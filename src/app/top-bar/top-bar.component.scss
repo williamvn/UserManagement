@@ -1,0 +1,39 @@
+$textColor: rgb(197, 186, 186);
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar{
+  padding:40px;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: $textColor;
+
+  .nav-list{
+    display: flex;
+    flex-direction: row;
+
+    a{
+      color: $textColor;
+      text-decoration: none;
+      margin: 10px
+    }
+  }
+}
