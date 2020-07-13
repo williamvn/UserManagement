@@ -8,7 +8,7 @@ import { Patient } from './model/patient';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class UserService {
 
   private _professionals :Professional[];
   private _patients :Patient[];
