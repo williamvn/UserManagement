@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
+  BASE_URI= "http://localhost:3000/";
 
   private _professionals :Professional[];
   private _patients :Patient[];
@@ -33,20 +34,18 @@ export class UserService {
     return forkJoin(this.loadPatients(), this.loadProfessionals()).pipe( 
       map((response:[Patient[], Professional[]]) => {
           this._patients = response[0];
-          // console.log(this._patients);
           this._professionals = response[1];
-          // console.log(this._professionals);
           return true;
         }
     ));
   }
 
   private loadProfessionals():Observable<Professional[]>{
-    return this.http.get<Professional[]>("/assets/professionals.json");
+    return this.http.get<Professional[]>(this.BASE_URI + "professionals");
   }
 
   private loadPatients():Observable<Patient[]>{
-    return this.http.get<Patient[]>("/assets/patients.json");
+    return this.http.get<Patient[]>(this.BASE_URI + "patients");
   }
 
 }
