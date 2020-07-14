@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild, Input, OnChanges, SimpleChanges } from '@
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../model/user';
-import { Professional } from '../model/professional';
-import { Patient } from '../model/patient';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-users-list',
@@ -17,7 +16,7 @@ export class UsersListComponent implements OnInit, OnChanges {
   dataSource = new MatTableDataSource(this.users);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -28,5 +27,6 @@ export class UsersListComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 }

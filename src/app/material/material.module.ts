@@ -10,9 +10,8 @@ import { MatListModule } from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSortModule} from '@angular/material/sort';
-import {CdkTableModule} from '@angular/cdk/table';
-
-
+import {CdkTableModule} from '@angular/cdk/table'; 
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -28,6 +27,7 @@ import {CdkTableModule} from '@angular/cdk/table';
     MatProgressSpinnerModule,
     MatSortModule,
     CdkTableModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }
