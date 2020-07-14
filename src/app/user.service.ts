@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { User } from './model/user';
 import { Professional } from './model/professional';
-import { exception } from 'console';
 import { Patient } from './model/patient';
+import { Observable } from 'rxjs';
+import { forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,23 +24,29 @@ export class UserService {
     return this._patients;
   }
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   /**
    * Load from the API all the professionals and patients
    */
-  public loadUsers():void {
-    //Use Fork Join
+  public loadUsers(): Observable<boolean> {
+    return forkJoin(this.loadPatients(), this.loadProfessionals()).pipe( 
+      map((response:[Patient[], Professional[]]) => {
+          this._patients = response[0];
+          // console.log(this._patients);
+          this._professionals = response[1];
+          // console.log(this._professionals);
+          return true;
+        }
+    ));
   }
 
-  private loadProfessionals():Professional[]{
-    //fetch professionals
-    throw new exception("Not Implemented");
+  private loadProfessionals():Observable<Professional[]>{
+    return this.http.get<Professional[]>("/assets/professionals.json");
   }
 
-  private loadPatients():Patient[]{
-    //fetch Patients;
-    throw new exception("Not Implemented");
+  private loadPatients():Observable<Patient[]>{
+    return this.http.get<Patient[]>("/assets/patients.json");
   }
 
 }

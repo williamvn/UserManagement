@@ -1,5 +1,20 @@
 <mat-tab-group>
-    <mat-tab label="Todo"> <app-users-list></app-users-list> </mat-tab>
-    <mat-tab label="Profesional"> <app-users-list></app-users-list> </mat-tab>
-    <mat-tab label="Paciente"> <app-users-list></app-users-list> </mat-tab>
+    <mat-tab label="Todo">
+        <app-users-list *ngIf="users != undefined" [users]="users"
+            [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'gender', 'docId']">
+        </app-users-list>
+    </mat-tab>
+    <mat-tab label="Profesional">
+        <app-users-list *ngIf="professionals != undefined" [users]="professionals"
+            [displayedColumns]="['id', 'name', 'type', 'firstName', 'lastName', 'gender', 'docId', 'noCollegiate']">
+        </app-users-list>
+    </mat-tab>
+    <mat-tab label="Paciente">
+        <app-users-list *ngIf="patients != undefined" [users]="patients"
+            [displayedColumns]="['id', 'NHC', 'name', 'firstName', 'lastName', 'gender', 'docId']">
+        </app-users-list>
+    </mat-tab>
 </mat-tab-group>
+<div class="center">
+    <mat-spinner></mat-spinner>
+</div>

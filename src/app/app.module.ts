@@ -8,6 +8,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UsersComponent } from './users/users.component';
 import { MaterialModule } from './material/material.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +22,8 @@ import { MaterialModule } from './material/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

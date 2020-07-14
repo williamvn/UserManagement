@@ -1,40 +1,32 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-
-interface A{
-  name:string;
-}
-
-interface B extends A{
-  age:number;
-}
-
-
-interface C extends A{
-  lastname:string;
-}
-
+import { Component, OnInit, ViewChild, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { User } from '../model/user';
+import { Professional } from '../model/professional';
+import { Patient } from '../model/patient';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.scss']
 })
-export class UsersListComponent implements OnInit {
+export class UsersListComponent implements OnInit, OnChanges {
 
-  displayedColumns: string[] = ['Nombre', 'Apellido', 'NHC', 'Rol'];
-  dataSource = new MatTableDataSource([]);
+  @Input() displayedColumns: string[];
+  @Input() users: User[] = [];
+  dataSource = new MatTableDataSource(this.users);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor() { }
 
-  ngOnInit(): void {
-    var b:B = {name:"Will", age:23}
-    var c:C = {name:"Will", lastname:"V"}
-    var a:B|C = c;
-    console.log(a.lastname);
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.users !== undefined){
+      this.dataSource = new MatTableDataSource(this.users);
+    }
   }
 
+  ngOnInit(): void {
+    this.dataSource.sort = this.sort;
+  }
 }

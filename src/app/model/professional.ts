@@ -1,7 +1,7 @@
 import { User } from './user';
 
-type ProfessionalType = "Médico" | "Enferemero" | "Adminsitrativo";
+type ProfessionalType = "Médico" | "Enfermero" | "Administrativo";
 export class Professional extends User{
-    NoCollegiate: string;
+    noCollegiate: string;
     type: ProfessionalType;
 }
