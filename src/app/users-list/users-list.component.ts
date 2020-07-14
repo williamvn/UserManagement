@@ -12,6 +12,7 @@ import {MatPaginator} from '@angular/material/paginator';
 export class UsersListComponent implements OnInit, OnChanges {
 
   @Input() displayedColumns: string[];
+  @Input() columnsNames:string[];
   @Input() users: User[] = [];
   dataSource = new MatTableDataSource(this.users);
 

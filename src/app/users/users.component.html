@@ -1,17 +1,27 @@
 <mat-tab-group>
     <mat-tab label="Todo">
-        <app-users-list *ngIf="users != undefined" [users]="users"
-            [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'gender', 'docId']">
+        <app-users-list 
+            *ngIf="users != undefined" 
+                [users]="users"
+                [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'gender', 'docId']"
+                [columnsNames] = "['Id', 'Nombre', 'Apellido', '2do Apellido', 'género', 'DNI/Pasaporte']">
         </app-users-list>
     </mat-tab>
     <mat-tab label="Profesional">
-        <app-users-list *ngIf="professionals != undefined" [users]="professionals"
-            [displayedColumns]="['id', 'name', 'type', 'firstName', 'lastName', 'gender', 'docId', 'noCollegiate']">
+        <app-users-list 
+        *ngIf="professionals != undefined" 
+            [users]="professionals"
+            [displayedColumns]="['id', 'name', 'type', 'firstName', 'lastName', 'gender', 'docId', 'noCollegiate']"
+            [columnsNames] = "['Id', 'Nombre', 'Tipo', 'Apellido', '2do Apellido', 'genero', 'DNI/Pasaporte', 'No. Colegiado']">
         </app-users-list>
     </mat-tab>
     <mat-tab label="Paciente">
-        <app-users-list *ngIf="patients != undefined" [users]="patients"
-            [displayedColumns]="['id', 'NHC', 'name', 'firstName', 'lastName', 'gender', 'docId']">
+        <app-users-list 
+            *ngIf="patients != undefined" 
+                [users]="patients"
+                [displayedColumns]="['id', 'NHC', 'name', 'firstName', 'lastName', 'gender', 'docId']"
+                [columnsNames] = "['Id', 'NHC', 'Nombre', 'Apellido', '2do Apellido', 'genero', 'DNI/Pasaporte']"
+            >
         </app-users-list>
     </mat-tab>
 </mat-tab-group>
