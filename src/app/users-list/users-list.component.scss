@@ -17,3 +17,23 @@ th.mat-sort-header-sorted {
 button {
   margin: 10px;
 }
+
+.mat-row {
+  cursor: pointer;
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+}
+
+.mat-row:hover {
+  background-color: lightgray;
+  opacity: 0.9;
+  .mat-cell {
+    color: black;
+    .mat-warn{
+      background-color: rgb(255, 0, 0);
+    }
+    .mat-primray{
+      background-color: rgb(0, 0, 255);
+    }
+  }
+}

@@ -34,6 +34,7 @@ export class UsersListComponent implements OnInit, OnChanges {
   }
 
   deleteUser(user){
+    console.log(user instanceof User);
     var isPro = (<Professional>user).noCollegiate != undefined;
     console.log(isPro? "Is Pro" : "Is Patient");
     alert("Deleting Element with ID: " + user.id + "....");
