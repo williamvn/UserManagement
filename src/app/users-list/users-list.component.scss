@@ -1,16 +1,19 @@
 table {
-    width: 100%;
-  }
-  
-  th.mat-sort-header-sorted {
-    color: black;
-  }
-
-.container{
-    margin:20px;     
+  width: 100%;
 }
 
-.box-shadow{
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.container {
+  margin: 20px;
+}
+
+.box-shadow {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
 }
 
+button {
+  margin: 10px;
+}

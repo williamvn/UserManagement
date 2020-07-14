@@ -3,6 +3,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../model/user';
 import {MatPaginator} from '@angular/material/paginator';
+import { Professional } from '../model/professional';
+import { Patient } from '../model/patient';
 
 @Component({
   selector: 'app-users-list',
@@ -30,4 +32,11 @@ export class UsersListComponent implements OnInit, OnChanges {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
+
+  deleteUser(user){
+    var isPro = (<Professional>user).noCollegiate != undefined;
+    console.log(isPro? "Is Pro" : "Is Patient");
+    alert("Deleting Element with ID: " + user.id + "....");
+  }
+
 }
