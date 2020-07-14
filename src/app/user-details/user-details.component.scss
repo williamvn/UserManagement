@@ -5,6 +5,8 @@
 .shipping-card {
   min-width: 120px;
   margin: 20px auto;
+  border-radius: 0em;
+  box-shadow: 0 0.25rem 0.50rem rgba(0, 0, 0, 0.2);
 }
 
 .mat-radio-button {
@@ -36,4 +38,14 @@
 
 .mt-5{
   margin-top: 50px;
+}
+
+.insurance{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(236, 236, 236);
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;;
+  margin: 5px;
 }

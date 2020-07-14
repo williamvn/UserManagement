@@ -1,11 +1,18 @@
 [
     {
         "NHC": "19283797U",
-        "insuranceCarrier":[{
-            "name": "mi serguro",
-            "type": "Salud",
-            "cardNumber": "123oh123"
-        }],
+        "insuranceCarrier": [
+            {
+                "name": "mi serguro",
+                "type": "Salud",
+                "cardNumber": "123oh123"
+            },
+            {
+                "name": "mi serguro",
+                "type": "Dental",
+                "cardNumber": "123oh123"
+            }
+        ],
         "id": 0,
         "name": "Scott",
         "firstName": "Schtape",

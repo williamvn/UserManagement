@@ -72,7 +72,7 @@ export class UserDetailsComponent implements OnInit {
     {name: 'Wisconsin', abbreviation: 'WI'},
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
-
+  type:string;
   constructor(private route:ActivatedRoute, private userService:UserService) {
   }
 
@@ -82,9 +82,12 @@ export class UserDetailsComponent implements OnInit {
       var id = +params.get('id');
       if(userType == "professional"){
         this.user = this.userService.professionals.find(pro=>pro.id == id);
+        this.type = "profesional";
       }
       else if(userType == "patient"){
+        this.type = "paciente";
         this.user = this.userService.patients.find(patient=>patient.id == id);
+        console.log(this.user['insuranceCarrier'].name);
       }
       else{
         alert("Error loading the user with ID:" + id);

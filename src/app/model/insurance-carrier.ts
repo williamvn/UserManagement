@@ -2,6 +2,6 @@ type InsuranceType = "Salud" | "Familiar" | "Dental";
 
 export interface InsuranceCarrier {
     name: string;
-    type: InsuranceCarrier;
+    type: InsuranceType;
     cardNumber: string;
 }
