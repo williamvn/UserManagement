@@ -1,6 +1,5 @@
 <div class="container">
-
-  <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <form #userForm='ngForm' novalidate (submit)="onSubmit()">
     <mat-card class="shipping-card">
       <mat-card-header>
         <mat-card-title>User Details</mat-card-title>
@@ -9,31 +8,31 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Nombre" formControlName="company">
+              <input matInput placeholder="Nombre" [(ngModel)]="user.name" name="Name">
             </mat-form-field>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Apellido" formControlName="firstName">
-              <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
-                First name is <strong>required</strong>
-              </mat-error>
+              <input matInput placeholder="Apellido" [(ngModel)]="user.firstName" name="firstName">
+              <!-- <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
+                El Apellido es <strong>requerido</strong>
+              </mat-error> -->
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Segundo Apellido" formControlName="lastName">
-              <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+              <input matInput placeholder="Segundo Apellido" [(ngModel)]="user.lastName" name="lastName">
+              <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
                 Last name is <strong>required</strong>
-              </mat-error>
+              </mat-error> -->
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="full-width">
               <mat-label>Choose a date</mat-label>
-              <input matInput [matDatepicker]="picker">
+              <input matInput [matDatepicker]="picker" [(ngModel)]="user.birthDay" name="birthDay">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -44,48 +43,56 @@
         </mat-card-header>
         <div class="col">
           <mat-form-field class="full-width">
-            <textarea matInput placeholder="Calle" formControlName="address"></textarea>
-            <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
+            <textarea matInput placeholder="Calle" [(ngModel)]="user.address.street" name="street"></textarea>
+            <!-- <mat-error *ngIf="userForm.controls['address.street'].hasError('required')">
               Address is <strong>required</strong>
-            </mat-error>
+            </mat-error> -->
           </mat-form-field>
         </div>
         <div class="row">
+          
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Ciudad" formControlName="city">
-              <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
+              <input matInput placeholder="Puerta" [(ngModel)]="user.address.door" name="puerta">
+              <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
                 City is <strong>required</strong>
-              </mat-error>
+              </mat-error> -->
             </mat-form-field>
           </div>
+
           <div class="col">
             <mat-form-field class="full-width">
-              <mat-select placeholder="Provincia" formControlName="state">
-                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
-                  {{ state.name }}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
-                State is <strong>required</strong>
-              </mat-error>
+              <input matInput placeholder="No" [(ngModel)]="user.address.no" name="no">
+              <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
+                City is <strong>required</strong>
+              </mat-error> -->
             </mat-form-field>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput #postalCode maxlength="5" placeholder="Código Postal" type="number"
-                formControlName="postalCode">
-              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+              <input matInput placeholder="Ciudad" [(ngModel)]="user.address.city" name="city">
+              <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
+                City is <strong>required</strong>
+              </mat-error> -->
             </mat-form-field>
           </div>
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput #zipCode maxlength="5" placeholder="Código Postal" type="number"
+                [(ngModel)]="user.address.zipCode" name="zipcode">
+              <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+          </div>
+          
         </div>
         <div class="row">
           <div class="col">
-            <mat-radio-group formControlName="shipping">
-              <mat-radio-button value="Masculino">Masculino</mat-radio-button>
-              <mat-radio-button value="Femenino"> Femenino</mat-radio-button>
+            <mat-radio-group [(ngModel)]="user.gender" name="gender">
+              <mat-radio-button value="M">Masculino</mat-radio-button>
+              <mat-radio-button value="F"> Femenino</mat-radio-button>
             </mat-radio-group>
           </div>
         </div>

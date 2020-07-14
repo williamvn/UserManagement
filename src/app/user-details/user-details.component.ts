@@ -1,28 +1,18 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.scss']
 })
-export class UserDetailsComponent {
-  addressForm = this.fb.group({
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    address2: null,
-    city: [null, Validators.required],
-    state: [null, Validators.required],
-    postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-    ],
-    shipping: ['free', Validators.required]
-  });
+export class UserDetailsComponent implements OnInit {
 
-  hasUnitNumber = false;
-
+  @Input() user: User = {id:0, name: "", firstName:"", lastName:"", gender:"M",  birthDay: null, docId: "", 
+     address: {city:"", street:"", no:0,
+    door: "",
+    zipCode:0}};
+ 
   states = [
     {name: 'Alabama', abbreviation: 'AL'},
     {name: 'Alaska', abbreviation: 'AK'},
@@ -85,8 +75,12 @@ export class UserDetailsComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor() {
+  }
 
+  ngOnInit(){
+  }
+  
   onSubmit() {
     alert('Thanks!');
   }
