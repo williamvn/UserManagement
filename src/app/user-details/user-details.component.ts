@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../model/user';
+import { UserService } from '../user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -8,11 +10,7 @@ import { User } from '../model/user';
 })
 export class UserDetailsComponent implements OnInit {
 
-  @Input() user: User = {id:0, name: "", firstName:"", lastName:"", gender:"M",  birthDay: null, docId: "", 
-     address: {city:"", street:"", no:0,
-    door: "",
-    zipCode:0}};
- 
+  user: User;
   states = [
     {name: 'Alabama', abbreviation: 'AL'},
     {name: 'Alaska', abbreviation: 'AK'},
@@ -75,10 +73,23 @@ export class UserDetailsComponent implements OnInit {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor() {
+  constructor(private route:ActivatedRoute, private userService:UserService) {
   }
 
   ngOnInit(){
+    this.route.paramMap.subscribe(params => {
+      var userType = params.get('userType');
+      var id = +params.get('id');
+      if(userType == "professional"){
+        this.user = this.userService.professionals.find(pro=>pro.id == id);
+      }
+      else if(userType == "patient"){
+        this.user = this.userService.patients.find(patient=>patient.id == id);
+      }
+      else{
+        alert("Error loading the user with ID:" + id);
+      }
+    });
   }
   
   onSubmit() {
