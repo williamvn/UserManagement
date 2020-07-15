@@ -7,6 +7,7 @@ import { Professional } from '../model/professional';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogComponent } from '../dialog/dialog.component';
 
 
 
@@ -39,8 +40,9 @@ export class UsersListComponent implements OnInit, OnChanges {
 
 
   deleteUser(user) {
-    const dialogRef = this.dialog.open(DeleteUserDialog, {
-      width: '250px'
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '350px',
+      data:{title:"Eliminar", subtitle:"Estás intentando borrar un usuario.", body:"¿Estás seguro?", reject:"No", accept:"Sí"}
     });
     var isProfessional = (<Professional>user).noCollegiate != undefined;
     dialogRef.afterClosed().subscribe(result => {
@@ -55,20 +57,3 @@ export class UsersListComponent implements OnInit, OnChanges {
   }
 }
 
-@Component({
-  selector: 'delete-user-dialog',
-  styleUrls: ['./delete-user-dialog.scss'],
-  templateUrl: 'delete-user-dialog.html',
-})
-export class DeleteUserDialog {
-
-  constructor(public dialogRef: MatDialogRef<UsersListComponent>) { }
-
-  onNoClick(): void {
-    this.dialogRef.close(false);
-  }
-
-  onClick(): void {
-    this.dialogRef.close(true);
-  }
-}

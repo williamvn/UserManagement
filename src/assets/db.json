@@ -20,24 +20,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 6,
-      "name": "Olive",
-      "firstName": "Yu",
-      "lastName": "Yu",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1743478+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 7,
       "name": "Reanne",
@@ -17963,6 +17945,24 @@
       "noCollegiate": "19283797U",
       "type": "Médico",
       "id": 1002
+    },
+    {
+      "address": {
+        "street": "Santa Catalina",
+        "door": "1B",
+        "no": "23",
+        "city": "Madrid",
+        "zipCode": 23901
+      },
+      "name": "Ale",
+      "firstName": "Vazquez",
+      "lastName": "Matos",
+      "docId": "552348Z",
+      "birthDay": "2020-07-13T22:00:00.000Z",
+      "gender": "M",
+      "noCollegiate": "19283797U",
+      "type": "Enfermero",
+      "id": 1003
     }
   ],
   "patients": [

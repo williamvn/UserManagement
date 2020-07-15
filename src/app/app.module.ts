@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from "@angular/forms";
 import { NewUserComponent } from './new-user/new-user.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -28,7 +29,8 @@ import { NewUserComponent } from './new-user/new-user.component';
     UsersListComponent,
     UsersComponent,
     UserDetailsComponent,
-    NewUserComponent
+    NewUserComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
