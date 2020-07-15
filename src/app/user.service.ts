@@ -75,4 +75,9 @@ export class UserService {
       this._patients[index] = patient;
     });
   }
+
+  public deleteUser(userId, resource){
+    console.log("deleting: " + resource + "/" +  userId);
+    return this.http.delete(this.BASE_URI + resource + "/" + userId);
+  }
 }

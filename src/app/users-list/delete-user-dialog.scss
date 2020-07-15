@@ -1,0 +1,33 @@
+button{
+    padding-top:13px;
+    padding-bottom:13px;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: 0 0.10rem 0.50rem rgba(0, 0, 0, 0.2);
+    border: none;
+    margin:10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.basic{
+    background-color: white;
+}
+
+.basic:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.warn{
+    background-color: rgb(253, 13, 13);
+    color: white;
+    box-shadow: 0 0.10rem 0.50rem rgba(0, 0, 0, 0.3);
+}
+
+.warn:hover{
+    background-color: rgb(194, 8, 8);
+}
+
+.dialog{
+    font-family: "Helvetica Neue", sans-serif;
+}

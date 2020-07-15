@@ -7,7 +7,7 @@
       "name": "Lionel",
       "firstName": "Messi",
       "lastName": "Cuchitini",
-      "gender": "F",
+      "gender": "M",
       "birthDay": "1992-11-09T23:00:00.000Z",
       "docId": "552348Z",
       "address": {
@@ -16,96 +16,6 @@
         "door": "1B",
         "zipCode": 28703,
         "city": "Barcelona"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 1,
-      "name": "Deb",
-      "firstName": "Utant",
-      "lastName": "Utant",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.174291+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 2,
-      "name": "Holly",
-      "firstName": "Graham",
-      "lastName": "Graham",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1743201+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Administrativo",
-      "id": 3,
-      "name": "Jimmy",
-      "firstName": "Changa",
-      "lastName": "Changa",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.174324+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 4,
-      "name": "Colin",
-      "firstName": "Derr",
-      "lastName": "Derr",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1743274+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 5,
-      "name": "Al",
-      "firstName": "Fredo",
-      "lastName": "Fredo",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1743444+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
       }
     },
     {
@@ -18003,23 +17913,23 @@
   ],
   "patients": [
     {
-      "NHC": "192AS97U",
+      "NHC": "19283797U",
       "insuranceCarrier": [
+        {
+          "name": "mi serguro",
+          "type": "Salud",
+          "cardNumber": "123IOIOI123"
+        },
         {
           "name": "Dientes Seguros",
           "type": "Dental",
           "cardNumber": "556ASF76"
-        },
-        {
-          "name": "Salud de Toro",
-          "type": "Salud",
-          "cardNumber": "123IOIOI123"
         }
       ],
-      "id": 0,
+      "id": 1,
       "name": "Scott",
       "firstName": "Schtape",
-      "lastName": "Switen",
+      "lastName": "Swip",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1672576+02:00",
       "docId": "5556988Z",
