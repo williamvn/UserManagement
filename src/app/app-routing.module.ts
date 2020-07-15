@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { NewUserComponent } from './new-user/new-user.component';
 
 
 const routes: Routes = [
   {path:"users", component:UsersComponent},
+  {path:"user/edit/:userType/:id", component:UserDetailsComponent},
+  {path:"user/new", component: NewUserComponent},
+  {path:"user/new/:userType", component: NewUserComponent},
   {path:"user/:userType/:id", component:UserDetailsComponent},
-  {path:"user/edit/:userType/:id", component:UserDetailsComponent}
 ];
 
 @NgModule({
