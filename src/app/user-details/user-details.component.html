@@ -1,7 +1,7 @@
 <div class="container">
   <form #userForm='ngForm' novalidate (submit)="saveUser()">
     <mat-tab-group>
-      <mat-tab label="Información de Usuario">
+      <mat-tab label="Datos Personales">
         <mat-card class="shipping-card">
           <mat-card-header>
             <mat-card-title>User Details</mat-card-title>
@@ -54,9 +54,26 @@
                 </mat-form-field>
               </div>
             </div>
-            <mat-card-header class="mt-5">
-              <mat-card-title>Address</mat-card-title>
-            </mat-card-header>
+            <div class="row">
+              <div class="col">
+                <mat-radio-group [(ngModel)]="user.gender" name="gender">
+                  <mat-radio-button value="M" [disabled]="!editableMode">Masculino</mat-radio-button>
+                  <mat-radio-button value="F" [disabled]="!editableMode"> Femenino</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit" *ngIf="editableMode">Guardar</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="Dirección">
+        <mat-card class="shipping-card">
+          <mat-card-header class="mt-5">
+            <mat-card-title>Address</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
             <div class="row">
 
               <div class="col">
@@ -110,14 +127,7 @@
               </div>
 
             </div>
-            <div class="row">
-              <div class="col">
-                <mat-radio-group [(ngModel)]="user.gender" name="gender">
-                  <mat-radio-button value="M" [disabled]="!editableMode">Masculino</mat-radio-button>
-                  <mat-radio-button value="F" [disabled]="!editableMode"> Femenino</mat-radio-button>
-                </mat-radio-group>
-              </div>
-            </div>
+           
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button color="primary" type="submit" *ngIf="editableMode">Guardar</button>
@@ -167,7 +177,8 @@
                       name="CardNumber{{i}}" [readonly]="!editableMode">
                   </mat-form-field>
                 </div>
-                <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(i)" *ngIf="editableMode">
+                <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(i)"
+                  *ngIf="editableMode">
                   x
                 </button>
               </div>
