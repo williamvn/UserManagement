@@ -18006,14 +18006,14 @@
       "NHC": "192AS97U",
       "insuranceCarrier": [
         {
-          "name": "Salud de Toro",
-          "type": "Salud",
-          "cardNumber": "123IOIOI123"
-        },
-        {
           "name": "Dientes Seguros",
           "type": "Dental",
           "cardNumber": "556ASF76"
+        },
+        {
+          "name": "Salud de Toro",
+          "type": "Salud",
+          "cardNumber": "123IOIOI123"
         }
       ],
       "id": 0,

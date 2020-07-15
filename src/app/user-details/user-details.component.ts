@@ -3,6 +3,7 @@ import { User } from '../model/user';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {InsuranceCarrier} from '../model/insurance-carrier';
 
 @Component({
   selector: 'app-user-details',
@@ -109,4 +110,22 @@ export class UserDetailsComponent implements OnInit {
       duration: 2000,
     });
   }
+
+  deleteInsurance(index:number){
+    var insurance = this.user["insuranceCarrier"][index];
+    this.user["insuranceCarrier"].splice(index, 1);
+    var snackBarRef = this._snackBar.open("Seguro Eliminado", "UNDO", {
+      duration: 5000,
+    });
+    snackBarRef.onAction().subscribe(() => {
+      this.user["insuranceCarrier"].splice(index, 0, insurance);
+    });
+
+  }
+
+  addInsurance(){
+    var newInsurance = new InsuranceCarrier();
+    this.user["insuranceCarrier"].push(newInsurance);
+  }
+  
 }

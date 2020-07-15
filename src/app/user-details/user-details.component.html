@@ -39,7 +39,7 @@
                 <mat-form-field class="full-width">
                   <input matInput placeholder="DNI/Pasaporte" [(ngModel)]="user.docId" name="docID"
                     [readonly]="!editableMode">
-                    <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
+                  <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
                   Last name is <strong>required</strong>
                 </mat-error> -->
                 </mat-form-field>
@@ -120,7 +120,7 @@
             </div>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" [disabled]="!editableMode">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="editableMode">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>
@@ -151,24 +151,33 @@
                   </mat-form-field>
                 </div>
               </div>
-              <div class="row" *ngFor="let insurance of user['insuranceCarrier'];let i = index;" class="insurance">
-                <mat-form-field>
-                  <input matInput placeholder="Nombre del Seguro" [(ngModel)]="insurance.name" name="insuranceName{{i}}"
-                    [readonly]="!editableMode">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Tipo de Seguro" [(ngModel)]="insurance.type" name="insuranceType{{i}}"
-                    [readonly]="!editableMode">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Numero de Tarjeta" [(ngModel)]="insurance.cardNumber"
-                    name="CardNumber{{i}}" [readonly]="!editableMode">
-                </mat-form-field>
+
+              <div class="row insurance-container" *ngFor="let insurance of user['insuranceCarrier'];let i = index;">
+                <div class="insurance">
+                  <mat-form-field>
+                    <input matInput placeholder="Nombre del Seguro" [(ngModel)]="insurance.name"
+                      name="insuranceName{{i}}" [readonly]="!editableMode">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Tipo de Seguro" [(ngModel)]="insurance.type" name="insuranceType{{i}}"
+                      [readonly]="!editableMode">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Numero de Tarjeta" [(ngModel)]="insurance.cardNumber"
+                      name="CardNumber{{i}}" [readonly]="!editableMode">
+                  </mat-form-field>
+                </div>
+                <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(i)" *ngIf="editableMode">
+                  x
+                </button>
               </div>
+              <button mat-mini-fab color="basic" type="button" (click)="addInsurance()" *ngIf="editableMode">
+                <mat-icon>add</mat-icon>
+              </button>
             </div>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" [disabled]="!editableMode">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="editableMode">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>

@@ -40,12 +40,27 @@
   margin-top: 50px;
 }
 
-.insurance{
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(236, 236, 236);
-  padding-top: 5px;
-  padding-left: 10px;
-  padding-right: 10px;;
-  margin: 5px;
+
+
+
+
+.insurance-container{
+  .insurance{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(236, 236, 236);
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;;
+    margin: 5px;
+    width: 100%;
+  }
+
+  .close{
+    width:20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
