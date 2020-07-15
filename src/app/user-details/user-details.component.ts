@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../model/user';
 import { UserService } from '../user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-details',
@@ -74,7 +75,7 @@ export class UserDetailsComponent implements OnInit {
   ];
   type: string;
   editableMode: boolean;
-  constructor(private route: ActivatedRoute, private userService: UserService) {
+  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -101,7 +102,11 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    alert('Thanks!');
+  saveUser() {
+    this.userService.updateUser(this.user, this.type == "profesional");
+    this.router.navigate(["users"]);
+    this._snackBar.open("Usuario Actualizado", "Aceptar", {
+      duration: 2000,
+    });
   }
 }

@@ -1,5 +1,5 @@
 <div class="container">
-  <form #userForm='ngForm' novalidate (submit)="onSubmit()">
+  <form #userForm='ngForm' novalidate (submit)="saveUser()">
     <mat-tab-group>
       <mat-tab label="Información de Usuario">
         <mat-card class="shipping-card">
@@ -17,7 +17,8 @@
             <div class="row">
               <div class="col">
                 <mat-form-field class="full-width">
-                  <input matInput placeholder="Apellido" [(ngModel)]="user.firstName" name="firstName" [readonly]="!editableMode">
+                  <input matInput placeholder="Apellido" [(ngModel)]="user.firstName" name="firstName"
+                    [readonly]="!editableMode">
                   <!-- <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
                 El Apellido es <strong>requerido</strong>
               </mat-error> -->
@@ -25,16 +26,29 @@
               </div>
               <div class="col">
                 <mat-form-field class="full-width">
-                  <input matInput placeholder="Segundo Apellido" [(ngModel)]="user.lastName" name="lastName" [readonly]="!editableMode" >
+                  <input matInput placeholder="Segundo Apellido" [(ngModel)]="user.lastName" name="lastName"
+                    [readonly]="!editableMode">
                   <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
                 Last name is <strong>required</strong>
               </mat-error> -->
                 </mat-form-field>
               </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="DNI/Pasaporte" [(ngModel)]="user.docId" name="docID"
+                    [readonly]="!editableMode">
+                    <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
+                  Last name is <strong>required</strong>
+                </mat-error> -->
+                </mat-form-field>
+              </div>
               <div class="col">
                 <mat-form-field class="full-width">
                   <mat-label>Fecha de Nacimiento</mat-label>
-                  <input matInput [matDatepicker]="picker" [(ngModel)]="user.birthDay" name="birthDay" [readonly]="!editableMode">
+                  <input matInput [matDatepicker]="picker" [(ngModel)]="user.birthDay" name="birthDay"
+                    [readonly]="!editableMode">
                   <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="!editableMode"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -47,7 +61,8 @@
 
               <div class="col">
                 <mat-form-field class="full-width">
-                  <input matInput placeholder="Calle" [(ngModel)]="user.address.street" name="street" [readonly]="!editableMode">
+                  <input matInput placeholder="Calle" [(ngModel)]="user.address.street" name="street"
+                    [readonly]="!editableMode">
                   <!-- <mat-error *ngIf="userForm.controls['address.street'].hasError('required')">
                     Address is <strong>required</strong>
                   </mat-error> -->
@@ -58,7 +73,8 @@
 
               <div class="col">
                 <mat-form-field class="full-width">
-                  <input matInput placeholder="Puerta" [(ngModel)]="user.address.door" name="puerta" [readonly]="!editableMode">
+                  <input matInput placeholder="Puerta" [(ngModel)]="user.address.door" name="puerta"
+                    [readonly]="!editableMode">
                   <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
                 City is <strong>required</strong>
               </mat-error> -->
@@ -77,7 +93,8 @@
             <div class="row">
               <div class="col">
                 <mat-form-field class="full-width">
-                  <input matInput placeholder="Ciudad" [(ngModel)]="user.address.city" name="city" [readonly]="!editableMode">
+                  <input matInput placeholder="Ciudad" [(ngModel)]="user.address.city" name="city"
+                    [readonly]="!editableMode">
                   <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
                 City is <strong>required</strong>
               </mat-error> -->
@@ -117,7 +134,8 @@
             <div class="row" *ngIf="type == 'profesional'">
               <div class="col">
                 <mat-form-field class="full-width">
-                  <input matInput placeholder="No. Colegiado" [(ngModel)]="user['noCollegiate']" name="noCollegiate" [readonly]="!editableMode">
+                  <input matInput placeholder="No. Colegiado" [(ngModel)]="user['noCollegiate']" name="noCollegiate"
+                    [readonly]="!editableMode">
                 </mat-form-field>
                 <mat-form-field class="full-width">
                   <input matInput placeholder="Tipo" [(ngModel)]="user['type']" name="type" [readonly]="!editableMode">
@@ -133,19 +151,19 @@
                   </mat-form-field>
                 </div>
               </div>
-                <div class="row" *ngFor="let insurance of user['insuranceCarrier'];let i = index;" class="insurance">
-                  <mat-form-field>
-                    <input matInput placeholder="Nombre del Seguro" [(ngModel)]="insurance.name"
-                      name="insuranceName{{i}}" [readonly]="!editableMode">
-                  </mat-form-field>
-                  <mat-form-field>
-                    <input matInput placeholder="Tipo de Seguro" [(ngModel)]="insurance.type"
-                      name="insuranceType{{i}}" [readonly]="!editableMode">
-                  </mat-form-field>
-                  <mat-form-field>
-                    <input matInput placeholder="Numero de Tarjeta" [(ngModel)]="insurance.cardNumber"
-                      name="CardNumber{{i}}" [readonly]="!editableMode">
-                  </mat-form-field>
+              <div class="row" *ngFor="let insurance of user['insuranceCarrier'];let i = index;" class="insurance">
+                <mat-form-field>
+                  <input matInput placeholder="Nombre del Seguro" [(ngModel)]="insurance.name" name="insuranceName{{i}}"
+                    [readonly]="!editableMode">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Tipo de Seguro" [(ngModel)]="insurance.type" name="insuranceType{{i}}"
+                    [readonly]="!editableMode">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Numero de Tarjeta" [(ngModel)]="insurance.cardNumber"
+                    name="CardNumber{{i}}" [readonly]="!editableMode">
+                </mat-form-field>
               </div>
             </div>
           </mat-card-content>
