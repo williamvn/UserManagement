@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../model/user';
 import { MatPaginator } from '@angular/material/paginator';
 import { Professional } from '../model/professional';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from '../dialog/dialog.component';

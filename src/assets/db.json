@@ -38,7 +38,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 8,
       "name": "Luke",
       "firstName": "Warm",
@@ -56,7 +56,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 9,
       "name": "Mary",
       "firstName": "Achi",
@@ -92,7 +92,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 11,
       "name": "Al",
       "firstName": "Dente",
@@ -110,7 +110,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 12,
       "name": "Jess",
       "firstName": "Thetip",
@@ -326,7 +326,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 24,
       "name": "Bart",
       "firstName": "Ender",
@@ -362,7 +362,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 26,
       "name": "Matt",
       "firstName": "Innae",
@@ -398,7 +398,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 28,
       "name": "Robin",
       "firstName": "Banks",
@@ -434,7 +434,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 30,
       "name": "Al",
       "firstName": "Fredo",
@@ -470,7 +470,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 32,
       "name": "Travis",
       "firstName": "Tee",
@@ -506,7 +506,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 34,
       "name": "Sara",
       "firstName": "Bellum",
@@ -758,7 +758,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 48,
       "name": "Sal",
       "firstName": "Ami",
@@ -794,7 +794,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 50,
       "name": "Barb",
       "firstName": "Dwyer",
@@ -992,49 +992,13 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 61,
       "name": "Scott",
       "firstName": "Schtape",
       "lastName": "Schtape",
       "gender": "M",
       "birthDay": "2020-07-14T09:03:13.1745363+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 62,
-      "name": "Phil",
-      "firstName": "Anderer",
-      "lastName": "Anderer",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745395+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 63,
-      "name": "Jen",
-      "firstName": "Trification",
-      "lastName": "Trification",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745428+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -1082,96 +1046,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 66,
-      "name": "Moe",
-      "firstName": "Fugga",
-      "lastName": "Fugga",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745531+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 67,
-      "name": "Cory",
-      "firstName": "Ander",
-      "lastName": "Ander",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1745561+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 68,
-      "name": "Chris",
-      "firstName": "P.",
-      "lastName": "P.",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1745593+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 69,
-      "name": "Al",
-      "firstName": "Dente",
-      "lastName": "Dente",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1745625+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 70,
-      "name": "Anne",
-      "firstName": "Fibbiyon",
-      "lastName": "Fibbiyon",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745692+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 71,
       "name": "Lucy",
@@ -1190,24 +1064,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 72,
-      "name": "Eric",
-      "firstName": "Shun",
-      "lastName": "Shun",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745759+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 73,
       "name": "Sal",
@@ -1215,42 +1071,6 @@
       "lastName": "Ami",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1745791+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 74,
-      "name": "Rick",
-      "firstName": "O'Shea",
-      "lastName": "O'Shea",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745824+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 75,
-      "name": "Rick",
-      "firstName": "Shaw",
-      "lastName": "Shaw",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745856+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -1298,42 +1118,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 78,
-      "name": "Ty",
-      "firstName": "Ballgame",
-      "lastName": "Ballgame",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745954+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 79,
-      "name": "Deb",
-      "firstName": "Utant",
-      "lastName": "Utant",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1745988+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 80,
       "name": "Mary",
@@ -1352,42 +1136,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 81,
-      "name": "Lucy",
-      "firstName": "Tania",
-      "lastName": "Tania",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1746052+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 82,
-      "name": "Curt",
-      "firstName": "N.",
-      "lastName": "N.",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1746085+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 83,
       "name": "Penny",
@@ -1395,60 +1143,6 @@
       "lastName": "Trate",
       "gender": "M",
       "birthDay": "2020-07-14T09:03:13.1746119+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 84,
-      "name": "Tara",
-      "firstName": "Zona",
-      "lastName": "Zona",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1746152+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 85,
-      "name": "Cara",
-      "firstName": "Larm",
-      "lastName": "Larm",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1746182+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 86,
-      "name": "Walter",
-      "firstName": "Melon",
-      "lastName": "Melon",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1746217+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -1496,24 +1190,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 89,
-      "name": "Nick",
-      "firstName": "R.",
-      "lastName": "R.",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1746366+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 90,
       "name": "Holland",
@@ -1521,24 +1197,6 @@
       "lastName": "Oats",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1746398+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 91,
-      "name": "Paul",
-      "firstName": "Molive",
-      "lastName": "Molive",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.174643+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -1604,24 +1262,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 95,
-      "name": "Reuben",
-      "firstName": "Sandwich",
-      "lastName": "Sandwich",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1746564+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 96,
       "name": "Ray",
@@ -1629,78 +1269,6 @@
       "lastName": "Cyst",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1746598+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 97,
-      "name": "Dante",
-      "firstName": "Sinferno",
-      "lastName": "Sinferno",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1746628+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 98,
-      "name": "Jenna",
-      "firstName": "Side",
-      "lastName": "Side",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1746661+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 99,
-      "name": "Mel",
-      "firstName": "Anoma",
-      "lastName": "Anoma",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1746695+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 100,
-      "name": "Lou",
-      "firstName": "Tenant",
-      "lastName": "Tenant",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1746727+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -1730,24 +1298,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 102,
-      "name": "Curt",
-      "firstName": "N.",
-      "lastName": "N.",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1746789+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 103,
       "name": "Marion",
@@ -1755,42 +1305,6 @@
       "lastName": "Gaze",
       "gender": "M",
       "birthDay": "2020-07-14T09:03:13.1746819+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 104,
-      "name": "Lewis",
-      "firstName": "N.",
-      "lastName": "N.",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1746851+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 105,
-      "name": "Sal",
-      "firstName": "Ami",
-      "lastName": "Ami",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1747083+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -1856,24 +1370,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 109,
-      "name": "Ty",
-      "firstName": "Ballgame",
-      "lastName": "Ballgame",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1747224+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 110,
       "name": "Ray",
@@ -1892,7 +1388,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 111,
       "name": "John",
       "firstName": "Withawind",
@@ -1964,7 +1460,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 115,
       "name": "Scott",
       "firstName": "Schtape",
@@ -2054,7 +1550,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 120,
       "name": "Fred",
       "firstName": "Attchini",
@@ -2108,7 +1604,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 123,
       "name": "Cam",
       "firstName": "L.",
@@ -2126,7 +1622,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 124,
       "name": "Mary",
       "firstName": "Christmas",
@@ -2234,7 +1730,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 130,
       "name": "Louis",
       "firstName": "Ville",
@@ -2252,7 +1748,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 131,
       "name": "Pat",
       "firstName": "Agonia",
@@ -2270,7 +1766,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 132,
       "name": "Jen",
       "firstName": "Youfelct",
@@ -2288,7 +1784,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 133,
       "name": "Ty",
       "firstName": "Tanic",
@@ -2360,7 +1856,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 137,
       "name": "Jack",
       "firstName": "Dup",
@@ -2378,7 +1874,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 138,
       "name": "Aaron",
       "firstName": "Spacemuseum",
@@ -2396,7 +1892,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 139,
       "name": "Barb",
       "firstName": "Dwyer",
@@ -2414,7 +1910,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 140,
       "name": "Deb",
       "firstName": "Utant",
@@ -2504,7 +2000,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 145,
       "name": "Hugo",
       "firstName": "Slavia",
@@ -2522,7 +2018,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 146,
       "name": "Donatella",
       "firstName": "Nobatti",
@@ -2558,7 +2054,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 148,
       "name": "Aaron",
       "firstName": "Ottix",
@@ -2612,7 +2108,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 151,
       "name": "Mary",
       "firstName": "Nara",
@@ -2666,7 +2162,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 154,
       "name": "Gail",
       "firstName": "Forcewind",
@@ -2684,7 +2180,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 155,
       "name": "Amber",
       "firstName": "Alert",
@@ -2702,7 +2198,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 156,
       "name": "Patty",
       "firstName": "Whack",
@@ -2774,7 +2270,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 160,
       "name": "Bill",
       "firstName": "Emia",
@@ -2792,7 +2288,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 161,
       "name": "Mae",
       "firstName": "O'Nayse",
@@ -2810,7 +2306,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 162,
       "name": "Farrah",
       "firstName": "Moan",
@@ -2864,7 +2360,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 165,
       "name": "Lynn",
       "firstName": "Guini",
@@ -2900,7 +2396,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 167,
       "name": "Paul",
       "firstName": "Samic",
@@ -2990,7 +2486,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 172,
       "name": "Cal",
       "firstName": "Orie",
@@ -3008,7 +2504,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 173,
       "name": "Jimmy",
       "firstName": "Changa",
@@ -3026,7 +2522,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 174,
       "name": "Dom",
       "firstName": "Inate",
@@ -3098,7 +2594,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 178,
       "name": "Cal",
       "firstName": "Q.",
@@ -3170,7 +2666,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 182,
       "name": "Anna",
       "firstName": "Mull",
@@ -3206,7 +2702,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 184,
       "name": "Gabe",
       "firstName": "Lackmen",
@@ -3260,7 +2756,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 187,
       "name": "Mario",
       "firstName": "Speedwagon",
@@ -3314,7 +2810,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 190,
       "name": "Lucy",
       "firstName": "Tania",
@@ -3422,7 +2918,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 196,
       "name": "Saul",
       "firstName": "T.",
@@ -3494,7 +2990,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 200,
       "name": "Paul",
       "firstName": "Issy",
@@ -3548,7 +3044,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 203,
       "name": "Lance",
       "firstName": "Dorporal",
@@ -3620,7 +3116,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 207,
       "name": "Javy",
       "firstName": "Cado",
@@ -3638,7 +3134,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 208,
       "name": "Travis",
       "firstName": "Tee",
@@ -3764,7 +3260,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 215,
       "name": "Mason",
       "firstName": "Protesters",
@@ -3818,7 +3314,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 218,
       "name": "Matt",
       "firstName": "Schtick",
@@ -3890,7 +3386,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 222,
       "name": "Anna",
       "firstName": "Lytics",
@@ -3908,7 +3404,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 223,
       "name": "Cody",
       "firstName": "Pendant",
@@ -3926,7 +3422,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 224,
       "name": "Anna",
       "firstName": "Mull",
@@ -3962,7 +3458,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 226,
       "name": "Arthur",
       "firstName": "Itis",
@@ -3998,7 +3494,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 228,
       "name": "Bill",
       "firstName": "Yerds",
@@ -4034,7 +3530,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 230,
       "name": "Hugh",
       "firstName": "Miliation",
@@ -4106,7 +3602,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 234,
       "name": "Aaron",
       "firstName": "Ottix",
@@ -4124,7 +3620,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 235,
       "name": "Eric",
       "firstName": "Shun",
@@ -4178,7 +3674,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 238,
       "name": "Minnie",
       "firstName": "Mum",
@@ -4232,7 +3728,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 241,
       "name": "Robin",
       "firstName": "Banks",
@@ -4268,7 +3764,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 243,
       "name": "Cliff",
       "firstName": "Hanger",
@@ -4376,7 +3872,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 249,
       "name": "Cathy",
       "firstName": "Derr",
@@ -4430,7 +3926,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 252,
       "name": "Ben",
       "firstName": "Effit",
@@ -4520,7 +4016,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 257,
       "name": "Curtis",
       "firstName": "E.",
@@ -4574,7 +4070,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 260,
       "name": "Christian",
       "firstName": "Mingle",
@@ -4592,7 +4088,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 261,
       "name": "Cooke",
       "firstName": "Edoh",
@@ -4700,7 +4196,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 267,
       "name": "Rick",
       "firstName": "O'Shea",
@@ -4736,7 +4232,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 269,
       "name": "John",
       "firstName": "Withawind",
@@ -4772,7 +4268,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 271,
       "name": "Sharon",
       "firstName": "Needles",
@@ -4844,7 +4340,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 275,
       "name": "Deb",
       "firstName": "Utant",
@@ -4898,7 +4394,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 278,
       "name": "Artie",
       "firstName": "Choke",
@@ -4934,7 +4430,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 280,
       "name": "Anne",
       "firstName": "Fibbiyon",
@@ -4952,7 +4448,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 281,
       "name": "Ty",
       "firstName": "Pryder",
@@ -5024,7 +4520,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 285,
       "name": "Colin",
       "firstName": "Derr",
@@ -5042,7 +4538,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 286,
       "name": "Barb",
       "firstName": "Dwyer",
@@ -5132,7 +4628,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 291,
       "name": "Bobby",
       "firstName": "Pin",
@@ -5168,7 +4664,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 293,
       "name": "Theo",
       "firstName": "Retical",
@@ -5186,7 +4682,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 294,
       "name": "Bud",
       "firstName": "Jet",
@@ -5204,7 +4700,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 295,
       "name": "Bill",
       "firstName": "Emia",
@@ -5258,7 +4754,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 298,
       "name": "Terry",
       "firstName": "Aki",
@@ -5276,7 +4772,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 299,
       "name": "Theo",
       "firstName": "Retical",
@@ -5294,7 +4790,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 300,
       "name": "Gustav",
       "firstName": "Wind",
@@ -5312,7 +4808,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 301,
       "name": "Minnie",
       "firstName": "Mum",
@@ -5330,7 +4826,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 302,
       "name": "Christian",
       "firstName": "Mingle",
@@ -5348,7 +4844,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 303,
       "name": "Adam",
       "firstName": "Zapple",
@@ -5384,7 +4880,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 305,
       "name": "Kerry",
       "firstName": "Oaky",
@@ -5402,7 +4898,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 306,
       "name": "Al",
       "firstName": "Fredo",
@@ -5528,7 +5024,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 313,
       "name": "Paige",
       "firstName": "Turner",
@@ -5672,7 +5168,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 321,
       "name": "Lou",
       "firstName": "Zing",
@@ -5690,7 +5186,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 322,
       "name": "Sal",
       "firstName": "Ami",
@@ -5744,7 +5240,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 325,
       "name": "Pat",
       "firstName": "Ernity",
@@ -5780,7 +5276,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 327,
       "name": "Arthur",
       "firstName": "Itis",
@@ -5870,7 +5366,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 332,
       "name": "Jen",
       "firstName": "Trification",
@@ -5906,7 +5402,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 334,
       "name": "Sue",
       "firstName": "Vaneer",
@@ -6032,7 +5528,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 341,
       "name": "Fred",
       "firstName": "Attchini",
@@ -6122,7 +5618,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 346,
       "name": "Beau",
       "firstName": "Tie",
@@ -6140,7 +5636,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 347,
       "name": "Rachel",
       "firstName": "Slurs",
@@ -6248,7 +5744,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 353,
       "name": "Phil",
       "firstName": "Harmonic",
@@ -6266,7 +5762,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 354,
       "name": "Deb",
       "firstName": "Utant",
@@ -6320,7 +5816,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 357,
       "name": "Lance",
       "firstName": "Dorporal",
@@ -6374,7 +5870,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 360,
       "name": "Cal",
       "firstName": "Q.",
@@ -6482,7 +5978,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 366,
       "name": "Ash",
       "firstName": "Wednesday",
@@ -6608,7 +6104,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 373,
       "name": "Phil",
       "firstName": "Erup",
@@ -6662,7 +6158,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 376,
       "name": "Deb",
       "firstName": "Utant",
@@ -6716,7 +6212,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 379,
       "name": "Sara",
       "firstName": "Bellum",
@@ -6752,7 +6248,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 381,
       "name": "Barb",
       "firstName": "Dwyer",
@@ -6788,7 +6284,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 383,
       "name": "Evan",
       "firstName": "Shlee",
@@ -6896,7 +6392,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 389,
       "name": "Jaques",
       "firstName": "Amole",
@@ -6968,7 +6464,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 393,
       "name": "Colin",
       "firstName": "Derr",
@@ -7022,7 +6518,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 396,
       "name": "Lewis",
       "firstName": "N.",
@@ -7238,7 +6734,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 408,
       "name": "Javy",
       "firstName": "Cado",
@@ -7256,7 +6752,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 409,
       "name": "Terry",
       "firstName": "Bull",
@@ -7310,7 +6806,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 412,
       "name": "Cody",
       "firstName": "Pendant",
@@ -7400,7 +6896,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 417,
       "name": "Petey",
       "firstName": "Cruiser",
@@ -7490,7 +6986,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 422,
       "name": "Bob",
       "firstName": "Frapples",
@@ -7580,7 +7076,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 427,
       "name": "Marge",
       "firstName": "Arin",
@@ -7652,7 +7148,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 431,
       "name": "Wilma",
       "firstName": "Mumduya",
@@ -7688,7 +7184,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 433,
       "name": "Manny",
       "firstName": "Petty",
@@ -7742,7 +7238,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 436,
       "name": "Buck",
       "firstName": "Kinnear",
@@ -7778,7 +7274,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 438,
       "name": "Paul",
       "firstName": "Itician",
@@ -7814,7 +7310,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 440,
       "name": "Holly",
       "firstName": "Graham",
@@ -7868,7 +7364,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 443,
       "name": "Louie",
       "firstName": "Z.",
@@ -7886,7 +7382,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 444,
       "name": "Terry",
       "firstName": "Torial",
@@ -7922,7 +7418,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 446,
       "name": "Javy",
       "firstName": "Cado",
@@ -7994,7 +7490,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 450,
       "name": "Marsha",
       "firstName": "Mello",
@@ -8066,7 +7562,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 454,
       "name": "Barney",
       "firstName": "Cull",
@@ -8120,7 +7616,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 457,
       "name": "Robin",
       "firstName": "Banks",
@@ -8210,7 +7706,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 462,
       "name": "Paige",
       "firstName": "Turner",
@@ -8246,7 +7742,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 464,
       "name": "Walter",
       "firstName": "Melon",
@@ -8264,7 +7760,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 465,
       "name": "Aaron",
       "firstName": "Ottix",
@@ -8318,7 +7814,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 468,
       "name": "Barry",
       "firstName": "Wine",
@@ -8498,7 +7994,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 478,
       "name": "Stew",
       "firstName": "Gots",
@@ -8516,7 +8012,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 479,
       "name": "Marsha",
       "firstName": "Mello",
@@ -8534,7 +8030,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 480,
       "name": "Cal",
       "firstName": "Q.",
@@ -8606,7 +8102,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 484,
       "name": "Phil",
       "firstName": "Erup",
@@ -8750,7 +8246,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 492,
       "name": "Chip",
       "firstName": "Zinsalsa",
@@ -8768,7 +8264,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 493,
       "name": "Paul",
       "firstName": "Molive",
@@ -8840,7 +8336,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 497,
       "name": "Indy",
       "firstName": "Nile",
@@ -8912,7 +8408,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 501,
       "name": "Mae",
       "firstName": "O'Nayse",
@@ -8930,7 +8426,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 502,
       "name": "Lynn",
       "firstName": "Guini",
@@ -8966,7 +8462,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 504,
       "name": "Chris",
       "firstName": "P.",
@@ -8984,7 +8480,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 505,
       "name": "Mick",
       "firstName": "Donalds",
@@ -9020,7 +8516,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 507,
       "name": "Mel",
       "firstName": "Anoma",
@@ -9038,7 +8534,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 508,
       "name": "Minnie",
       "firstName": "Strone",
@@ -9056,7 +8552,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 509,
       "name": "Arthur",
       "firstName": "Itis",
@@ -9074,7 +8570,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 510,
       "name": "Dom",
       "firstName": "Inate",
@@ -9182,7 +8678,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 516,
       "name": "Ella",
       "firstName": "Vator",
@@ -9200,7 +8696,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 517,
       "name": "Bill",
       "firstName": "Dabear",
@@ -9308,7 +8804,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 523,
       "name": "Buck",
       "firstName": "Kinnear",
@@ -9398,7 +8894,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 528,
       "name": "Penny",
       "firstName": "Tration",
@@ -9434,7 +8930,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 530,
       "name": "Phil",
       "firstName": "Anthropist",
@@ -9542,7 +9038,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 536,
       "name": "Mort",
       "firstName": "Adella",
@@ -9596,7 +9092,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 539,
       "name": "Ty",
       "firstName": "Pryder",
@@ -9650,7 +9146,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 542,
       "name": "Eda",
       "firstName": "Torial",
@@ -9668,7 +9164,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 543,
       "name": "Ash",
       "firstName": "Wednesday",
@@ -9686,7 +9182,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 544,
       "name": "Lou",
       "firstName": "Zing",
@@ -9704,7 +9200,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 545,
       "name": "Scott",
       "firstName": "Schtape",
@@ -9758,7 +9254,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 548,
       "name": "Adam",
       "firstName": "Zapple",
@@ -9776,7 +9272,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 549,
       "name": "Chip",
       "firstName": "Zinsalsa",
@@ -9812,7 +9308,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 551,
       "name": "Juan",
       "firstName": "Annatoo",
@@ -9830,7 +9326,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 552,
       "name": "Holly",
       "firstName": "Graham",
@@ -9902,7 +9398,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 556,
       "name": "Eddy",
       "firstName": "Kitt",
@@ -9974,7 +9470,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 560,
       "name": "Polly",
       "firstName": "Tech",
@@ -9992,7 +9488,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 561,
       "name": "Chris",
       "firstName": "P.",
@@ -10046,7 +9542,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 564,
       "name": "Matt",
       "firstName": "Innae",
@@ -10082,7 +9578,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 566,
       "name": "Marge",
       "firstName": "Arita",
@@ -10118,7 +9614,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 568,
       "name": "Cliff",
       "firstName": "Diver",
@@ -10154,7 +9650,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 570,
       "name": "Buster",
       "firstName": "Hyman",
@@ -10244,7 +9740,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 575,
       "name": "Al",
       "firstName": "Dente",
@@ -10316,7 +9812,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 579,
       "name": "Mario",
       "firstName": "Speedwagon",
@@ -10370,7 +9866,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 582,
       "name": "Cooke",
       "firstName": "Edoh",
@@ -10460,7 +9956,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 587,
       "name": "Adam",
       "firstName": "Up",
@@ -10532,7 +10028,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 591,
       "name": "Mason",
       "firstName": "Protesters",
@@ -10640,7 +10136,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 597,
       "name": "",
       "firstName": "Snow",
@@ -10748,7 +10244,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 603,
       "name": "Nick",
       "firstName": "R.",
@@ -10820,7 +10316,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 607,
       "name": "Rick",
       "firstName": "Shaw",
@@ -10892,7 +10388,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 611,
       "name": "Greta",
       "firstName": "Life",
@@ -10910,7 +10406,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 612,
       "name": "Tucker",
       "firstName": "Doubt",
@@ -10928,7 +10424,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 613,
       "name": "Polly",
       "firstName": "Tech",
@@ -11036,7 +10532,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 619,
       "name": "Kerry",
       "firstName": "Oaky",
@@ -11108,7 +10604,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 623,
       "name": "Ken",
       "firstName": "Tucky",
@@ -11126,7 +10622,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 624,
       "name": "Gustav",
       "firstName": "Wind",
@@ -11216,7 +10712,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 629,
       "name": "Phil",
       "firstName": "Erup",
@@ -11252,7 +10748,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 631,
       "name": "Gustav",
       "firstName": "Wind",
@@ -11306,7 +10802,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 634,
       "name": "Sarah",
       "firstName": "Yevo",
@@ -11378,7 +10874,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 638,
       "name": "Jim",
       "firstName": "Nasium",
@@ -11414,7 +10910,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 640,
       "name": "Graham",
       "firstName": "Cracker",
@@ -11468,7 +10964,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 643,
       "name": "Anna",
       "firstName": "Rexia",
@@ -11486,7 +10982,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 644,
       "name": "Lewis",
       "firstName": "N.",
@@ -11504,7 +11000,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 645,
       "name": "Ellis",
       "firstName": "Dee",
@@ -11630,7 +11126,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 652,
       "name": "Tom",
       "firstName": "Ollie",
@@ -11702,7 +11198,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 656,
       "name": "Monty",
       "firstName": "Carlo",
@@ -11738,7 +11234,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 658,
       "name": "Mel",
       "firstName": "Anoma",
@@ -11810,7 +11306,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 662,
       "name": "Phil",
       "firstName": "Harmonic",
@@ -11828,7 +11324,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 663,
       "name": "Justin",
       "firstName": "Case",
@@ -11882,7 +11378,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 666,
       "name": "Sam",
       "firstName": "Buca",
@@ -11900,7 +11396,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 667,
       "name": "Helen",
       "firstName": "Highwater",
@@ -11990,7 +11486,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 672,
       "name": "Adam",
       "firstName": "Zapple",
@@ -12062,7 +11558,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 676,
       "name": "Sven",
       "firstName": "Gineer",
@@ -12152,7 +11648,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 681,
       "name": "Serj",
       "firstName": "Protector",
@@ -12206,7 +11702,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 684,
       "name": "Robin",
       "firstName": "Banks",
@@ -12350,7 +11846,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 692,
       "name": "Fred",
       "firstName": "Attchini",
@@ -12440,7 +11936,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 697,
       "name": "Mark",
       "firstName": "Ette",
@@ -12458,7 +11954,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 698,
       "name": "Marge",
       "firstName": "Arin",
@@ -12476,7 +11972,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 699,
       "name": "Petey",
       "firstName": "Cruiser",
@@ -12512,7 +12008,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 701,
       "name": "Mark",
       "firstName": "Ette",
@@ -12548,7 +12044,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 703,
       "name": "Ella",
       "firstName": "Vator",
@@ -12566,7 +12062,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 704,
       "name": "Cliff",
       "firstName": "Diver",
@@ -12602,7 +12098,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 706,
       "name": "Sue",
       "firstName": "Shee",
@@ -12674,7 +12170,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 710,
       "name": "Sal",
       "firstName": "Vidge",
@@ -12710,7 +12206,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 712,
       "name": "Ed",
       "firstName": "Zupp",
@@ -12746,7 +12242,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 714,
       "name": "Mary",
       "firstName": "Achi",
@@ -12800,7 +12296,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 717,
       "name": "Mike",
       "firstName": "Roscope",
@@ -12854,7 +12350,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 720,
       "name": "Mark",
       "firstName": "Key",
@@ -12872,7 +12368,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 721,
       "name": "Dante",
       "firstName": "Sinferno",
@@ -12908,7 +12404,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 723,
       "name": "Jen",
       "firstName": "Trification",
@@ -13016,7 +12512,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 729,
       "name": "Amber",
       "firstName": "Alert",
@@ -13034,7 +12530,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 730,
       "name": "Ray",
       "firstName": "Zindaroof",
@@ -13070,7 +12566,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 732,
       "name": "Sil",
       "firstName": "Antro",
@@ -13160,7 +12656,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 737,
       "name": "Penny",
       "firstName": "Tration",
@@ -13196,7 +12692,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 739,
       "name": "Penny",
       "firstName": "Trate",
@@ -13250,7 +12746,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 742,
       "name": "Pat",
       "firstName": "Agonia",
@@ -13268,7 +12764,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 743,
       "name": "Gene",
       "firstName": "Poole",
@@ -13322,7 +12818,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 746,
       "name": "Sharon",
       "firstName": "Needles",
@@ -13340,7 +12836,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 747,
       "name": "Deb",
       "firstName": "Utant",
@@ -13376,7 +12872,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 749,
       "name": "Sal",
       "firstName": "Monella",
@@ -13430,7 +12926,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 752,
       "name": "Arty",
       "firstName": "Ficial",
@@ -13448,7 +12944,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 753,
       "name": "Louis",
       "firstName": "Ville",
@@ -13484,7 +12980,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 755,
       "name": "Cara",
       "firstName": "Larm",
@@ -13502,7 +12998,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 756,
       "name": "Fred",
       "firstName": "Attchini",
@@ -13520,7 +13016,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 757,
       "name": "Pat",
       "firstName": "Agonia",
@@ -13538,7 +13034,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 758,
       "name": "Aaron",
       "firstName": "Spacemuseum",
@@ -13556,7 +13052,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 759,
       "name": "Phil",
       "firstName": "Harmonic",
@@ -13610,7 +13106,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 762,
       "name": "Rachel",
       "firstName": "Slurs",
@@ -13628,7 +13124,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 763,
       "name": "Bill",
       "firstName": "Yerds",
@@ -13664,7 +13160,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 765,
       "name": "Paul",
       "firstName": "Misunday",
@@ -13682,7 +13178,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 766,
       "name": "Jen",
       "firstName": "Youfelct",
@@ -13754,7 +13250,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 770,
       "name": "Greta",
       "firstName": "Life",
@@ -13808,7 +13304,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 773,
       "name": "Saul",
       "firstName": "T.",
@@ -13934,7 +13430,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 780,
       "name": "Adam",
       "firstName": "Up",
@@ -13952,7 +13448,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 781,
       "name": "Anna",
       "firstName": "Sthesia",
@@ -13970,7 +13466,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 782,
       "name": "Benny",
       "firstName": "Ficial",
@@ -14114,7 +13610,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 790,
       "name": "Shonda",
       "firstName": "Leer",
@@ -14132,7 +13628,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 791,
       "name": "Dan",
       "firstName": "Druff",
@@ -14186,186 +13682,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 794,
-      "name": "Matt",
-      "firstName": "Schtick",
-      "lastName": "Schtick",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769233+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 795,
-      "name": "Doug",
-      "firstName": "Out",
-      "lastName": "Out",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769257+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 796,
-      "name": "Petey",
-      "firstName": "Cruiser",
-      "lastName": "Cruiser",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1769287+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 797,
-      "name": "Amber",
-      "firstName": "Alert",
-      "lastName": "Alert",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1769311+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 798,
-      "name": "Clara",
-      "firstName": "Fication",
-      "lastName": "Fication",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769335+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 799,
-      "name": "Arty",
-      "firstName": "Ficial",
-      "lastName": "Ficial",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769357+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 800,
-      "name": "Matt",
-      "firstName": "Schtick",
-      "lastName": "Schtick",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769379+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 801,
-      "name": "Cam",
-      "firstName": "L.",
-      "lastName": "L.",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769423+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 802,
-      "name": "Frank",
-      "firstName": "N.",
-      "lastName": "N.",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.176953+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 803,
-      "name": "Lou",
-      "firstName": "Ow",
-      "lastName": "Ow",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769553+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 804,
       "name": "Carol",
@@ -14402,24 +13718,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 806,
-      "name": "Carrie",
-      "firstName": "R.",
-      "lastName": "R.",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769621+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 807,
       "name": "Mae",
@@ -14427,78 +13725,6 @@
       "lastName": "O'Nayse",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1769643+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 808,
-      "name": "Otto",
-      "firstName": "Matic",
-      "lastName": "Matic",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769665+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 809,
-      "name": "Nick",
-      "firstName": "R.",
-      "lastName": "R.",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.176969+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 810,
-      "name": "Artie",
-      "firstName": "Choke",
-      "lastName": "Choke",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769712+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 811,
-      "name": "Moe",
-      "firstName": "Fugga",
-      "lastName": "Fugga",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1769735+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -14528,42 +13754,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 813,
-      "name": "Doug",
-      "firstName": "Lee",
-      "lastName": "Lee",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.176978+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 814,
-      "name": "Barb",
-      "firstName": "Dwyer",
-      "lastName": "Dwyer",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1769804+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 815,
       "name": "Eddy",
@@ -14571,78 +13761,6 @@
       "lastName": "Kitt",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1769828+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 816,
-      "name": "Ash",
-      "firstName": "Wednesday",
-      "lastName": "Wednesday",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.176985+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 817,
-      "name": "Chris",
-      "firstName": "P.",
-      "lastName": "P.",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1769871+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 818,
-      "name": "Elle",
-      "firstName": "Bowdrop",
-      "lastName": "Bowdrop",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1769922+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 819,
-      "name": "Caire",
-      "firstName": "Innet",
-      "lastName": "Innet",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1769945+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -14708,42 +13826,6 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 823,
-      "name": "Poppa",
-      "firstName": "Cherry",
-      "lastName": "Cherry",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1770035+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Médico",
-      "id": 824,
-      "name": "Don",
-      "firstName": "Stairs",
-      "lastName": "Stairs",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1770059+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
       "type": "Administrativo",
       "id": 825,
       "name": "Sil",
@@ -14751,42 +13833,6 @@
       "lastName": "Antro",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1770082+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 826,
-      "name": "Buster",
-      "firstName": "Hyman",
-      "lastName": "Hyman",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1770105+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 827,
-      "name": "Juan",
-      "firstName": "Annatoo",
-      "lastName": "Annatoo",
-      "gender": "F",
-      "birthDay": "2020-07-14T09:03:13.1770126+02:00",
       "docId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -14816,7 +13862,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 829,
       "name": "Chris",
       "firstName": "P.",
@@ -14834,7 +13880,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 830,
       "name": "Artie",
       "firstName": "Choke",
@@ -14906,7 +13952,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 834,
       "name": "Marion",
       "firstName": "Gaze",
@@ -14924,7 +13970,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 835,
       "name": "Marion",
       "firstName": "Gaze",
@@ -15122,7 +14168,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 846,
       "name": "Hans",
       "firstName": "Olo",
@@ -15176,7 +14222,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 849,
       "name": "Sam",
       "firstName": "Owen",
@@ -15284,7 +14330,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 855,
       "name": "Donatella",
       "firstName": "Nobatti",
@@ -15446,7 +14492,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 864,
       "name": "Ray",
       "firstName": "Zindaroof",
@@ -15464,7 +14510,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 865,
       "name": "Deb",
       "firstName": "Utant",
@@ -15482,7 +14528,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 866,
       "name": "Scott",
       "firstName": "Schtape",
@@ -15500,7 +14546,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 867,
       "name": "Jess",
       "firstName": "Thetip",
@@ -15644,7 +14690,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 875,
       "name": "Peg",
       "firstName": "Leg",
@@ -15662,7 +14708,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 876,
       "name": "John",
       "firstName": "Withawind",
@@ -15698,7 +14744,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 878,
       "name": "Ken",
       "firstName": "Tucky",
@@ -15806,7 +14852,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 884,
       "name": "Lewis",
       "firstName": "N.",
@@ -15914,7 +14960,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 890,
       "name": "Mort",
       "firstName": "Ission",
@@ -15986,7 +15032,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 894,
       "name": "Bud",
       "firstName": "Wiser",
@@ -16076,7 +15122,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 899,
       "name": "Gene",
       "firstName": "Poole",
@@ -16166,7 +15212,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 904,
       "name": "Al",
       "firstName": "Fredo",
@@ -16238,7 +15284,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 908,
       "name": "Sam",
       "firstName": "Buca",
@@ -16256,7 +15302,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 909,
       "name": "Donatella",
       "firstName": "Nobatti",
@@ -16310,7 +15356,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 912,
       "name": "Caire",
       "firstName": "Innet",
@@ -16346,7 +15392,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 914,
       "name": "Bella",
       "firstName": "Ruse",
@@ -16418,7 +15464,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 918,
       "name": "Anna",
       "firstName": "Lytics",
@@ -16454,7 +15500,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 920,
       "name": "Phil",
       "firstName": "Harmonic",
@@ -16472,7 +15518,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 921,
       "name": "Moe",
       "firstName": "Fugga",
@@ -16490,7 +15536,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 922,
       "name": "Theo",
       "firstName": "Retical",
@@ -16526,7 +15572,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 924,
       "name": "Elle",
       "firstName": "Bowdrop",
@@ -16580,7 +15626,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 927,
       "name": "Bella",
       "firstName": "Ruse",
@@ -16634,7 +15680,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 930,
       "name": "Gio",
       "firstName": "Metric",
@@ -16652,7 +15698,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 931,
       "name": "Reed",
       "firstName": "Iculous",
@@ -16670,7 +15716,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 932,
       "name": "Aaron",
       "firstName": "Ottix",
@@ -16706,7 +15752,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 934,
       "name": "Peg",
       "firstName": "Leg",
@@ -16742,7 +15788,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 936,
       "name": "Ty",
       "firstName": "Ballgame",
@@ -16778,7 +15824,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 938,
       "name": "Jess",
       "firstName": "Thetip",
@@ -16796,7 +15842,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 939,
       "name": "Cory",
       "firstName": "Ander",
@@ -16832,7 +15878,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 941,
       "name": "Theo",
       "firstName": "Retical",
@@ -16850,7 +15896,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 942,
       "name": "Chris",
       "firstName": "P.",
@@ -16922,7 +15968,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 946,
       "name": "Kerry",
       "firstName": "Oaky",
@@ -16958,7 +16004,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 948,
       "name": "Barry",
       "firstName": "Wine",
@@ -17030,7 +16076,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 952,
       "name": "Faye",
       "firstName": "Sbook",
@@ -17084,7 +16130,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 955,
       "name": "Phil",
       "firstName": "Anthropist",
@@ -17102,7 +16148,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 956,
       "name": "Midge",
       "firstName": "Itz",
@@ -17156,7 +16202,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 959,
       "name": "Dan",
       "firstName": "Druff",
@@ -17192,7 +16238,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 961,
       "name": "Holly",
       "firstName": "Graham",
@@ -17228,7 +16274,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 963,
       "name": "Mort",
       "firstName": "Ission",
@@ -17354,7 +16400,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 970,
       "name": "Kat",
       "firstName": "E.",
@@ -17534,7 +16580,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 980,
       "name": "Marge",
       "firstName": "Arita",
@@ -17732,7 +16778,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 991,
       "name": "Reed",
       "firstName": "Iculous",
@@ -17804,7 +16850,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 995,
       "name": "Hugh",
       "firstName": "Briss",
@@ -17822,7 +16868,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 996,
       "name": "Frank",
       "firstName": "Senbeans",
@@ -17876,7 +16922,7 @@
     },
     {
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 999,
       "name": "Will",
       "firstName": "Power",
@@ -17943,7 +16989,7 @@
       "birthDay": "1992-11-09T23:00:00.000Z",
       "gender": "M",
       "noCollegiate": "19283797U",
-      "type": "Médico",
+      "type": "Enfermero",
       "id": 1002
     },
     {

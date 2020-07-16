@@ -77,11 +77,15 @@ export class UserService {
   }
 
   public deleteUser(userId, resource){
-    console.log("deleting: " + resource + "/" +  userId);
+    // console.log("deleting: " + resource + "/" +  userId);
     return this.http.delete(this.BASE_URI + resource + "/" + userId);
   }
 
   public addNewUser(user, resource){
       return this.http.post(this.BASE_URI + resource, user);
+  }
+
+  public deleteAllDoctors(){
+    return forkJoin(this._professionals.filter(pro=>pro.type == "Médico").map(pro=>this.deleteUser(pro.id, "professionals")));
   }
 }
