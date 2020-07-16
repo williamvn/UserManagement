@@ -14,8 +14,8 @@ import { map } from 'rxjs/operators';
 export class UserService {
   BASE_URI = "http://localhost:3000/";
 
-  private _professionals: Professional[];
-  private _patients: Patient[];
+  private _professionals: Professional[] = [];
+  private _patients: Patient[] = [];
 
   get professionals() {
     return this._professionals;
@@ -46,6 +46,10 @@ export class UserService {
 
   private loadPatients(): Observable<Patient[]> {
     return this.http.get<Patient[]>(this.BASE_URI + "patients");
+  }
+
+  public getUserById(id:number, resource:string):Observable<User>{
+    return this.http.get<User>(this.BASE_URI + resource + "?id=" + id); 
   }
 
   public updateUser(user, isProfessional) {

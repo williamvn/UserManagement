@@ -84,15 +84,17 @@ export class UserDetailsComponent implements OnInit {
   professionalForm: FormGroup;
   userForm: FormGroup;
 
+  loading:boolean = true;
   type: string;
   constructor(private route: ActivatedRoute,
-            private userService: UserService, 
-            private router: Router, 
-            private _snackBar: MatSnackBar, 
-            public formService: FormsService,
-            private formbuilder:FormBuilder) {}
+    private userService: UserService,
+    private router: Router,
+    private _snackBar: MatSnackBar,
+    public formService: FormsService,
+    private formbuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.loading = true;
     this.route.url.subscribe((segments) => {
       this.formService.isEditable = (segments.find(s => s.path == "edit") !== undefined);
     });
@@ -100,29 +102,61 @@ export class UserDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       var userType = params.get('userType');
       var id = +params.get('id');
-      if (userType == "professional") {
-        this.user = this.userService.professionals.find(pro => pro.id == id);
-        this.formService.user = this.user;
-        this.formService.createProfessionalForm();
-        this.formService.isProfessional = true;
-        this.type = "Profesional";
+      this.loadUser(id, userType);
+    });
+  }
 
-      }
-      else if (userType == "patient") {
-        this.user = this.userService.patients.find(patient => patient.id == id);
-        this.formService.user = this.user;
-        this.formService.createPatientForm();
-        this.formService.isProfessional = false;
-        this.type = "Paciente";
+  private loadUser(id: number, userType: string): void {
+    if (userType == "professional") {
+      this.user = this.userService.professionals.find(pro => pro.id == id);
+      this.formService.isProfessional = true;
+      this.type = "Profesional";
+      if (!this.user) {
+        //No Cache
+        this.getUserbyId(id);
       }
       else {
-        alert("Error loading the user with ID:" + id);
+        this.formService.user = this.user;
+        this.formService.createProfessionalForm();
+        this.loadForms();
+      }
+    }
+    else if (userType == "patient") {
+      this.user = this.userService.patients.find(patient => patient.id == id);
+      this.formService.isProfessional = false;
+      this.type = "Paciente";
+      if (!this.user) {
+        //No Cache
+        this.getUserbyId(id);
+      }
+      else {
+        this.formService.user = this.user;
+        this.formService.createPatientForm();
+        this.loadForms();
+      }
+    }
+    else {
+      alert("Error loading the user with ID:" + id);
+    }
+  }
+
+  private getUserbyId(id: number) {
+    var resource = this.formService.isProfessional ? "professionals" : "patients";
+    this.userService.getUserById(id, resource).subscribe(response => {
+      this.user = response[0];
+      this.formService.user = this.user;
+      if (this.formService.isProfessional) {
+        this.formService.createProfessionalForm();
+      }
+      else {
+        this.formService.createPatientForm();
       }
       this.loadForms();
     });
   }
 
-  loadForms(){
+  loadForms() {
+    this.loading = false;
     this.personalInfoForm = this.formService.personalInfoForm;
     this.addressForm = this.formService.addressForm;
     this.patientForm = this.formService.patientForm;
