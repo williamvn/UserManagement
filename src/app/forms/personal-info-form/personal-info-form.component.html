@@ -3,6 +3,9 @@
         <div class="col">
             <mat-form-field class="full-width">
                 <input matInput placeholder="Nombre" formControlName="name" name="Name" [readonly]="!isEditable">
+                <mat-error *ngIf="personalUserForm.controls['name'].hasError('required')">
+                    El Nombre es <strong>obligatorio</strong>
+                </mat-error>
             </mat-form-field>
         </div>
     </div>
@@ -11,9 +14,9 @@
             <mat-form-field class="full-width">
                 <input matInput placeholder="Apellido" formControlName="firstName" name="firstName"
                     [readonly]="!isEditable">
-                <!-- <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
-      El Apellido es <strong>requerido</strong>
-    </mat-error> -->
+                <mat-error *ngIf="personalUserForm.controls['firstName'].hasError('required')">
+                    El primer apellido es <strong>obligatorio</strong>
+                </mat-error>
             </mat-form-field>
         </div>
         <div class="col">

@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../model/user';
 import { Injectable } from '@angular/core';
 
@@ -22,7 +22,7 @@ export class FormsService {
     this.createUserForm();
     this.createAddressForm();
     this.professionalForm = this.formbuilder.group({
-      noCollegiate: [this.user['noCollegiate']],
+      noCollegiate: [this.user['noCollegiate'], Validators.required],
       type: [this.user['type']]
     });
   
@@ -30,8 +30,8 @@ export class FormsService {
 
   createUserForm(): void {
     this.personalInfoForm = this.formbuilder.group({
-      name: [this.user.name],
-      firstName: [this.user.firstName],
+      name: [this.user.name, Validators.required],
+      firstName: [this.user.firstName, Validators.required],
       lastName: [this.user.lastName],
       docId: [this.user.docId],
       birthDay: [this.user.birthDay],
@@ -55,7 +55,7 @@ export class FormsService {
     this.createAddressForm();
 
     this.patientForm = this.formbuilder.group({
-      NHC: [this.user['NHC']]
+      NHC: [this.user['NHC'], Validators.required]
     });
   }
 

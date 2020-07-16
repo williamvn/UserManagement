@@ -1,5 +1,5 @@
 <div *ngIf="isTypeSelected">
-    <mat-horizontal-stepper #stepper>
+    <mat-horizontal-stepper #stepper [linear]="true">
         <mat-step [stepControl]="personalInfoForm">
             <ng-template matStepLabel>Datos Personales</ng-template>
             <app-personal-info-form [personalUserForm]="personalInfoForm">
@@ -16,12 +16,21 @@
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
             </div>
         </mat-step>
-        <mat-step [stepControl]="professionalForm">
+        
+        <mat-step *ngIf="!this.formService.isProfessional" [stepControl]="patientForm" >
             <ng-template matStepLabel>{{type}}</ng-template>
-            <app-professional-form *ngIf="isProfessional" [professionalForm]="professionalForm">
-            </app-professional-form>
-            <app-patient-form *ngIf="!isProfessional" [patientForm]="patientForm"
+            <app-patient-form [patientForm]="patientForm"
                 [insuranceCarriers]="user['insuranceCarrier']"></app-patient-form>
+            <div>
+                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+
+        <mat-step *ngIf="this.formService.isProfessional" [stepControl]="professionalForm" >
+            <ng-template matStepLabel>{{type}}</ng-template>
+            <app-professional-form [professionalForm]="professionalForm">
+            </app-professional-form>
             <div>
                 <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>

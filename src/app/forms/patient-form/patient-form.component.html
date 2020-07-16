@@ -3,6 +3,9 @@
         <div class="col">
             <mat-form-field class="full-width">
                 <input matInput placeholder="NHC" formControlName='NHC' name="NHC" [readonly]="!isEditable">
+                <mat-error *ngIf="patientForm.controls['NHC'].hasError('required')">
+                    Porfavor introduzca el <strong>NHC</strong>
+                </mat-error>
             </mat-form-field>
         </div>
     </div>

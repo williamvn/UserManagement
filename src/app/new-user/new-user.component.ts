@@ -24,9 +24,6 @@ export class NewUserComponent implements OnInit {
   patientForm: FormGroup;
   professionalForm: FormGroup;
 
-  isProfessional: boolean = true;
-  isEditable: boolean = true;
-
   type: string;
   isTypeSelected: boolean;
   user: User;
@@ -41,7 +38,7 @@ export class NewUserComponent implements OnInit {
       var userType = params.get('userType');
       this.isTypeSelected = (userType != undefined);
       var addr = new Address();
-      if (userType == "professional") {
+      if (userType === "professional") {
         this.formService.isProfessional = true;
         this.type = "Profesional";
         this.user = new Professional();
@@ -49,7 +46,7 @@ export class NewUserComponent implements OnInit {
         this.formService.user = this.user;
         this.formService.createProfessionalForm();
       }
-      else if (userType == "patient") {
+      else if (userType === "patient") {
         this.formService.isProfessional = false;
         this.type = "Paciente";
         this.user = new Patient();
