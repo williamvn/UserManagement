@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="patientForm">
     <div class="row">
         <div class="col">
             <mat-form-field class="full-width">
@@ -7,25 +7,24 @@
         </div>
     </div>
 
-    <div class=" row insurance-container" *ngFor="let insurance of insurances;let i = index;">
-        <div class="insurance">
+    <div class=" row insurance-container" *ngFor="let form of insuranceForms;let i = index;">
+        <form class="insurance" [formGroup]="form">
             <mat-form-field>
-                <input matInput placeholder="Nombre del Seguro" formControlName = "insuranceName{{i}}"
+                <input matInput placeholder="Nombre del Seguro" formControlName="name"
                     [readonly]="!isEditable">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Tipo de Seguro" formControlName="insuranceType{{i}}"
-                    [readonly]="!isEditable">
+                <input matInput placeholder="Tipo de Seguro" formControlName="type" [readonly]="!isEditable">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Numero de Tarjeta" formControlName="CardNumber{{i}}" [readonly]="!isEditable">
+                <input matInput placeholder="Numero de Tarjeta" formControlName="cardNumber" [readonly]="!isEditable">
             </mat-form-field>
-        </div>
-        <button mat-mini-fab color="basic" type="button" class="close" (click)="onDeleteInsurance(i)" *ngIf="isEditable">
+        </form>
+        <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(form)" *ngIf="isEditable">
             x
         </button>
     </div>
-    <button mat-mini-fab color="basic" type="button" (click)="onAddInsurance()" *ngIf="isEditable">
+    <button mat-mini-fab color="basic" type="button" (click)="addInsurance()" *ngIf="isEditable">
         <mat-icon>add</mat-icon>
     </button>
 </form>

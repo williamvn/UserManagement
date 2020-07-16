@@ -1,5 +1,5 @@
 <div class="container">
-  <form #userForm='ngForm' novalidate (submit)="saveUser()">
+  <form [formGroup]="userForm" novalidate (submit)="saveUser()">
     <mat-tab-group>
       <mat-tab label="Datos Personales">
         <mat-card class="shipping-card">
@@ -27,13 +27,18 @@
           </mat-card-actions>
         </mat-card>
       </mat-tab>
-      <mat-tab label={{isProfessional}}>
+      <mat-tab label={{type}}>
         <mat-card class="shipping-card">
           <mat-card-header>
-            <mat-card-title>Información del {{isProfessional}}</mat-card-title>
+            <mat-card-title>Información del {{type}}</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-           
+            <app-professional-form *ngIf="isProfessional" [isEditable] = "isEditable" [professionalForm] = "professionalForm"></app-professional-form>
+            <app-patient-form *ngIf="!isProfessional" 
+              [isEditable] = "isEditable" 
+              [patientForm] = "patientForm" 
+              [insuranceCarriers] = "user['insuranceCarrier']"
+              ></app-patient-form>
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button color="primary" type="submit" *ngIf="isEditable">Guardar</button>

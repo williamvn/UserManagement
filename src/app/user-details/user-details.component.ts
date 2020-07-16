@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InsuranceCarrier } from '../model/insurance-carrier';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-details',
@@ -81,6 +82,8 @@ export class UserDetailsComponent implements OnInit {
   addressForm: FormGroup;
   patientForm: FormGroup;
   professionalForm: FormGroup;
+  userForm: FormGroup;
+  type: string;
   constructor(private route: ActivatedRoute, private userService: UserService, private router: Router, private _snackBar: MatSnackBar, private formbuilder: FormBuilder) {
   }
 
@@ -96,12 +99,16 @@ export class UserDetailsComponent implements OnInit {
         this.user = this.userService.professionals.find(pro => pro.id == id);
         this.createProfessionalForm();
         this.isProfessional = true;
+        this.type = "Profesional";
+
       }
       else if (userType == "patient") {
-        this.isProfessional = true;
         this.user = this.userService.patients.find(patient => patient.id == id);
-        console.log(this.user['insuranceCarrier'].name);
+        this.createPatientForm();
+        this.isProfessional = false;
+        this.type = "Paciente";
       }
+
       else {
         alert("Error loading the user with ID:" + id);
       }
@@ -109,6 +116,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   saveUser() {
+    this.getUser();
     this.userService.updateUser(this.user, this.isProfessional);
     this.router.navigate(["users"]);
     this._snackBar.open("Usuario Actualizado", "Aceptar", {
@@ -116,50 +124,88 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  deleteInsurance(index: number) {
-    var insurance = this.user["insuranceCarrier"][index];
-    this.user["insuranceCarrier"].splice(index, 1);
-    var snackBarRef = this._snackBar.open("Seguro Eliminado", "UNDO", {
-      duration: 5000,
-    });
-    snackBarRef.onAction().subscribe(() => {
-      this.user["insuranceCarrier"].splice(index, 0, insurance);
-    });
-
-  }
-
-  addInsurance() {
-    var newInsurance = new InsuranceCarrier();
-    this.user["insuranceCarrier"].push(newInsurance);
-  }
-
-  createProfessionalForm():void{
+  createProfessionalForm(): void {
     this.createUserForm();
     this.createAddressForm();
     this.professionalForm = this.formbuilder.group({
-      noCollegiate:[this.user['noCollegiate']],
-      type:[this.user['type']]
+      noCollegiate: [this.user['noCollegiate']],
+      type: [this.user['type']]
+    });
+    this.userForm = this.formbuilder.group({
+      personalInfo: [this.personalInfoForm],
+      addressForm: [this.addressForm],
+      professionalForm: [this.professionalForm]
     });
   }
 
-  createUserForm():void{
+  createUserForm(): void {
     this.personalInfoForm = this.formbuilder.group({
-      name:[this.user.name],
-      firstName:[this.user.firstName],
-      lastName:[this.user.lastName],
-      docId:[this.user.docId],
-      birthDay:[this.user.birthDay],
-      gender:[this.user.gender]
+      name: [this.user.name],
+      firstName: [this.user.firstName],
+      lastName: [this.user.lastName],
+      docId: [this.user.docId],
+      birthDay: [this.user.birthDay],
+      gender: [this.user.gender]
+    });
+  }
+
+  createAddressForm(): void {
+    this.addressForm = this.formbuilder.group({
+      street: [this.user.address.street],
+      door: [this.user.address.door],
+      no: [this.user.address.no],
+      city: [this.user.address.city],
+      zipCode: [this.user.address.zipCode]
     })
   }
 
-  createAddressForm():void{
-    this.addressForm = this.formbuilder.group({
-      street:[this.user.address.street],
-      door:[this.user.address.door],
-      no:[this.user.address.no],
-      city:[this.user.address.city],
-      zipCode:[this.user.address.zipCode]
-    })
+  createPatientForm(): void {
+    this.createUserForm();
+
+    this.createAddressForm();
+
+    this.patientForm = this.formbuilder.group({
+      NHC: [this.user['NHC']]
+    });
+
+    this.userForm = this.formbuilder.group({
+      personalInfo: [this.personalInfoForm],
+      addressForm: [this.addressForm],
+      patientForm: [this.professionalForm]
+    });
   }
+
+  private getUser(): void {
+    this.mapFormToUser(this.personalInfoForm);
+    this.mapFormToUser(this.addressForm, "address");
+    if (this.isProfessional) {
+      this.mapFormToUser(this.professionalForm);
+    }
+    else {
+      this.getInsuranceCarriers();
+    }
+  }
+
+  private getInsuranceCarriers() {
+    var insurancesKeys:string[] = Object.keys(this.patientForm.getRawValue());
+    this.user['insuranceCarrier'] = [];
+    insurancesKeys.forEach((key)=>{
+      if(key == "NHC"){
+        this.user['NHC'] = this.patientForm.value['NHC'];
+      }
+      else{
+          this.user['insuranceCarrier'].push(this.patientForm.value[key]);
+        }
+    });
+  }
+
+  private mapFormToUser(form: FormGroup, property: string = ""): void {
+    if (!property) {
+      this.user = Object.assign(this.user, form.getRawValue());
+    }
+    else {
+      this.user[property] = form.getRawValue();
+    }
+  }
+
 }

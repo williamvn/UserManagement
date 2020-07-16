@@ -4,7 +4,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-professional-form',
   templateUrl: './professional-form.component.html',
-  styleUrls: ['./professional-form.component.scss']
+  styleUrls: ['./professional-form.component.scss','../user-details/user-details.component.scss']
 })
 export class ProfessionalFormComponent implements OnInit {
 
