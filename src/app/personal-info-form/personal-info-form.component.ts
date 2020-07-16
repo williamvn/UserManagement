@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class PersonalInfoFormComponent implements OnInit {
 
-  @Input() isEditable:boolean = false;
+  @Input() isEditable:boolean = true;
   @Input() personalUserForm:FormGroup;
   constructor() {
    }

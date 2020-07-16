@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class AddressFormComponent implements OnInit {
 
-  @Input() isEditable: boolean;
+  @Input() isEditable: boolean = true;
   @Input() addressFormGroup: FormGroup;
   constructor() { }
 

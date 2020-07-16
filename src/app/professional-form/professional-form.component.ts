@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class ProfessionalFormComponent implements OnInit {
 
-  @Input() isEditable: boolean;
+  @Input() isEditable: boolean = true;
   @Input() professionalForm: FormGroup;
   constructor() { }
 

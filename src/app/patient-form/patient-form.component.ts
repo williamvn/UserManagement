@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PatientFormComponent implements OnInit {
 
-  @Input() isEditable:boolean;
+  @Input() isEditable:boolean = true;
   @Input() patientForm:FormGroup;
   @Input() insuranceCarriers:InsuranceCarrier[];
   insuranceForms: FormGroup[] = [];

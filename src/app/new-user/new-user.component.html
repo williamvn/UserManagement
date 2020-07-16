@@ -1,184 +1,40 @@
 <div *ngIf="isTypeSelected">
     <mat-horizontal-stepper #stepper>
-        <form #userForm='ngForm' novalidate (submit)="saveUser()">
-            <mat-step>
-                <ng-template matStepLabel>Datos Personales</ng-template>
-                <div class="row">
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Nombre" [(ngModel)]="user.name" name="Name">
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Apellido" [(ngModel)]="user.firstName" name="firstName">
-                            <!-- <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
-                      El Apellido es <strong>requerido</strong>
-                    </mat-error> -->
-                        </mat-form-field>
-                    </div>
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Segundo Apellido" [(ngModel)]="user.lastName" name="lastName">
-                            <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
-                      Last name is <strong>required</strong>
-                    </mat-error> -->
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="DNI/Pasaporte" [(ngModel)]="user.docId" name="docID">
-                            <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
-                        Last name is <strong>required</strong>
-                      </mat-error> -->
-                        </mat-form-field>
-                    </div>
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <mat-label>Fecha de Nacimiento</mat-label>
-                            <input matInput [matDatepicker]="picker" [(ngModel)]="user.birthDay" name="birthDay">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <mat-radio-group [(ngModel)]="user.gender" name="gender">
-                            <mat-radio-button value="M" color="primary">Masculino</mat-radio-button>
-                            <mat-radio-button value="F"> Femenino</mat-radio-button>
-                        </mat-radio-group>
-                    </div>
-                </div>
-                <div>
-                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Dirección</ng-template>
-                <div class="row">
-
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Calle" [(ngModel)]="user.address.street" name="street">
-                            <!-- <mat-error *ngIf="userForm.controls['address.street'].hasError('required')">
-                          Address is <strong>required</strong>
-                        </mat-error> -->
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Puerta" [(ngModel)]="user.address.door" name="puerta">
-                            <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
-                      City is <strong>required</strong>
-                    </mat-error> -->
-                        </mat-form-field>
-                    </div>
-
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="No" [(ngModel)]="user.address.no" name="no">
-                            <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
-                      City is <strong>required</strong>
-                    </mat-error> -->
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Ciudad" [(ngModel)]="user.address.city" name="city">
-                            <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
-                      City is <strong>required</strong>
-                    </mat-error> -->
-                        </mat-form-field>
-                    </div>
-
-                    <div class="col">
-                        <mat-form-field class="full-width">
-                            <input matInput #zipCode maxlength="5" placeholder="Código Postal" type="number"
-                                [(ngModel)]="user.address.zipCode" name="zipcode">
-                            <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
-                        </mat-form-field>
-                    </div>
-
-                </div>
-                <div>
-                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
-                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <div *ngIf="isProfessional">
-                    <ng-template matStepLabel>Professional</ng-template>
-                    <div class="row">
-                        <div class="col">
-                            <mat-form-field class="full-width">
-                                <input matInput placeholder="No. Colegiado" [(ngModel)]="user['noCollegiate']"
-                                    name="noCollegiate">
-                            </mat-form-field>
-                            <mat-form-field class="full-width">
-                                <input matInput placeholder="Tipo" [(ngModel)]="user['type']" name="type">
-                            </mat-form-field>
-                        </div>
-                    </div>
-                </div>
-                <div *ngIf="!isProfessional">
-                    <ng-template matStepLabel>Patient</ng-template>
-                    <div class="row">
-                        <div class="col">
-                            <mat-form-field class="full-width">
-                                <input matInput placeholder="NHC" [(ngModel)]="user['NHC']" name="NHC">
-                            </mat-form-field>
-                        </div>
-                    </div>
-
-                    <div class="row insurance-container"
-                        *ngFor="let insurance of user['insuranceCarrier'];let i = index;">
-                        <div class="insurance">
-                            <mat-form-field>
-                                <input matInput placeholder="Nombre del Seguro" [(ngModel)]="insurance.name"
-                                    name="insuranceName{{i}}">
-                            </mat-form-field>
-                            <mat-form-field>
-                                <input matInput placeholder="Tipo de Seguro" [(ngModel)]="insurance.type"
-                                    name="insuranceType{{i}}">
-                            </mat-form-field>
-                            <mat-form-field>
-                                <input matInput placeholder="Numero de Tarjeta" [(ngModel)]="insurance.cardNumber"
-                                    name="CardNumber{{i}}">
-                            </mat-form-field>
-                        </div>
-                        <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(i)">
-                  x
-                </button>
-                    </div>
-                    <button mat-mini-fab color="basic" type="button" (click)="addInsurance()">
-                        <mat-icon>add</mat-icon>
-                    </button>
-                </div>
-                <div>
-                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
-                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Done</ng-template>
-                <p>Ya has completado. Presiona en Finalizar para completar la acción.</p>
-                <div>
-                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
-                    <button mat-raised-button class="m-1" color="primary" type="submit"
-                        (click)="saveUser()">Finalizar</button>
-                </div>
-            </mat-step>
-        </form>
+        <mat-step [stepControl]="personalInfoForm">
+            <ng-template matStepLabel>Datos Personales</ng-template>
+            <app-personal-info-form [personalUserForm]="personalInfoForm">
+            </app-personal-info-form>
+            <div>
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="addressForm">
+            <ng-template matStepLabel>Dirección</ng-template>
+            <app-address-form [addressFormGroup]="addressForm"></app-address-form>
+            <div>
+                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="professionalForm">
+            <ng-template matStepLabel>{{type}}</ng-template>
+            <app-professional-form *ngIf="isProfessional" [professionalForm]="professionalForm">
+            </app-professional-form>
+            <app-patient-form *ngIf="!isProfessional" [patientForm]="patientForm"
+                [insuranceCarriers]="user['insuranceCarrier']"></app-patient-form>
+            <div>
+                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Fin</ng-template>
+            <p>Ya has terminado. Presiona en Finalizar para completar la acción.</p>
+            <div>
+                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                <button mat-raised-button class="m-1" color="primary" (click)="saveUser()" type="submit">Finalizar</button>
+            </div>
+        </mat-step>
     </mat-horizontal-stepper>
 </div>
 
