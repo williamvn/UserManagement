@@ -1,0 +1,57 @@
+<form [formGroup]="personalUserForm">
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Nombre" formControlName="name" name="Name" [readonly]="!isEditable">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Apellido" formControlName="firstName" name="firstName"
+                    [readonly]="!isEditable">
+                <!-- <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
+      El Apellido es <strong>requerido</strong>
+    </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Segundo Apellido" formControlName="lastName" name="lastName"
+                    [readonly]="!isEditable">
+                <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
+      Last name is <strong>required</strong>
+    </mat-error> -->
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="DNI/Pasaporte" formControlName="docId" name="docID"
+                    [readonly]="!isEditable">
+                <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
+        Last name is <strong>required</strong>
+      </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthDay" name="birthDay"
+                    [readonly]="!isEditable">
+                <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="!isEditable"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-radio-group formControlName="gender" name="gender">
+                <mat-radio-button value="M" color="primary" [disabled]="!isEditable">Masculino</mat-radio-button>
+                <mat-radio-button value="F" [disabled]="!isEditable"> Femenino</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</form>

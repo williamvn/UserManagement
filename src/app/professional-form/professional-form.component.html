@@ -1,0 +1,13 @@
+<form [formGroup] = "professionalForm">
+    <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="No. Colegiado" formControlName = 'noCollegiate' name="noCollegiate"
+              [readonly]="!isEditable">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Tipo" formControlName = 'type' name="type" [readonly]="!isEditable">
+          </mat-form-field>
+        </div>
+      </div>
+</form>

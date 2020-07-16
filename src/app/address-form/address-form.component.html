@@ -1,0 +1,51 @@
+<form [formGroup]="addressFormGroup">
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Calle" formControlName="street" name="street" [readonly]="!isEditable">
+                <!-- <mat-error *ngIf="userForm.controls['address.street'].hasError('required')">
+              Address is <strong>required</strong>
+            </mat-error> -->
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Puerta" formControlName="door" name="puerta" [readonly]="!isEditable">
+                <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
+          City is <strong>required</strong>
+        </mat-error> -->
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="No" formControlName="no" name="no" [readonly]="!isEditable">
+                <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
+          City is <strong>required</strong>
+        </mat-error> -->
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Ciudad" formControlName="city" name="city" [readonly]="!isEditable">
+                <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
+          City is <strong>required</strong>
+        </mat-error> -->
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput #zipCode maxlength="5" placeholder="Código Postal" type="number"
+                    formControlName="zipCode" name="zipcode" [readonly]="!isEditable">
+                <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+        </div>
+
+    </div>
+</form>

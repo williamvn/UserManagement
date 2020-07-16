@@ -7,64 +7,10 @@
             <mat-card-title>User Details</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <div class="row">
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Nombre" [(ngModel)]="user.name" name="Name" [readonly]="!editableMode">
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Apellido" [(ngModel)]="user.firstName" name="firstName"
-                    [readonly]="!editableMode">
-                  <!-- <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
-                El Apellido es <strong>requerido</strong>
-              </mat-error> -->
-                </mat-form-field>
-              </div>
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Segundo Apellido" [(ngModel)]="user.lastName" name="lastName"
-                    [readonly]="!editableMode">
-                  <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
-                Last name is <strong>required</strong>
-              </mat-error> -->
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="DNI/Pasaporte" [(ngModel)]="user.docId" name="docID"
-                    [readonly]="!editableMode">
-                  <!-- <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
-                  Last name is <strong>required</strong>
-                </mat-error> -->
-                </mat-form-field>
-              </div>
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <mat-label>Fecha de Nacimiento</mat-label>
-                  <input matInput [matDatepicker]="picker" [(ngModel)]="user.birthDay" name="birthDay"
-                    [readonly]="!editableMode">
-                  <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="!editableMode"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <mat-radio-group [(ngModel)]="user.gender" name="gender">
-                  <mat-radio-button value="M" color="primary" [disabled]="!editableMode">Masculino</mat-radio-button>
-                  <mat-radio-button value="F" [disabled]="!editableMode"> Femenino</mat-radio-button>
-                </mat-radio-group>
-              </div>
-            </div>
+
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="editableMode">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="isEditable">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>
@@ -74,121 +20,24 @@
             <mat-card-title>Address</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <div class="row">
-
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Calle" [(ngModel)]="user.address.street" name="street"
-                    [readonly]="!editableMode">
-                  <!-- <mat-error *ngIf="userForm.controls['address.street'].hasError('required')">
-                    Address is <strong>required</strong>
-                  </mat-error> -->
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Puerta" [(ngModel)]="user.address.door" name="puerta"
-                    [readonly]="!editableMode">
-                  <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
-                City is <strong>required</strong>
-              </mat-error> -->
-                </mat-form-field>
-              </div>
-
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="No" [(ngModel)]="user.address.no" name="no" [readonly]="!editableMode">
-                  <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
-                City is <strong>required</strong>
-              </mat-error> -->
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Ciudad" [(ngModel)]="user.address.city" name="city"
-                    [readonly]="!editableMode">
-                  <!-- <mat-error *ngIf="userForm.controls['city'].hasError('required')">
-                City is <strong>required</strong>
-              </mat-error> -->
-                </mat-form-field>
-              </div>
-
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput #zipCode maxlength="5" placeholder="Código Postal" type="number"
-                    [(ngModel)]="user.address.zipCode" name="zipcode" [readonly]="!editableMode">
-                  <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
-                </mat-form-field>
-              </div>
-
-            </div>
+            
            
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="editableMode">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="isEditable">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>
-      <mat-tab label={{type}}>
+      <mat-tab label={{isProfessional}}>
         <mat-card class="shipping-card">
           <mat-card-header>
-            <mat-card-title>Información del {{type}}</mat-card-title>
+            <mat-card-title>Información del {{isProfessional}}</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-
-            <div class="row" *ngIf="type == 'profesional'">
-              <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="No. Colegiado" [(ngModel)]="user['noCollegiate']" name="noCollegiate"
-                    [readonly]="!editableMode">
-                </mat-form-field>
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Tipo" [(ngModel)]="user['type']" name="type" [readonly]="!editableMode">
-                </mat-form-field>
-              </div>
-            </div>
-
-            <div *ngIf="type == 'paciente'">
-              <div class="row">
-                <div class="col">
-                  <mat-form-field class="full-width">
-                    <input matInput placeholder="NHC" [(ngModel)]="user['NHC']" name="NHC" [readonly]="!editableMode">
-                  </mat-form-field>
-                </div>
-              </div>
-
-              <div class="row insurance-container" *ngFor="let insurance of user['insuranceCarrier'];let i = index;">
-                <div class="insurance">
-                  <mat-form-field>
-                    <input matInput placeholder="Nombre del Seguro" [(ngModel)]="insurance.name"
-                      name="insuranceName{{i}}" [readonly]="!editableMode">
-                  </mat-form-field>
-                  <mat-form-field>
-                    <input matInput placeholder="Tipo de Seguro" [(ngModel)]="insurance.type" name="insuranceType{{i}}"
-                      [readonly]="!editableMode">
-                  </mat-form-field>
-                  <mat-form-field>
-                    <input matInput placeholder="Numero de Tarjeta" [(ngModel)]="insurance.cardNumber"
-                      name="CardNumber{{i}}" [readonly]="!editableMode">
-                  </mat-form-field>
-                </div>
-                <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(i)"
-                  *ngIf="editableMode">
-                  x
-                </button>
-              </div>
-              <button mat-mini-fab color="basic" type="button" (click)="addInsurance()" *ngIf="editableMode">
-                <mat-icon>add</mat-icon>
-              </button>
-            </div>
+           
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="editableMode">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="isEditable">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>

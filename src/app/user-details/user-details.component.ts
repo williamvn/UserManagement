@@ -3,7 +3,8 @@ import { User } from '../model/user';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {InsuranceCarrier} from '../model/insurance-carrier';
+import { InsuranceCarrier } from '../model/insurance-carrier';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user-details',
@@ -74,15 +75,18 @@ export class UserDetailsComponent implements OnInit {
     { name: 'Wisconsin', abbreviation: 'WI' },
     { name: 'Wyoming', abbreviation: 'WY' }
   ];
-  type: string;
-  editableMode: boolean;
-  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router, private _snackBar: MatSnackBar) {
+  isProfessional: boolean;
+  isEditable: boolean;
+  personalInfoForm: FormGroup;
+  addressForm: FormGroup;
+  patientForm: FormGroup;
+  professionalForm: FormGroup;
+  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router, private _snackBar: MatSnackBar, private formbuilder: FormBuilder) {
   }
 
   ngOnInit() {
     this.route.url.subscribe((segments) => {
-      this.editableMode = (segments.find(s => s.path == "edit") !== undefined);
-      console.log(this.editableMode);
+      this.isEditable = (segments.find(s => s.path == "edit") !== undefined);
     });
 
     this.route.paramMap.subscribe(params => {
@@ -90,10 +94,11 @@ export class UserDetailsComponent implements OnInit {
       var id = +params.get('id');
       if (userType == "professional") {
         this.user = this.userService.professionals.find(pro => pro.id == id);
-        this.type = "profesional";
+        this.createProfessionalForm();
+        this.isProfessional = true;
       }
       else if (userType == "patient") {
-        this.type = "paciente";
+        this.isProfessional = true;
         this.user = this.userService.patients.find(patient => patient.id == id);
         console.log(this.user['insuranceCarrier'].name);
       }
@@ -104,14 +109,14 @@ export class UserDetailsComponent implements OnInit {
   }
 
   saveUser() {
-    this.userService.updateUser(this.user, this.type == "profesional");
+    this.userService.updateUser(this.user, this.isProfessional);
     this.router.navigate(["users"]);
     this._snackBar.open("Usuario Actualizado", "Aceptar", {
       duration: 2000,
     });
   }
 
-  deleteInsurance(index:number){
+  deleteInsurance(index: number) {
     var insurance = this.user["insuranceCarrier"][index];
     this.user["insuranceCarrier"].splice(index, 1);
     var snackBarRef = this._snackBar.open("Seguro Eliminado", "UNDO", {
@@ -123,9 +128,38 @@ export class UserDetailsComponent implements OnInit {
 
   }
 
-  addInsurance(){
+  addInsurance() {
     var newInsurance = new InsuranceCarrier();
     this.user["insuranceCarrier"].push(newInsurance);
   }
-  
+
+  createProfessionalForm():void{
+    this.createUserForm();
+    this.createAddressForm();
+    this.professionalForm = this.formbuilder.group({
+      noCollegiate:[this.user['noCollegiate']],
+      type:[this.user['type']]
+    });
+  }
+
+  createUserForm():void{
+    this.personalInfoForm = this.formbuilder.group({
+      name:[this.user.name],
+      firstName:[this.user.firstName],
+      lastName:[this.user.lastName],
+      docId:[this.user.docId],
+      birthDay:[this.user.birthDay],
+      gender:[this.user.gender]
+    })
+  }
+
+  createAddressForm():void{
+    this.addressForm = this.formbuilder.group({
+      street:[this.user.address.street],
+      door:[this.user.address.door],
+      no:[this.user.address.no],
+      city:[this.user.address.city],
+      zipCode:[this.user.address.zipCode]
+    })
+  }
 }

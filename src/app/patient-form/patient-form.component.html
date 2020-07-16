@@ -1,0 +1,31 @@
+<form>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="NHC" formControlName='NHC' name="NHC" [readonly]="!isEditable">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class=" row insurance-container" *ngFor="let insurance of insurances;let i = index;">
+        <div class="insurance">
+            <mat-form-field>
+                <input matInput placeholder="Nombre del Seguro" formControlName = "insuranceName{{i}}"
+                    [readonly]="!isEditable">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Tipo de Seguro" formControlName="insuranceType{{i}}"
+                    [readonly]="!isEditable">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Numero de Tarjeta" formControlName="CardNumber{{i}}" [readonly]="!isEditable">
+            </mat-form-field>
+        </div>
+        <button mat-mini-fab color="basic" type="button" class="close" (click)="onDeleteInsurance(i)" *ngIf="isEditable">
+            x
+        </button>
+    </div>
+    <button mat-mini-fab color="basic" type="button" (click)="onAddInsurance()" *ngIf="isEditable">
+        <mat-icon>add</mat-icon>
+    </button>
+</form>
