@@ -6,11 +6,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { InsuranceCarrier } from '../model/insurance-carrier';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { FormsService } from '../services/forms.service';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.scss']
+  styleUrls: ['./user-details.component.scss'],
+  providers: [FormsService]
 })
 export class UserDetailsComponent implements OnInit {
 
@@ -76,20 +78,23 @@ export class UserDetailsComponent implements OnInit {
     { name: 'Wisconsin', abbreviation: 'WI' },
     { name: 'Wyoming', abbreviation: 'WY' }
   ];
-  isProfessional: boolean;
-  isEditable: boolean;
   personalInfoForm: FormGroup;
   addressForm: FormGroup;
   patientForm: FormGroup;
   professionalForm: FormGroup;
   userForm: FormGroup;
+
   type: string;
-  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router, private _snackBar: MatSnackBar, private formbuilder: FormBuilder) {
-  }
+  constructor(private route: ActivatedRoute,
+            private userService: UserService, 
+            private router: Router, 
+            private _snackBar: MatSnackBar, 
+            public formService: FormsService,
+            private formbuilder:FormBuilder) {}
 
   ngOnInit() {
     this.route.url.subscribe((segments) => {
-      this.isEditable = (segments.find(s => s.path == "edit") !== undefined);
+      this.formService.isEditable = (segments.find(s => s.path == "edit") !== undefined);
     });
 
     this.route.paramMap.subscribe(params => {
@@ -97,40 +102,31 @@ export class UserDetailsComponent implements OnInit {
       var id = +params.get('id');
       if (userType == "professional") {
         this.user = this.userService.professionals.find(pro => pro.id == id);
-        this.createProfessionalForm();
-        this.isProfessional = true;
+        this.formService.user = this.user;
+        this.formService.createProfessionalForm();
+        this.formService.isProfessional = true;
         this.type = "Profesional";
 
       }
       else if (userType == "patient") {
         this.user = this.userService.patients.find(patient => patient.id == id);
-        this.createPatientForm();
-        this.isProfessional = false;
+        this.formService.user = this.user;
+        this.formService.createPatientForm();
+        this.formService.isProfessional = false;
         this.type = "Paciente";
       }
-
       else {
         alert("Error loading the user with ID:" + id);
       }
+      this.loadForms();
     });
   }
 
-  saveUser() {
-    this.getUser();
-    this.userService.updateUser(this.user, this.isProfessional);
-    this.router.navigate(["users"]);
-    this._snackBar.open("Usuario Actualizado", "Aceptar", {
-      duration: 2000,
-    });
-  }
-
-  createProfessionalForm(): void {
-    this.createUserForm();
-    this.createAddressForm();
-    this.professionalForm = this.formbuilder.group({
-      noCollegiate: [this.user['noCollegiate']],
-      type: [this.user['type']]
-    });
+  loadForms(){
+    this.personalInfoForm = this.formService.personalInfoForm;
+    this.addressForm = this.formService.addressForm;
+    this.patientForm = this.formService.patientForm;
+    this.professionalForm = this.formService.professionalForm;
     this.userForm = this.formbuilder.group({
       personalInfo: [this.personalInfoForm],
       addressForm: [this.addressForm],
@@ -138,74 +134,12 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  createUserForm(): void {
-    this.personalInfoForm = this.formbuilder.group({
-      name: [this.user.name],
-      firstName: [this.user.firstName],
-      lastName: [this.user.lastName],
-      docId: [this.user.docId],
-      birthDay: [this.user.birthDay],
-      gender: [this.user.gender]
+  saveUser() {
+    this.formService.getUser();
+    this.userService.updateUser(this.user, this.formService.isProfessional);
+    this.router.navigate(["users"]);
+    this._snackBar.open("Usuario Actualizado", "Aceptar", {
+      duration: 2000,
     });
   }
-
-  createAddressForm(): void {
-    this.addressForm = this.formbuilder.group({
-      street: [this.user.address.street],
-      door: [this.user.address.door],
-      no: [this.user.address.no],
-      city: [this.user.address.city],
-      zipCode: [this.user.address.zipCode]
-    })
-  }
-
-  createPatientForm(): void {
-    this.createUserForm();
-
-    this.createAddressForm();
-
-    this.patientForm = this.formbuilder.group({
-      NHC: [this.user['NHC']]
-    });
-
-    this.userForm = this.formbuilder.group({
-      personalInfo: [this.personalInfoForm],
-      addressForm: [this.addressForm],
-      patientForm: [this.professionalForm]
-    });
-  }
-
-  private getUser(): void {
-    this.mapFormToUser(this.personalInfoForm);
-    this.mapFormToUser(this.addressForm, "address");
-    if (this.isProfessional) {
-      this.mapFormToUser(this.professionalForm);
-    }
-    else {
-      this.getInsuranceCarriers();
-    }
-  }
-
-  private getInsuranceCarriers() {
-    var insurancesKeys:string[] = Object.keys(this.patientForm.getRawValue());
-    this.user['insuranceCarrier'] = [];
-    insurancesKeys.forEach((key)=>{
-      if(key == "NHC"){
-        this.user['NHC'] = this.patientForm.value['NHC'];
-      }
-      else{
-          this.user['insuranceCarrier'].push(this.patientForm.value[key]);
-        }
-    });
-  }
-
-  private mapFormToUser(form: FormGroup, property: string = ""): void {
-    if (!property) {
-      this.user = Object.assign(this.user, form.getRawValue());
-    }
-    else {
-      this.user[property] = form.getRawValue();
-    }
-  }
-
 }

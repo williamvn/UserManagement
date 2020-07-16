@@ -7,10 +7,10 @@
             <mat-card-title>Detalles</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <app-personal-info-form [isEditable] = "isEditable" [personalUserForm] = "personalInfoForm" ></app-personal-info-form>
+            <app-personal-info-form [isEditable] = "formService.isEditable" [personalUserForm] = "personalInfoForm" ></app-personal-info-form>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="isEditable">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>
@@ -20,10 +20,10 @@
             <mat-card-title>Address</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <app-address-form [isEditable] = "isEditable" [addressFormGroup] = "addressForm"></app-address-form>
+            <app-address-form [isEditable] = "formService.isEditable" [addressFormGroup] = "addressForm"></app-address-form>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="isEditable">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>
@@ -33,15 +33,15 @@
             <mat-card-title>Información del {{type}}</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <app-professional-form *ngIf="isProfessional" [isEditable] = "isEditable" [professionalForm] = "professionalForm"></app-professional-form>
-            <app-patient-form *ngIf="!isProfessional" 
-              [isEditable] = "isEditable" 
+            <app-professional-form *ngIf="formService.isProfessional" [isEditable] = "formService.isEditable" [professionalForm] = "professionalForm"></app-professional-form>
+            <app-patient-form *ngIf="!formService.isProfessional" 
+              [isEditable] = "formService.isEditable" 
               [patientForm] = "patientForm" 
               [insuranceCarriers] = "user['insuranceCarrier']"
               ></app-patient-form>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="isEditable">Guardar</button>
+            <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable">Guardar</button>
           </mat-card-actions>
         </mat-card>
       </mat-tab>
