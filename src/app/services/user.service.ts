@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { User } from './model/user';
-import { Professional } from './model/professional';
-import { Patient } from './model/patient';
+import { User } from '../model/user';
+import { Professional } from '../model/professional';
+import { Patient } from '../model/patient';
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';

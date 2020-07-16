@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { InsuranceCarrier } from '../model/insurance-carrier';
+import { InsuranceCarrier } from '../../model/insurance-carrier';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
   selector: 'app-patient-form',
   templateUrl: './patient-form.component.html',
-  styleUrls: ['./patient-form.component.scss', '../user-details/user-details.component.scss']
+  styleUrls: ['./patient-form.component.scss', '../../user-details/user-details.component.scss']
 })
 export class PatientFormComponent implements OnInit {
 

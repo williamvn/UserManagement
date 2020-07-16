@@ -19,10 +19,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from "@angular/forms";
 import { NewUserComponent } from './new-user/new-user.component';
 import { DialogComponent } from './dialog/dialog.component';
-import { PersonalInfoFormComponent } from './personal-info-form/personal-info-form.component';
-import { AddressFormComponent } from './address-form/address-form.component';
-import { ProfessionalFormComponent } from './professional-form/professional-form.component';
-import { PatientFormComponent } from './patient-form/patient-form.component';
+import { PersonalInfoFormComponent } from './forms/personal-info-form/personal-info-form.component';
+import { AddressFormComponent } from './forms/address-form/address-form.component';
+import { ProfessionalFormComponent } from './forms/professional-form/professional-form.component';
+import { PatientFormComponent } from './forms/patient-form/patient-form.component';
 
 
 

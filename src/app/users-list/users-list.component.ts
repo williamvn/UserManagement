@@ -5,7 +5,7 @@ import { User } from '../model/user';
 import { MatPaginator } from '@angular/material/paginator';
 import { Professional } from '../model/professional';
 import { MatDialog } from '@angular/material/dialog';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from '../dialog/dialog.component';
 

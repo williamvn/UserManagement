@@ -4,7 +4,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-address-form',
   templateUrl: './address-form.component.html',
-  styleUrls: ['./address-form.component.scss' ,'../user-details/user-details.component.scss']
+  styleUrls: ['./address-form.component.scss' ,'../../user-details/user-details.component.scss']
 })
 export class AddressFormComponent implements OnInit {
 
