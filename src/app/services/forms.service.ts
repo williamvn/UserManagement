@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { User } from '../model/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -28,7 +28,7 @@ export class FormsService {
       noCollegiate: [this.user['noCollegiate'], Validators.required],
       type: [this.user['type']]
     });
-  
+
   }
 
   private createUserForm(): void {
@@ -48,7 +48,9 @@ export class FormsService {
       door: [this.user.address.door],
       no: [this.user.address.no],
       city: [this.user.address.city],
-      zipCode: [this.user.address.zipCode]
+       zipCode: new FormControl(this.user.address.zipCode, Validators.pattern(/^[0-9]{5,5}$/))
+      // [this.user.address.zipCode,[
+      //   Validators.minLength(5), Validators.maxLength(5), Validators.required]]
     })
   }
 
@@ -60,6 +62,12 @@ export class FormsService {
     this.patientForm = this.formbuilder.group({
       NHC: [this.user['NHC'], Validators.required]
     });
+  }
+
+  public allowOnlyNumbers(event:KeyboardEvent):void{
+    if((event.keyCode < 48 || event.keyCode > 57) && event.keyCode !== 9 && event.keyCode !== 8){
+      event.preventDefault();
+    }
   }
 
   public getUser(): void {
@@ -74,15 +82,15 @@ export class FormsService {
   }
 
   private getInsuranceCarriers() {
-    var insurancesKeys:string[] = Object.keys(this.patientForm.getRawValue());
+    var insurancesKeys: string[] = Object.keys(this.patientForm.getRawValue());
     this.user['insuranceCarrier'] = [];
-    insurancesKeys.forEach((key)=>{
-      if(key == "NHC"){
+    insurancesKeys.forEach((key) => {
+      if (key == "NHC") {
         this.user['NHC'] = this.patientForm.value['NHC'];
       }
-      else{
-          this.user['insuranceCarrier'].push(this.patientForm.value[key]);
-        }
+      else {
+        this.user['insuranceCarrier'].push(this.patientForm.value[key]);
+      }
     });
   }
 
@@ -95,9 +103,22 @@ export class FormsService {
     }
   }
 
-  public loadCities():Observable<string[]>{
-    return this.http.get("../../assets/cities.json").pipe(map((res)=>{
+  public loadCities(): Observable<string[]> {
+    return this.http.get("../../assets/cities.json").pipe(map((res) => {
       return res["cities"];
     }));
   }
+
+  noSpecialChars(c: FormControl) {
+    let REGEXP = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
+
+    return REGEXP.test(c.value);
+  }
+
+  onlyNumber(c: FormControl) {
+    let REGEXP = new RegExp(/^[0-9]*$/);
+
+    return REGEXP.test(c.value);
+  }
+
 }
