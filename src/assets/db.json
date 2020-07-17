@@ -17009,6 +17009,24 @@
       "noCollegiate": "KYOKEN89",
       "type": "Médico",
       "id": 1005
+    },
+    {
+      "address": {
+        "street": null,
+        "door": null,
+        "no": null,
+        "city": "Barcelona (Cataluña)",
+        "zipCode": null
+      },
+      "name": "Andres",
+      "firstName": "Iniesta",
+      "lastName": null,
+      "docId": null,
+      "birthDay": null,
+      "gender": "M",
+      "noCollegiate": "IJOSDL098",
+      "type": "Administrativo",
+      "id": 1006
     }
   ],
   "patients": [
@@ -17059,7 +17077,7 @@
       "insuranceCarrier": [
         {
           "name": "Dientes Limpios",
-          "type": "Dientes",
+          "type": "Dental",
           "cardNumber": "9090909"
         },
         {
@@ -17178,6 +17196,40 @@
       "gender": "M",
       "NHC": "654564JHGJYG",
       "id": 5
+    },
+    {
+      "insuranceCarrier": [
+        {
+          "name": "Seguro de Vida",
+          "type": "Salud",
+          "cardNumber": "KJHIUH87987"
+        },
+        {
+          "name": "Mi familia Seguro",
+          "type": "Familiar",
+          "cardNumber": "JOIJLIJ"
+        },
+        {
+          "name": "Seguro Dental",
+          "type": "Dental",
+          "cardNumber": "LIJLIJLKJ"
+        }
+      ],
+      "address": {
+        "street": null,
+        "door": null,
+        "no": null,
+        "city": "Madrid (Comunidad de Madrid)",
+        "zipCode": null
+      },
+      "name": "Jorge Luis",
+      "firstName": "Vazquez",
+      "lastName": null,
+      "docId": null,
+      "birthDay": null,
+      "gender": "M",
+      "NHC": "HUHK098098",
+      "id": 6
     }
   ]
 }

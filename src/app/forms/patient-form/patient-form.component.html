@@ -13,17 +13,21 @@
     <div class=" row insurance-container" *ngFor="let form of insuranceForms;let i = index;">
         <form class="insurance" [formGroup]="form">
             <mat-form-field>
-                <input matInput placeholder="Nombre del Seguro" formControlName="name"
-                    [readonly]="!isEditable">
+                <input matInput placeholder="Nombre del Seguro" formControlName="name" [readonly]="!isEditable">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Tipo de Seguro" formControlName="type" [readonly]="!isEditable">
+                <mat-select matInput placeholder="Tipo de Seguro" formControlName="type" [disabled]="!isEditable">
+                    <mat-option value="Salud">Salud</mat-option>
+                    <mat-option value="Familiar">Familiar</mat-option>
+                    <mat-option value="Dental">Dental</mat-option>
+                </mat-select>
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="Numero de Tarjeta" formControlName="cardNumber" [readonly]="!isEditable">
             </mat-form-field>
         </form>
-        <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(form)" *ngIf="isEditable">
+        <button mat-mini-fab color="basic" type="button" class="close" (click)="deleteInsurance(form)"
+            *ngIf="isEditable">
             x
         </button>
     </div>

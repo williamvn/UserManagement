@@ -9,7 +9,11 @@
             </mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Tipo" formControlName = 'type' name="type" [readonly]="!isEditable">
+            <mat-select matInput placeholder="Tipo" formControlName = 'type' name="type" [disabled]="!isEditable">
+              <mat-option value="Enfermero">Enfermero</mat-option>
+              <mat-option value="Médico">Médico</mat-option>
+              <mat-option value="Administrativo">Administrativo</mat-option>
+              </mat-select>
           </mat-form-field>
         </div>
       </div>
