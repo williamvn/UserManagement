@@ -1,12 +1,15 @@
 <div class="search-bar">
     <div class="container" *ngIf="advancedQuery">
-        <form (submit)="sendQuery()" class="row">
+        <form (submit)="sendQuery()" class="row" #form="ngForm">
             <mat-form-field class="full-width">
                 <mat-label>Buscar</mat-label>
                 <input matInput placeholder="Ejemplo: name=William&lastName=Shackespare&id=3..." name="Buscar"
-                    [(ngModel)]="query" (keydown)="resetQuery()">
+                    [(ngModel)]="query" #searchquery="ngModel" (keyup)="resetQuery()" QueryValidator>
+                    <mat-error *ngIf="searchquery.invalid">
+                        La query es incorrecta
+                    </mat-error>
             </mat-form-field>
-            <button mat-mini-fab type="submit" color="primary">
+            <button mat-mini-fab type="submit" color="primary" [disabled]="form.invalid">
                 <mat-icon matSuffix>search</mat-icon>
             </button>
         </form>
@@ -16,7 +19,7 @@
 
     <div class="container" *ngIf="!advancedQuery">
         <mat-form-field class="full-width" *ngIf="!advancedQuery">
-            <input matInput placeholder="Buscar" name="Buscar" (keydown)="filterUsers()" [(ngModel)]="query">
+            <input matInput placeholder="Buscar" name="Buscar" (keyup)="filterUsers()" [(ngModel)]="query">
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
         <mat-slide-toggle class="pull-right" color="primary" [(ngModel)]="advancedQuery">Busqueda Avanzada

@@ -23,6 +23,7 @@ import { PersonalInfoFormComponent } from './forms/personal-info-form/personal-i
 import { AddressFormComponent } from './forms/address-form/address-form.component';
 import { ProfessionalFormComponent } from './forms/professional-form/professional-form.component';
 import { PatientFormComponent } from './forms/patient-form/patient-form.component';
+import { QueryValidatorDirective } from './query-validator.directive';
 
 
 
@@ -38,7 +39,8 @@ import { PatientFormComponent } from './forms/patient-form/patient-form.componen
     PersonalInfoFormComponent,
     AddressFormComponent,
     ProfessionalFormComponent,
-    PatientFormComponent
+    PatientFormComponent,
+    QueryValidatorDirective
   ],
   imports: [
     BrowserModule,

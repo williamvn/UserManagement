@@ -86,7 +86,6 @@ export class UsersComponent implements OnInit {
   }
 
   filterUsers() {
-    console.log(this.query);
     if(!this.query){
       this.loadCollections();
     }

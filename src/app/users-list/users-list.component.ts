@@ -29,7 +29,6 @@ export class UsersListComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.users !== undefined) {
-      console.log("Init Again");
       this.dataSource = new MatTableDataSource(this.users);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
