@@ -10,7 +10,7 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./address-form.component.scss' ,'../../user-details/user-details.component.scss'],
   providers:[FormsService]
 })
-export class AddressFormComponent implements OnInit, DoCheck {
+export class AddressFormComponent implements OnInit {
 
   @Input() isEditable: boolean = true;
   @Input() addressFormGroup: FormGroup;
@@ -26,10 +26,6 @@ export class AddressFormComponent implements OnInit, DoCheck {
       startWith(''),
       map(value => this.filter(value))
     );
-  }
-
-  ngDoCheck(){
-    console.log(this.addressFormGroup.get("zipCode"));
   }
 
   private filter(value: string): string[] {

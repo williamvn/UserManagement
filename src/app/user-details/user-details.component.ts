@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { User } from '../model/user';
 import { UserService, Resource } from '../services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { FormsService } from '../services/forms.service';
   styleUrls: ['./user-details.component.scss'],
   providers: [FormsService]
 })
-export class UserDetailsComponent implements OnInit {
+export class UserDetailsComponent implements OnInit, DoCheck {
 
   user: User;
   states = [
@@ -90,6 +90,10 @@ export class UserDetailsComponent implements OnInit {
     private _snackBar: MatSnackBar,
     public formService: FormsService,
     private formbuilder: FormBuilder) { }
+
+  ngDoCheck(): void {
+    console.log(this.userForm);
+  }
 
   ngOnInit() {
     this.loading = true;

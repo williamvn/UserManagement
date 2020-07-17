@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, ValidatorFn } from '@angular/forms';
 import { User } from '../model/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -36,7 +36,7 @@ export class FormsService {
       name: [this.user.name, Validators.required],
       firstName: [this.user.firstName, Validators.required],
       lastName: [this.user.lastName],
-      docId: [this.user.docId],
+      docId: [this.user.docId, this.docValidation],
       birthDay: [this.user.birthDay],
       gender: [this.user.gender]
     });
@@ -47,10 +47,8 @@ export class FormsService {
       street: [this.user.address.street],
       door: [this.user.address.door],
       no: [this.user.address.no],
-      city: [this.user.address.city],
-       zipCode: new FormControl(this.user.address.zipCode, Validators.pattern(/^[0-9]{5,5}$/))
-      // [this.user.address.zipCode,[
-      //   Validators.minLength(5), Validators.maxLength(5), Validators.required]]
+      city: [this.user.address.city, this.noSpecialChars],
+      zipCode: [this.user.address.zipCode, Validators.pattern(/^[0-9]{5,5}$/)]
     })
   }
 
@@ -64,8 +62,8 @@ export class FormsService {
     });
   }
 
-  public allowOnlyNumbers(event:KeyboardEvent):void{
-    if((event.keyCode < 48 || event.keyCode > 57) && event.keyCode !== 9 && event.keyCode !== 8){
+  public allowOnlyNumbers(event: KeyboardEvent): void {
+    if ((event.keyCode < 48 || event.keyCode > 57) && event.keyCode !== 9 && event.keyCode !== 8) {
       event.preventDefault();
     }
   }
@@ -109,16 +107,31 @@ export class FormsService {
     }));
   }
 
+  docValidation(c: FormControl) {
+    let PASSPORT = new RegExp(/^[a-z A-Z]{3}[0-9]{6}[a-z]?$/);
+    let DNI = new RegExp(/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/);
+    let NIE = new RegExp(/^[XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$/);
+
+    let result = PASSPORT.test(c.value);
+    result = result || !c.value;
+    result = result || DNI.test(c.value);
+    result = result || NIE.test(c.value);
+    console.log(result);
+    return result ? null : {
+      validate: {
+        valid: false
+      }
+    };
+  }
+
   noSpecialChars(c: FormControl) {
     let REGEXP = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
 
-    return REGEXP.test(c.value);
-  }
-
-  onlyNumber(c: FormControl) {
-    let REGEXP = new RegExp(/^[0-9]*$/);
-
-    return REGEXP.test(c.value);
+    return REGEXP.test(c.value) ? {
+      validate: {
+        valid: true
+      }
+    }:null;
   }
 
 }
