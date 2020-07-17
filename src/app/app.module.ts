@@ -24,6 +24,7 @@ import { AddressFormComponent } from './forms/address-form/address-form.componen
 import { ProfessionalFormComponent } from './forms/professional-form/professional-form.component';
 import { PatientFormComponent } from './forms/patient-form/patient-form.component';
 import { QueryValidatorDirective } from './query-validator.directive';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -40,7 +41,8 @@ import { QueryValidatorDirective } from './query-validator.directive';
     AddressFormComponent,
     ProfessionalFormComponent,
     PatientFormComponent,
-    QueryValidatorDirective
+    QueryValidatorDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

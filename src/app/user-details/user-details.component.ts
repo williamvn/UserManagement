@@ -100,7 +100,12 @@ export class UserDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       var userType = params.get('userType');
       var id = +params.get('id');
-      this.loadUser(id, userType);
+      if (!id) {
+        this.router.navigate(["not-found"]);
+      }
+      else {
+        this.loadUser(id, userType);
+      }
     });
   }
 
@@ -134,7 +139,7 @@ export class UserDetailsComponent implements OnInit {
       }
     }
     else {
-      alert("Error loading the user with ID:" + id);
+      this.router.navigate(["not-found"]);
     }
   }
 

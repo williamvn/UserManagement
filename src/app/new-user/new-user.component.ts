@@ -4,7 +4,7 @@ import { User } from '../model/user';
 import { Address } from '../model/Address';
 import { Professional } from '../model/professional';
 import { Patient } from '../model/patient';
-import { UserService } from '../services/user.service';
+import { UserService, Resource } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InsuranceCarrier } from '../model/insurance-carrier';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -25,7 +25,7 @@ export class NewUserComponent implements OnInit {
   professionalForm: FormGroup;
 
   type: string;
-  isTypeSelected: boolean;
+  isTypeSelected: boolean = false;
   user: User;
   constructor(private route: ActivatedRoute,
     private userService: UserService,
@@ -36,10 +36,13 @@ export class NewUserComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       var userType = params.get('userType');
-      this.isTypeSelected = (userType != undefined);
       var addr = new Address();
-      if (userType === "professional") {
+      if(!userType){
+        this.isTypeSelected = false;
+      }
+      else if (userType === "professional") {
         this.formService.isProfessional = true;
+        this.isTypeSelected = true;
         this.type = "Profesional";
         this.user = new Professional();
         this.user.address = addr;
@@ -48,12 +51,17 @@ export class NewUserComponent implements OnInit {
       }
       else if (userType === "patient") {
         this.formService.isProfessional = false;
+        this.isTypeSelected = true;
         this.type = "Paciente";
         this.user = new Patient();
         this.user['insuranceCarrier'] = []
         this.user.address = addr;
         this.formService.user = this.user;
         this.formService.createPatientForm();
+      }
+      else{
+        this.router.navigate(["not-found"]);
+        return;
       }
       this.loadForms()
     });

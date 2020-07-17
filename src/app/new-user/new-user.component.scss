@@ -4,7 +4,8 @@ $color: rgb(0, 119, 139);
 .type{
     display: flex;
     justify-content: space-around;
-    margin: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .center{
@@ -21,7 +22,6 @@ $color: rgb(0, 119, 139);
     border-radius: 5px;
     color: white;
     padding: 20px;
-    // width: 400px;
     background-color: $color;
 }
 
