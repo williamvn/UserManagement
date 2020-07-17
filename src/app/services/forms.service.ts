@@ -1,6 +1,9 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../model/user';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class FormsService {
@@ -16,7 +19,7 @@ export class FormsService {
   isProfessional: boolean = true;
   isEditable: boolean = true;
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor(private formbuilder: FormBuilder, private http: HttpClient) { }
 
   public createProfessionalForm(): void {
     this.createUserForm();
@@ -28,7 +31,7 @@ export class FormsService {
   
   }
 
-  createUserForm(): void {
+  private createUserForm(): void {
     this.personalInfoForm = this.formbuilder.group({
       name: [this.user.name, Validators.required],
       firstName: [this.user.firstName, Validators.required],
@@ -39,7 +42,7 @@ export class FormsService {
     });
   }
 
-  createAddressForm(): void {
+  private createAddressForm(): void {
     this.addressForm = this.formbuilder.group({
       street: [this.user.address.street],
       door: [this.user.address.door],
@@ -49,7 +52,7 @@ export class FormsService {
     })
   }
 
-  createPatientForm(): void {
+  public createPatientForm(): void {
     this.createUserForm();
 
     this.createAddressForm();
@@ -90,5 +93,11 @@ export class FormsService {
     else {
       this.user[property] = form.getRawValue();
     }
+  }
+
+  public loadCities():Observable<string[]>{
+    return this.http.get("../../assets/cities.json").pipe(map((res)=>{
+      return res["cities"];
+    }));
   }
 }
