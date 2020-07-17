@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: flex-start;
+    background-color: white;
+}
+
+.page-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-display-4{
+    margin-top: 10px;
+}
