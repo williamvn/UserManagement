@@ -29,7 +29,10 @@ export class UsersListComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.users !== undefined) {
+      console.log("Init Again");
       this.dataSource = new MatTableDataSource(this.users);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
     }
   }
 
@@ -42,7 +45,7 @@ export class UsersListComponent implements OnInit, OnChanges {
   deleteUser(user) {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
-      data:{title:"Eliminar", subtitle:"Estás intentando borrar un usuario.", body:"¿Estás seguro?", reject:"No", accept:"Sí"}
+      data: { title: "Eliminar", subtitle: "Estás intentando borrar un usuario.", body: "¿Estás seguro?", reject: "No", accept: "Sí" }
     });
     var isProfessional = (<Professional>user).noCollegiate != undefined;
     dialogRef.afterClosed().subscribe(result => {

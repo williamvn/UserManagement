@@ -1,13 +1,43 @@
-.center{
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-  }
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
 
-  .add{
-    margin-left: 20px;
-  }
+.add {
+  margin-left: 20px;
+}
 
-  .delete{
-    margin-left: 15px;
+.delete {
+  margin-left: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  align-self: center;
+
+  .pull-right{
+    align-self: flex-end;
   }
+}
+
+.search-bar{
+  display: flex;
+  justify-content: center;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+

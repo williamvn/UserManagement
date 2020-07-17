@@ -48,23 +48,42 @@ export class UserService {
     return this.http.get<Patient[]>(this.BASE_URI + "patients");
   }
 
-  public getUserById(id:number, resource:Resource):Observable<User>{
-    return this.http.get<User>(this.BASE_URI + resource + "?id=" + id); 
+  public getUserById(id: number, resource: Resource): Observable<User> {
+    return this.http.get<User>(this.BASE_URI + resource + "?id=" + id);
   }
 
-  public updateUser(user, resource:Resource) {
+  public updateUser(user, resource: Resource) {
     return this.http.put(this.BASE_URI + resource + "/" + user.id, user);
   }
 
-  public deleteUser(userId, resource:Resource){
+  public deleteUser(userId, resource: Resource) {
     return this.http.delete(this.BASE_URI + resource + "/" + userId);
   }
 
-  public addNewUser(user, resource:Resource){
-      return this.http.post(this.BASE_URI + resource, user);
+  public addNewUser(user, resource: Resource) {
+    return this.http.post(this.BASE_URI + resource, user);
   }
 
-  public deleteAllDoctors(){
-    return forkJoin(this._professionals.filter(pro=>pro.type == "Médico").map(pro=>this.deleteUser(pro.id, "professionals")));
+  public deleteAllDoctors() {
+    return forkJoin(this._professionals.filter(pro => pro.type == "Médico").map(pro => this.deleteUser(pro.id, "professionals")));
+  }
+
+  public sendQuery(query: string): Observable<boolean> {
+    return forkJoin(this.sendProfessionalQuery(query), this.sendPatientQuery(query)).pipe(
+      map((response: [Professional[], Patient[]]) => {
+        console.log(response[0]);
+        console.log(response[1]);
+        this._professionals = response[0];
+        this._patients = response[1];
+        return true;
+      }));
+  }
+
+  private sendProfessionalQuery(query: string): Observable<Professional[]> {
+    return this.http.get<Professional[]>(this.BASE_URI + "professionals?" + query);
+  }
+
+  private sendPatientQuery(query: string): Observable<Patient[]> {
+    return this.http.get<Patient[]>(this.BASE_URI + "patients?" + query);
   }
 }

@@ -18,28 +18,39 @@ export class UsersComponent implements OnInit {
   users: User[];
   professionals: Professional[];
   patients: Patient[];
+  query: string = "";
 
+  private _professionalsBackup:Professional[];
+  private _patientsBackup: Patient[];
+  private _userSaveBackup: User[];
+  advancedQuery: boolean;
   constructor(private userService: UserService, public dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.loadUser();
+    this.loadUsers();
   }
 
-  private loadUser(): void {
+  private loadUsers(): void {
     this.userService.loadUsers().subscribe(
       success => {
         if (success) {
-          this.professionals = this.userService.professionals;
-
-          this.patients = this.userService.patients;
-
-          this.users = this.professionals;
-          this.users = this.users.concat(this.patients);
+          this.loadCollections();
         }
         else {
           alert("Error Loading the Users");
         }
       });
+  }
+
+  private loadCollections(): void {
+    this.professionals = this.userService.professionals;
+    this.patients = this.userService.patients;
+    this.users = this.professionals;
+    this.users = this.users.concat(this.patients);
+    //Backup
+    this._professionalsBackup = this.professionals;
+    this._patientsBackup = this.patients;
+    this._userSaveBackup = this.users;
   }
 
   deleteDoctors() {
@@ -60,4 +71,34 @@ export class UsersComponent implements OnInit {
       }
     });
   };
+
+  sendQuery() {
+    this.userService.sendQuery(this.query).subscribe(
+      (success) => {
+        if (success) {
+          this.loadCollections();
+        }
+        else {
+          alert("Error While loading users");
+        }
+      }
+    );
+  }
+
+  filterUsers() {
+    console.log(this.query);
+    if(!this.query){
+      this.loadCollections();
+    }
+    this.professionals = this._professionalsBackup.filter(professional => professional.name.includes(this.query));
+    this.patients = this._patientsBackup.filter(patient => patient.name.includes(this.query));
+    this.users = this.professionals;
+    this.users = this.users.concat(this.patients);
+  }
+
+  resetQuery():void{
+    if(!this.query){
+      this.loadUsers();
+    }
+  }
 }

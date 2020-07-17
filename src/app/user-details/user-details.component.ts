@@ -12,7 +12,7 @@ import { FormsService } from '../services/forms.service';
   styleUrls: ['./user-details.component.scss'],
   providers: [FormsService]
 })
-export class UserDetailsComponent implements OnInit, DoCheck {
+export class UserDetailsComponent implements OnInit {
 
   user: User;
   states = [
@@ -90,10 +90,6 @@ export class UserDetailsComponent implements OnInit, DoCheck {
     private _snackBar: MatSnackBar,
     public formService: FormsService,
     private formbuilder: FormBuilder) { }
-
-  ngDoCheck(): void {
-    console.log(this.userForm);
-  }
 
   ngOnInit() {
     this.loading = true;
