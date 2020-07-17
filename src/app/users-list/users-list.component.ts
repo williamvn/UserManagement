@@ -5,7 +5,7 @@ import { User } from '../model/user';
 import { MatPaginator } from '@angular/material/paginator';
 import { Professional } from '../model/professional';
 import { MatDialog } from '@angular/material/dialog';
-import { UserService } from '../services/user.service';
+import { UserService, Resource } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -47,7 +47,8 @@ export class UsersListComponent implements OnInit, OnChanges {
     var isProfessional = (<Professional>user).noCollegiate != undefined;
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.deleteUser(user.id, isProfessional ? "professionals" : "patients").subscribe(() => {
+        var resource: Resource = isProfessional ? "professionals" : "patients";
+        this.userService.deleteUser(user.id, resource).subscribe(() => {
           this._snackBar.open("Usuario Eliminado", "Aceptar", {
             duration: 5000,
           });

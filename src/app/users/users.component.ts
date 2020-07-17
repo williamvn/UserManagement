@@ -51,7 +51,6 @@ export class UsersComponent implements OnInit {
       if (result) {
         this.userService.deleteAllDoctors().subscribe(
           (res) => {
-            // this.loadUser();
             this._snackBar.open("Todos los médicos han sido borrados", "Cerrar", {
               duration: 5000,
             });

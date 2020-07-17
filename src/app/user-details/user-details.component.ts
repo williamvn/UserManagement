@@ -1,11 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user';
-import { UserService } from '../services/user.service';
+import { UserService, Resource } from '../services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { InsuranceCarrier } from '../model/insurance-carrier';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { FormsService } from '../services/forms.service';
 
 @Component({
@@ -84,7 +82,7 @@ export class UserDetailsComponent implements OnInit {
   professionalForm: FormGroup;
   userForm: FormGroup;
 
-  loading:boolean = true;
+  loading: boolean = true;
   type: string;
   constructor(private route: ActivatedRoute,
     private userService: UserService,
@@ -141,7 +139,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   private getUserbyId(id: number) {
-    var resource = this.formService.isProfessional ? "professionals" : "patients";
+    var resource: Resource = this.formService.isProfessional ? "professionals" : "patients";
     this.userService.getUserById(id, resource).subscribe(response => {
       this.user = response[0];
       this.formService.user = this.user;
@@ -170,10 +168,12 @@ export class UserDetailsComponent implements OnInit {
 
   saveUser() {
     this.formService.getUser();
-    this.userService.updateUser(this.user, this.formService.isProfessional);
-    this.router.navigate(["users"]);
-    this._snackBar.open("Usuario Actualizado", "Aceptar", {
-      duration: 2000,
-    });
+    var resource: Resource = this.formService.isProfessional ? "professionals" : "patients";
+    this.userService.updateUser(this.user, resource).subscribe((res => {
+      this.router.navigate(["users"]);
+      this._snackBar.open("Usuario Actualizado", "Aceptar", {
+        duration: 2000,
+      });
+    }));
   }
 }

@@ -8,6 +8,9 @@ import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
+export type Resource = "professionals" | "patients";
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,9 +30,6 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  /**
-   * Load from the API all the professionals and patients
-   */
   public loadUsers(): Observable<boolean> {
     return forkJoin(this.loadPatients(), this.loadProfessionals()).pipe(
       map((response: [Patient[], Professional[]]) => {
@@ -48,44 +48,19 @@ export class UserService {
     return this.http.get<Patient[]>(this.BASE_URI + "patients");
   }
 
-  public getUserById(id:number, resource:string):Observable<User>{
+  public getUserById(id:number, resource:Resource):Observable<User>{
     return this.http.get<User>(this.BASE_URI + resource + "?id=" + id); 
   }
 
-  public updateUser(user, isProfessional) {
-    if (isProfessional) {
-      console.log("Updating professional...");
-      this.updateProfessional(user);
-    }
-    else {
-      console.log("Updating patient");
-      this.updatePatient(user);
-    }
+  public updateUser(user, resource:Resource) {
+    return this.http.put(this.BASE_URI + resource + "/" + user.id, user);
   }
 
-  private updateProfessional(user: Professional) {
-    this.http.put<Professional>(this.BASE_URI + "professionals/" + user.id, user).subscribe(professional => {
-      console.log(professional);
-      var index = this._professionals.findIndex(p => p.id == professional.id);
-      this._professionals[index] = professional;
-    }
-    );
-  }
-
-  private updatePatient(user: Patient) {
-    this.http.put<Patient>(this.BASE_URI + "patients/" + user.id, user).subscribe(patient => {
-      console.log(patient);
-      var index = this._patients.findIndex(p => p.id == patient.id);
-      this._patients[index] = patient;
-    });
-  }
-
-  public deleteUser(userId, resource){
-    // console.log("deleting: " + resource + "/" +  userId);
+  public deleteUser(userId, resource:Resource){
     return this.http.delete(this.BASE_URI + resource + "/" + userId);
   }
 
-  public addNewUser(user, resource){
+  public addNewUser(user, resource:Resource){
       return this.http.post(this.BASE_URI + resource, user);
   }
 

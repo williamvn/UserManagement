@@ -24,7 +24,7 @@
       "id": 7,
       "name": "Reanne",
       "firstName": "Carnation",
-      "lastName": "Castle",
+      "lastName": "Double",
       "gender": "M",
       "birthDay": "2020-07-14T09:03:13.1743511+02:00",
       "docId": "5556988Z",
@@ -34,24 +34,6 @@
         "no": 23,
         "city": "Madrid",
         "zipCode": 28703
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Enfermero",
-      "id": 8,
-      "name": "Luke",
-      "firstName": "Warm",
-      "lastName": "Warm",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1743543+02:00",
-      "docId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
       }
     },
     {
@@ -17009,6 +16991,24 @@
       "noCollegiate": "OIJOIJ96876",
       "type": "Médico",
       "id": 1004
+    },
+    {
+      "address": {
+        "street": null,
+        "door": null,
+        "no": null,
+        "city": null,
+        "zipCode": null
+      },
+      "name": "Goku",
+      "firstName": "Kakaroto",
+      "lastName": "Hamehameha",
+      "docId": "KJGGJYGH987",
+      "birthDay": "2020-06-30T22:00:00.000Z",
+      "gender": "M",
+      "noCollegiate": "KYOKEN89",
+      "type": "Médico",
+      "id": 1005
     }
   ],
   "patients": [
@@ -17098,6 +17098,11 @@
           "name": "Seguro de Vida",
           "type": "Salud",
           "cardNumber": "JAJAAJA90"
+        },
+        {
+          "name": "Seguro de Todo",
+          "type": "Salud",
+          "cardNumber": "INJAHSD798"
         }
       ],
       "address": {
