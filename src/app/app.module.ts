@@ -27,6 +27,7 @@ import { QueryValidatorDirective } from './query-validator.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -46,7 +47,8 @@ import { ErrorComponent } from './error/error.component';
     QueryValidatorDirective,
     NotFoundComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
