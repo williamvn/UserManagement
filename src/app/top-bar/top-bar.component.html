@@ -6,7 +6,7 @@
       <a mat-list-item routerLink="/users">
         <mat-icon>account_circle</mat-icon> Usuarios
       </a>
-      <mat-slide-toggle class="ml-1" color="primary" name="DarkTheme">Tema Oscuro</mat-slide-toggle>
+      <!-- <mat-slide-toggle class="ml-1" color="primary" name="DarkTheme">Tema Oscuro</mat-slide-toggle> -->
       <a mat-list-item routerLink="/user/new">
         <mat-icon>add</mat-icon> Nuevo Usuario
       </a>
@@ -31,7 +31,9 @@
         </button>
       </div>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div class="full-page">
+      <router-outlet></router-outlet>
+    </div>
     <app-footer></app-footer>
 
   </mat-sidenav-content>
