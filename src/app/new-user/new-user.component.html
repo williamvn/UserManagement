@@ -102,7 +102,7 @@
 
 <div *ngIf="!isTypeSelected">
     <div class="center">
-        <h2 class="title">Seleccione el tipo de usuario que desea crear</h2>
+        <h2 class="title"><img src="../../assets/img/login.png" width="30%" *ngIf="isHandset$|async">Seleccione el tipo de usuario que desea crear</h2>
     </div>
     <div class="type">
         <div class="service" routerLink="/user/new/professional">
