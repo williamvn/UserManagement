@@ -41,3 +41,9 @@ $textColor: rgb(197, 186, 186);
 .ml-1{
   margin-left: 10px;
 }
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
