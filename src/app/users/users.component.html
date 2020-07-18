@@ -6,7 +6,7 @@
                 <input matInput placeholder="Ejemplo: name=William&lastName=Shackespare&id=3..." name="Buscar"
                     [(ngModel)]="query" #searchquery="ngModel" (keyup)="resetQuery()" QueryValidator>
                 <mat-error *ngIf="searchquery.invalid">
-                    El formato de búsqueda es incorrecto. <strong>Vea Documentación</strong>, para mas informcación.
+                    El formato de búsqueda es incorrecto. <a  class="error-link" href="https://github.com/williamvn/UserManagement/blob/master/README.md">Vea Documentación</a>, para mas informcación.
                 </mat-error>
             </mat-form-field>
             <button mat-mini-fab type="submit" color="primary" [disabled]="form.invalid">
