@@ -85,17 +85,22 @@ export class UserDetailsComponent implements OnInit {
 
   private getUserbyId(id: number) {
     var resource: Resource = this.formService.isProfessional ? "professionals" : "patients";
-    this.userService.getUserById(id, resource).subscribe(response => {
-      this.user = response[0];
-      this.formService.user = this.user;
-      if (this.formService.isProfessional) {
-        this.formService.createProfessionalForm();
+    this.userService.getUserById(id, resource).subscribe(
+      response => {
+        this.user = response[0];
+        this.formService.user = this.user;
+        if (this.formService.isProfessional) {
+          this.formService.createProfessionalForm();
+        }
+        else {
+          this.formService.createPatientForm();
+        }
+        this.loadForms();
+      },
+      error => {
+        this.router.navigate(["error"])
       }
-      else {
-        this.formService.createPatientForm();
-      }
-      this.loadForms();
-    });
+    );
   }
 
   private loadForms() {
@@ -114,11 +119,14 @@ export class UserDetailsComponent implements OnInit {
   saveUser() {
     this.formService.getUser();
     var resource: Resource = this.formService.isProfessional ? "professionals" : "patients";
-    this.userService.updateUser(this.user, resource).subscribe((res => {
-      this.router.navigate(["users"]);
-      this._snackBar.open("Usuario Actualizado", "Aceptar", {
-        duration: 2000,
-      });
-    }));
+    this.userService.updateUser(this.user, resource).subscribe(
+      response => {
+        this.router.navigate(["users"]);
+        this._snackBar.open("Usuario Actualizado", "Aceptar", {
+          duration: 2000,
+        });
+      },
+      error => { this.router.navigate(["error"]); }
+    );
   }
 }

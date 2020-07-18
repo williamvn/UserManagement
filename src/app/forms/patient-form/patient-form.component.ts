@@ -13,7 +13,7 @@ export class PatientFormComponent implements OnInit {
 
   @Input() isEditable:boolean = true;
   @Input() patientForm:FormGroup;
-  @Input() insuranceCarriers:InsuranceCarrier[];
+  @Input() insuranceCarriers:InsuranceCarrier[] = [];
   insuranceForms: FormGroup[] = [];
   insuranceFormsNames:string[] = [];
   insuranceId:number = 0;

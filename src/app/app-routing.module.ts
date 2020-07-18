@@ -6,6 +6,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { ErrorComponent } from './error/error.component';
 
 
 const routes: Routes = [
@@ -13,11 +14,12 @@ const routes: Routes = [
   { path: "home", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "users", component: UsersComponent },
-  { path: "user/edit/:userType/:id", component: UserDetailsComponent },
+  { path: "error", component: ErrorComponent },
+  { path: "not-found", component: NotFoundComponent },
   { path: "user/new", component: NewUserComponent },
+  { path: "user/edit/:userType/:id", component: UserDetailsComponent },
   { path: "user/new/:userType", component: NewUserComponent },
   { path: "user/:userType/:id", component: UserDetailsComponent },
-  { path: "not-found", component: NotFoundComponent },
   { path: "**", component: NotFoundComponent }
 ];
 

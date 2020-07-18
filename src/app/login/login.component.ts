@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   logUser() {
-    this._snackBar.open("Usuario Registrado Satisfactoriamente", "Aceptar", {
+    this._snackBar.open("Entrada Exitosa", "Aceptar", {
       duration: 2000,
     });
     this.router.navigate(["users"]);

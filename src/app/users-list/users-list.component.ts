@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserService, Resource } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from '../dialog/dialog.component';
+import { Router } from '@angular/router';
 
 
 
@@ -25,7 +26,7 @@ export class UsersListComponent implements OnInit, OnChanges {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor(public dialog: MatDialog, private userService: UserService, private _snackBar: MatSnackBar) { }
+  constructor(public dialog: MatDialog, private userService: UserService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.users !== undefined) {
@@ -40,7 +41,6 @@ export class UsersListComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
-
   deleteUser(user) {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
@@ -50,11 +50,14 @@ export class UsersListComponent implements OnInit, OnChanges {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         var resource: Resource = isProfessional ? "professionals" : "patients";
-        this.userService.deleteUser(user.id, resource).subscribe(() => {
-          this._snackBar.open("Usuario Eliminado", "Aceptar", {
-            duration: 5000,
-          });
-        });
+        this.userService.deleteUser(user.id, resource).subscribe(
+          () => {
+            this._snackBar.open("Usuario Eliminado", "Aceptar", {
+              duration: 5000,
+            });
+          },
+          (error) => { this.router.navigate[("error")] }
+        );
       }
     });
   }

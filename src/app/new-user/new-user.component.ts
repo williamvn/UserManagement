@@ -64,10 +64,11 @@ export class NewUserComponent implements OnInit {
         this.isTypeSelected = true;
         this.type = "Paciente";
         this.user = new Patient();
-        this.user['insuranceCarriers'] = []
+        this.user['insuranceCarriers'] = [];
         this.user.address = addr;
         this.formService.user = this.user;
         this.formService.createPatientForm();
+        console.log(this.user['insuranceCarriers']);
       }
       else {
         this.router.navigate(["not-found"]);
@@ -86,11 +87,15 @@ export class NewUserComponent implements OnInit {
 
   saveUser() {
     this.formService.getUser();
-    this.userService.addNewUser(this.user, this.formService.isProfessional ? "professionals" : "patients").subscribe(() => {
+    this.userService.addNewUser(this.user, this.formService.isProfessional ? "professionals" : "patients").subscribe(
+      (success) => {
       this._snackBar.open("Usuario Agregado", "Aceptar", {
         duration: 2000,
       });
       this.router.navigate(["users"]);
+    },
+    (error)=>{
+      this.router.navigate(["error"]);
     });
   }
 }

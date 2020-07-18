@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 
@@ -23,7 +24,7 @@ export class UsersComponent implements OnInit {
   patients: Patient[];
   query: string = "";
 
-  private _professionalsBackup:Professional[];
+  private _professionalsBackup: Professional[];
   private _patientsBackup: Patient[];
   private _userSaveBackup: User[];
   advancedQuery: boolean;
@@ -34,7 +35,11 @@ export class UsersComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private userService: UserService, public dialog: MatDialog, private _snackBar: MatSnackBar, private breakpointObserver: BreakpointObserver) { }
+  constructor(private userService: UserService,
+              public dialog: MatDialog, 
+              private _snackBar: MatSnackBar, 
+              private breakpointObserver: BreakpointObserver,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.loadUsers();
@@ -49,6 +54,11 @@ export class UsersComponent implements OnInit {
         else {
           alert("Error Loading the Users");
         }
+      },
+      error => {
+        this._snackBar.open("La conexión con la base de datos ha fallado", "Cerrar", {
+          duration: 5000,
+        });
       });
   }
 
@@ -76,7 +86,7 @@ export class UsersComponent implements OnInit {
               duration: 5000,
             });
           },
-          (error) => { console.log(error) }
+          (error) => {this.router.navigate(["error"]) }
         );
       }
     });
@@ -96,7 +106,7 @@ export class UsersComponent implements OnInit {
   }
 
   filterUsers() {
-    if(!this.query){
+    if (!this.query) {
       this.loadCollections();
     }
     this.professionals = this._professionalsBackup.filter(professional => professional.name.includes(this.query));
@@ -105,8 +115,8 @@ export class UsersComponent implements OnInit {
     this.users = this.users.concat(this.patients);
   }
 
-  resetQuery():void{
-    if(!this.query){
+  resetQuery(): void {
+    if (!this.query) {
       this.loadUsers();
     }
   }

@@ -20,7 +20,7 @@
 
             <mat-step *ngIf="!this.formService.isProfessional" [stepControl]="patientForm">
                 <ng-template matStepLabel>{{type}}</ng-template>
-                <app-patient-form [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarrier']">
+                <app-patient-form [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarriers']">
                 </app-patient-form>
                 <div>
                     <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
@@ -70,7 +70,7 @@
 
             <mat-step *ngIf="!this.formService.isProfessional" [stepControl]="patientForm">
                 <ng-template matStepLabel>{{type}}</ng-template>
-                <app-patient-form [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarrier']">
+                <app-patient-form [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarriers']">
                 </app-patient-form>
                 <div>
                     <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
