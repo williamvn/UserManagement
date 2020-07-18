@@ -24,16 +24,16 @@
       "id": 9,
       "name": "Mary",
       "lastName": "Achi",
-      "secondLastName": "Achi",
+      "secondLastName": "Zong",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.174358+02:00",
-      "documentationId": "5556988Z",
+      "documentationId": "55563988Z",
       "address": {
         "street": "Santa Catalina",
-        "no": 23,
         "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
+        "no": 23,
+        "city": "Madrid",
+        "zipCode": 28703
       }
     },
     {
@@ -63,24 +63,6 @@
       "secondLastName": "Thetip",
       "gender": "F",
       "birthDay": "2020-07-14T09:03:13.1743673+02:00",
-      "documentationId": "5556988Z",
-      "address": {
-        "street": "Santa Catalina",
-        "no": 23,
-        "door": "1B",
-        "zipCode": 28703,
-        "city": "Madrid"
-      }
-    },
-    {
-      "noCollegiate": "19283797U",
-      "type": "Administrativo",
-      "id": 13,
-      "name": "Ed",
-      "lastName": "U.",
-      "secondLastName": "U.",
-      "gender": "M",
-      "birthDay": "2020-07-14T09:03:13.1743706+02:00",
       "documentationId": "5556988Z",
       "address": {
         "street": "Santa Catalina",
@@ -17123,11 +17105,23 @@
       "name": "Sherlhy",
       "lastName": "Leon",
       "secondLastName": "Lopez",
-      "documentationId": "XDC99999",
+      "documentationId": "XDC999299",
       "birthDay": "1995-04-14T22:00:00.000Z",
       "gender": "F",
       "NHC": "19283797U",
-      "id": 3
+      "id": 3,
+      "insuranceCarriers": [
+        {
+          "name": "Seguro de Vida",
+          "type": "Salud",
+          "cardNumber": "OIHKU787865"
+        },
+        {
+          "name": "Dientes Fuertes",
+          "type": "Dental",
+          "cardNumber": "KJGHCTF86t765"
+        }
+      ]
     },
     {
       "insuranceCarrier": [
