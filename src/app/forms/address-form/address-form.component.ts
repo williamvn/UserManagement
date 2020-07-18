@@ -7,7 +7,7 @@ import {map, startWith} from 'rxjs/operators';
 @Component({
   selector: 'app-address-form',
   templateUrl: './address-form.component.html',
-  styleUrls: ['./address-form.component.scss' ,'../../user-details/user-details.component.scss'],
+  styleUrls: ['./address-form.component.scss' ,'../forms.component.scss'],
   providers:[FormsService]
 })
 export class AddressFormComponent implements OnInit {

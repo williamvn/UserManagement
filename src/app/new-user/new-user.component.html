@@ -1,50 +1,103 @@
 <div *ngIf="isTypeSelected">
-    <mat-horizontal-stepper #stepper [linear]="true">
-        <mat-step [stepControl]="personalInfoForm">
-            <ng-template matStepLabel>Datos Personales</ng-template>
-            <app-personal-info-form [personalUserForm]="personalInfoForm">
-            </app-personal-info-form>
-            <div>
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-            </div>
-        </mat-step>
-        <mat-step [stepControl]="addressForm">
-            <ng-template matStepLabel>Dirección</ng-template>
-            <app-address-form [addressFormGroup]="addressForm"></app-address-form>
-            <div>
-                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-            </div>
-        </mat-step>
-        
-        <mat-step *ngIf="!this.formService.isProfessional" [stepControl]="patientForm" >
-            <ng-template matStepLabel>{{type}}</ng-template>
-            <app-patient-form [patientForm]="patientForm"
-                [insuranceCarriers]="user['insuranceCarrier']"></app-patient-form>
-            <div>
-                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-            </div>
-        </mat-step>
+    <div *ngIf="!(isHandset$|async)">
+        <mat-horizontal-stepper #stepper [linear]="true">
+            <mat-step [stepControl]="personalInfoForm">
+                <ng-template matStepLabel>Datos Personales</ng-template>
+                <app-personal-info-form [personalUserForm]="personalInfoForm">
+                </app-personal-info-form>
+                <div>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="addressForm">
+                <ng-template matStepLabel>Dirección</ng-template>
+                <app-address-form [addressFormGroup]="addressForm"></app-address-form>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
 
-        <mat-step *ngIf="this.formService.isProfessional" [stepControl]="professionalForm" >
-            <ng-template matStepLabel>{{type}}</ng-template>
-            <app-professional-form [professionalForm]="professionalForm">
-            </app-professional-form>
-            <div>
-                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-            </div>
-        </mat-step>
-        <mat-step>
-            <ng-template matStepLabel>Fin</ng-template>
-            <p>Ya has terminado. Presiona en Finalizar para completar la acción.</p>
-            <div>
-                <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
-                <button mat-raised-button class="m-1" color="primary" (click)="saveUser()" type="submit">Finalizar</button>
-            </div>
-        </mat-step>
-    </mat-horizontal-stepper>
+            <mat-step *ngIf="!this.formService.isProfessional" [stepControl]="patientForm">
+                <ng-template matStepLabel>{{type}}</ng-template>
+                <app-patient-form [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarrier']">
+                </app-patient-form>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
+
+            <mat-step *ngIf="this.formService.isProfessional" [stepControl]="professionalForm">
+                <ng-template matStepLabel>{{type}}</ng-template>
+                <app-professional-form [professionalForm]="professionalForm">
+                </app-professional-form>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Fin</ng-template>
+                <p>Ya has terminado. Presiona en Finalizar para completar la acción.</p>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button class="m-1" color="primary" (click)="saveUser()"
+                        type="submit">Finalizar</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+
+    <div *ngIf="(isHandset$|async)">
+        <mat-vertical-stepper #stepper [linear]="true">
+            <mat-step [stepControl]="personalInfoForm">
+                <ng-template matStepLabel>Datos Personales</ng-template>
+                <app-personal-info-form [personalUserForm]="personalInfoForm">
+                </app-personal-info-form>
+                <div>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="addressForm">
+                <ng-template matStepLabel>Dirección</ng-template>
+                <app-address-form [addressFormGroup]="addressForm"></app-address-form>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
+
+            <mat-step *ngIf="!this.formService.isProfessional" [stepControl]="patientForm">
+                <ng-template matStepLabel>{{type}}</ng-template>
+                <app-patient-form [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarrier']">
+                </app-patient-form>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
+
+            <mat-step *ngIf="this.formService.isProfessional" [stepControl]="professionalForm">
+                <ng-template matStepLabel>{{type}}</ng-template>
+                <app-professional-form [professionalForm]="professionalForm">
+                </app-professional-form>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Fin</ng-template>
+                <p>Ya has terminado. Presiona en Finalizar para completar la acción.</p>
+                <div>
+                    <button mat-raised-button class="m-1" matStepperPrevious>Atrás</button>
+                    <button mat-raised-button class="m-1" color="primary" (click)="saveUser()"
+                        type="submit">Finalizar</button>
+                </div>
+            </mat-step>
+        </mat-vertical-stepper>
+    </div>
 </div>
 
 <div *ngIf="!isTypeSelected">

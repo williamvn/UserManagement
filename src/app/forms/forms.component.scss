@@ -1,0 +1,68 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .mat-radio-button {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .col {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .col:last-child {
+    margin-right: 0;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: center;
+    form{
+      width: 80%;
+    }
+  }
+  
+  .mt-5{
+    margin-top: 50px;
+  }
+  
+  .center{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+  }
+  
+  .insurance-container{
+    .insurance{
+      display: flex;
+      justify-content: space-between;
+      background-color: rgb(236, 236, 236);
+      padding-top: 5px;
+      padding-left: 10px;
+      padding-right: 10px;;
+      margin: 5px;
+      width: 100%;
+    }
+  
+    .close{
+      width:20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .row {
+      display: flex;
+      flex-direction: column;
+    }
+  }

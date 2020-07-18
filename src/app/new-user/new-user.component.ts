@@ -8,6 +8,9 @@ import { UserService, Resource } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup } from '@angular/forms';
 import { FormsService } from '../services/forms.service';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 
 @Component({
@@ -26,17 +29,25 @@ export class NewUserComponent implements OnInit {
   type: string;
   isTypeSelected: boolean = false;
   user: User;
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
   constructor(private route: ActivatedRoute,
     private userService: UserService,
     private _snackBar: MatSnackBar,
     private router: Router,
-    public formService: FormsService) { }
+    public formService: FormsService,
+    private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       var userType = params.get('userType');
       var addr = new Address();
-      if(!userType){
+      if (!userType) {
         this.isTypeSelected = false;
       }
       else if (userType === "professional") {
@@ -58,7 +69,7 @@ export class NewUserComponent implements OnInit {
         this.formService.user = this.user;
         this.formService.createPatientForm();
       }
-      else{
+      else {
         this.router.navigate(["not-found"]);
         return;
       }
