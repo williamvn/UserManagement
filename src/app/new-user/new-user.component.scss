@@ -4,8 +4,9 @@ $color: rgb(0, 119, 139);
 .type{
     display: flex;
     justify-content: space-around;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 10px, 100px;
 }
 
 .center{
@@ -19,9 +20,9 @@ $color: rgb(0, 119, 139);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 0px;
     color: white;
-    padding: 20px;
+	padding: 20px;
     background-color: $color;
 }
 
@@ -32,7 +33,8 @@ $color: rgb(0, 119, 139);
 .service {
 	width: 100%;
 	height: 320px;
-	margin: 0px 80px 80px 80px;
+	margin-top: 80px;
+	margin: 10px;
 	text-align: center;
 	border: 1px solid rgb(100, 100, 100);
 	cursor: pointer;
