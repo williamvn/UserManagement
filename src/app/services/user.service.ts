@@ -52,16 +52,16 @@ export class UserService {
     return this.http.get<User>(this.BASE_URI + resource + "?id=" + id);
   }
 
-  public updateUser(user, resource: Resource) {
-    return this.http.put(this.BASE_URI + resource + "/" + user.id, user);
+  public updateUser(user, resource: Resource):Observable<User> {
+    return this.http.put<User>(this.BASE_URI + resource + "/" + user.id, user);
   }
 
   public deleteUser(userId, resource: Resource) {
     return this.http.delete(this.BASE_URI + resource + "/" + userId);
   }
 
-  public addNewUser(user, resource: Resource) {
-    return this.http.post(this.BASE_URI + resource, user);
+  public addNewUser(user, resource: Resource):Observable<User> {
+    return this.http.post<User>(this.BASE_URI + resource, user);
   }
 
   public deleteAllDoctors() {
@@ -71,8 +71,6 @@ export class UserService {
   public sendQuery(query: string): Observable<boolean> {
     return forkJoin(this.sendProfessionalQuery(query), this.sendPatientQuery(query)).pipe(
       map((response: [Professional[], Patient[]]) => {
-        console.log(response[0]);
-        console.log(response[1]);
         this._professionals = response[0];
         this._patients = response[1];
         return true;

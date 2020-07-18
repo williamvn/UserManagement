@@ -31,13 +31,13 @@
     <mat-tab label="Todo">
         <div *ngIf="!(isHandset$|async)">
             <app-users-list *ngIf="users != undefined" [users]="users"
-                [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'gender', 'docId', 'action']"
+                [displayedColumns]="['id', 'name', 'lastName', 'secondLastName', 'gender', 'documentationId', 'action']"
                 [columnsNames]="['Id', 'Nombre', 'Apellido', '2do Apellido', 'Género', 'DNI/Pasaporte', 'Action']">
             </app-users-list>
         </div>
         <div *ngIf="(isHandset$|async)">
             <app-users-list *ngIf="users != undefined" [users]="users"
-                [displayedColumns]="['id', 'name', 'docId', 'action']"
+                [displayedColumns]="['id', 'name', 'documentationId', 'action']"
                 [columnsNames]="['Id', 'Nombre', 'DNI/Pasaporte', 'Action']">
             </app-users-list>
         </div>
@@ -45,13 +45,13 @@
     <mat-tab label="Profesional">
         <div *ngIf="!(isHandset$|async)">
             <app-users-list *ngIf="professionals != undefined" [users]="professionals"
-                [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'type', 'gender', 'docId', 'noCollegiate', 'action']"
+                [displayedColumns]="['id', 'name', 'lastName', 'secondLastName', 'type', 'gender', 'documentationId', 'noCollegiate', 'action']"
                 [columnsNames]="['Id', 'Nombre', 'Apellido', '2do Apellido', 'Tipo', 'Género', 'DNI/Pasaporte', 'No. Colegiado', 'Action']">
             </app-users-list>
         </div>
         <div *ngIf="(isHandset$|async)">
             <app-users-list *ngIf="professionals != undefined" [users]="professionals"
-                [displayedColumns]="['id', 'name', 'docId', 'type', 'action']"
+                [displayedColumns]="['id', 'name', 'documentationId', 'type', 'action']"
                 [columnsNames]="['Id', 'Nombre', 'DNI/Pasaporte', 'Tipo', 'Action']">
             </app-users-list>
         </div>
@@ -60,13 +60,13 @@
     <mat-tab label="Paciente">
         <div *ngIf="!(isHandset$|async)">
             <app-users-list *ngIf="patients != undefined" [users]="patients"
-                [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'NHC', 'gender', 'docId', 'action']"
+                [displayedColumns]="['id', 'name', 'lastName', 'secondLastName', 'NHC', 'gender', 'documentationId', 'action']"
                 [columnsNames]="['Id', 'Nombre', 'Apellido', '2do Apellido','NHC', 'Género', 'DNI/Pasaporte', 'Action']">
             </app-users-list>
         </div>
         <div *ngIf="(isHandset$|async)">
             <app-users-list *ngIf="patients != undefined" [users]="patients"
-                [displayedColumns]="['id', 'name', 'docId', 'action']"
+                [displayedColumns]="['id', 'name', 'documentationId', 'action']"
                 [columnsNames]="['Id', 'Nombre','DNI/Pasaporte', 'Action']">
             </app-users-list>
         </div>

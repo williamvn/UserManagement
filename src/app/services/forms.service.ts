@@ -34,9 +34,9 @@ export class FormsService {
   private createUserForm(): void {
     this.personalInfoForm = this.formbuilder.group({
       name: [this.user.name, Validators.required],
-      firstName: [this.user.firstName, Validators.required],
-      lastName: [this.user.lastName],
-      docId: [this.user.docId, this.docValidation],
+      lastName: [this.user.lastName, Validators.required],
+      secondLastName: [this.user.secondLastName],
+      documentationId: [this.user.documentationId, this.docValidation],
       birthDay: [this.user.birthDay],
       gender: [this.user.gender]
     });
@@ -81,13 +81,13 @@ export class FormsService {
 
   private getInsuranceCarriers() {
     var insurancesKeys: string[] = Object.keys(this.patientForm.getRawValue());
-    this.user['insuranceCarrier'] = [];
+    this.user['insuranceCarriers'] = [];
     insurancesKeys.forEach((key) => {
       if (key == "NHC") {
         this.user['NHC'] = this.patientForm.value['NHC'];
       }
       else {
-        this.user['insuranceCarrier'].push(this.patientForm.value[key]);
+        this.user['insuranceCarriers'].push(this.patientForm.value[key]);
       }
     });
   }
@@ -107,7 +107,7 @@ export class FormsService {
     }));
   }
 
-  docValidation(c: FormControl) {
+  public docValidation(c: FormControl) {
     let PASSPORT = new RegExp(/^[a-z A-Z]{3}[0-9]{6}[a-z]?$/);
     let DNI = new RegExp(/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/);
     let NIE = new RegExp(/^[XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$/);
@@ -116,7 +116,6 @@ export class FormsService {
     result = result || !c.value;
     result = result || DNI.test(c.value);
     result = result || NIE.test(c.value);
-    console.log(result);
     return result ? null : {
       validate: {
         valid: false
@@ -124,7 +123,7 @@ export class FormsService {
     };
   }
 
-  noSpecialChars(c: FormControl) {
+  public noSpecialChars(c: FormControl) {
     let REGEXP = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
 
     return REGEXP.test(c.value) ? {

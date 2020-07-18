@@ -1,16 +1,14 @@
 import { Directive } from '@angular/core';
 import { NG_VALIDATORS, Validator, FormControl, ValidationErrors, Validators, AbstractControl } from '@angular/forms';
-import { User } from './model/user';
-import { Professional } from './model/professional';
-import { Patient } from './model/patient';
 
 
   const FILTERS: string[] = [
     "id",
     "name",
-    "firstName",
     "lastName",
+    "secondLastName",
     "noCollegiate",
+    "documentationId",
     "type",
     "NHC"
   ];
@@ -31,7 +29,7 @@ export class QueryValidatorDirective implements Validator {
     let filters = query.split("&");
     for (let i = 0; i < filters.length; i++) {
       let field: string = filters[i].split("=")[0];
-      if (field == "insuranceCarrier" || filters[i] == "address") {
+      if (field == "insuranceCarriers" || filters[i] == "address") {
         result = false;
         break;
       }

@@ -64,7 +64,7 @@ export class NewUserComponent implements OnInit {
         this.isTypeSelected = true;
         this.type = "Paciente";
         this.user = new Patient();
-        this.user['insuranceCarrier'] = []
+        this.user['insuranceCarriers'] = []
         this.user.address = addr;
         this.formService.user = this.user;
         this.formService.createPatientForm();
@@ -84,9 +84,7 @@ export class NewUserComponent implements OnInit {
     this.professionalForm = this.formService.professionalForm;
   }
 
-
   saveUser() {
-    console.log(this.user);
     this.formService.getUser();
     this.userService.addNewUser(this.user, this.formService.isProfessional ? "professionals" : "patients").subscribe(() => {
       this._snackBar.open("Usuario Agregado", "Aceptar", {

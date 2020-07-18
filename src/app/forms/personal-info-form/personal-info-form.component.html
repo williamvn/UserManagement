@@ -1,9 +1,9 @@
-<form [formGroup]="personalUserForm">
+<form [formGroup]="personalInfoForm">
     <div class="row">
         <div class="col">
             <mat-form-field class="full-width">
                 <input matInput placeholder="Nombre" formControlName="name" name="Name" [readonly]="!isEditable">
-                <mat-error *ngIf="personalUserForm.controls['name'].hasError('required')">
+                <mat-error *ngIf="personalInfoForm.controls['name'].hasError('required')">
                     El Nombre es <strong>obligatorio</strong>
                 </mat-error>
             </mat-form-field>
@@ -12,16 +12,16 @@
     <div class="row">
         <div class="col">
             <mat-form-field class="full-width">
-                <input matInput placeholder="Apellido" formControlName="firstName" name="firstName"
+                <input matInput placeholder="Apellido" formControlName="lastName" name="lastName"
                     [readonly]="!isEditable">
-                <mat-error *ngIf="personalUserForm.controls['firstName'].hasError('required')">
+                <mat-error *ngIf="personalInfoForm.controls['lastName'].hasError('required')">
                     El primer apellido es <strong>obligatorio</strong>
                 </mat-error>
             </mat-form-field>
         </div>
         <div class="col">
             <mat-form-field class="full-width">
-                <input matInput placeholder="Segundo Apellido" formControlName="lastName" name="lastName"
+                <input matInput placeholder="Segundo Apellido" formControlName="secondLastName" name="secondLastName"
                     [readonly]="!isEditable">
             </mat-form-field>
         </div>
@@ -29,9 +29,9 @@
     <div class="row">
         <div class="col">
             <mat-form-field class="full-width">
-                <input matInput placeholder="DNI/Pasaporte" formControlName="docId" name="docID"
+                <input matInput placeholder="DNI/Pasaporte" formControlName="documentationId" name="docID"
                     [readonly]="!isEditable">
-                <mat-error *ngIf="personalUserForm.controls['docId'].errors">
+                <mat-error *ngIf="personalInfoForm.controls['documentationId'].errors">
                     DNI or Pasaporte no válido
                 </mat-error>
             </mat-form-field>

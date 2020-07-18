@@ -3,7 +3,7 @@
         <mat-horizontal-stepper #stepper [linear]="true">
             <mat-step [stepControl]="personalInfoForm">
                 <ng-template matStepLabel>Datos Personales</ng-template>
-                <app-personal-info-form [personalUserForm]="personalInfoForm">
+                <app-personal-info-form [personalInfoForm]="personalInfoForm">
                 </app-personal-info-form>
                 <div>
                     <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
@@ -53,7 +53,7 @@
         <mat-vertical-stepper #stepper [linear]="true">
             <mat-step [stepControl]="personalInfoForm">
                 <ng-template matStepLabel>Datos Personales</ng-template>
-                <app-personal-info-form [personalUserForm]="personalInfoForm">
+                <app-personal-info-form [personalInfoForm]="personalInfoForm">
                 </app-personal-info-form>
                 <div>
                     <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
