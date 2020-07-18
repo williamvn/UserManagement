@@ -6,6 +6,10 @@ import { Patient } from '../model/patient';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+
 
 
 @Component({
@@ -14,7 +18,6 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
   users: User[];
   professionals: Professional[];
   patients: Patient[];
@@ -24,7 +27,14 @@ export class UsersComponent implements OnInit {
   private _patientsBackup: Patient[];
   private _userSaveBackup: User[];
   advancedQuery: boolean;
-  constructor(private userService: UserService, public dialog: MatDialog, private _snackBar: MatSnackBar) { }
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  constructor(private userService: UserService, public dialog: MatDialog, private _snackBar: MatSnackBar, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.loadUsers();

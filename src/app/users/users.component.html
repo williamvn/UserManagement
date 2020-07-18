@@ -5,9 +5,9 @@
                 <mat-label>Buscar</mat-label>
                 <input matInput placeholder="Ejemplo: name=William&lastName=Shackespare&id=3..." name="Buscar"
                     [(ngModel)]="query" #searchquery="ngModel" (keyup)="resetQuery()" QueryValidator>
-                    <mat-error *ngIf="searchquery.invalid">
-                        La query es incorrecta. <strong>Vea Documentación</strong>, para mas informcación.
-                    </mat-error>
+                <mat-error *ngIf="searchquery.invalid">
+                    La query es incorrecta. <strong>Vea Documentación</strong>, para mas informcación.
+                </mat-error>
             </mat-form-field>
             <button mat-mini-fab type="submit" color="primary" [disabled]="form.invalid">
                 <mat-icon matSuffix>search</mat-icon>
@@ -29,22 +29,47 @@
 
 <mat-tab-group>
     <mat-tab label="Todo">
-        <app-users-list *ngIf="users != undefined" [users]="users"
-            [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'gender', 'docId', 'action']"
-            [columnsNames]="['Id', 'Nombre', 'Apellido', '2do Apellido', 'género', 'DNI/Pasaporte', 'action']">
-        </app-users-list>
+        <div *ngIf="!(isHandset$|async)">
+            <app-users-list *ngIf="users != undefined" [users]="users"
+                [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'gender', 'docId', 'action']"
+                [columnsNames]="['Id', 'Nombre', 'Apellido', '2do Apellido', 'Género', 'DNI/Pasaporte', 'Action']">
+            </app-users-list>
+        </div>
+        <div *ngIf="(isHandset$|async)">
+            <app-users-list *ngIf="users != undefined" [users]="users"
+                [displayedColumns]="['id', 'name', 'docId', 'action']"
+                [columnsNames]="['Id', 'Nombre', 'DNI/Pasaporte', 'Action']">
+            </app-users-list>
+        </div>
     </mat-tab>
     <mat-tab label="Profesional">
-        <app-users-list *ngIf="professionals != undefined" [users]="professionals"
-            [displayedColumns]="['id', 'name', 'type', 'firstName', 'lastName', 'gender', 'docId', 'noCollegiate', 'action']"
-            [columnsNames]="['Id', 'Nombre', 'Tipo', 'Apellido', '2do Apellido', 'genero', 'DNI/Pasaporte', 'No. Colegiado', 'action']">
-        </app-users-list>
+        <div *ngIf="!(isHandset$|async)">
+            <app-users-list *ngIf="professionals != undefined" [users]="professionals"
+                [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'type', 'gender', 'docId', 'noCollegiate', 'action']"
+                [columnsNames]="['Id', 'Nombre', 'Apellido', '2do Apellido', 'Tipo', 'Género', 'DNI/Pasaporte', 'No. Colegiado', 'Action']">
+            </app-users-list>
+        </div>
+        <div *ngIf="(isHandset$|async)">
+            <app-users-list *ngIf="professionals != undefined" [users]="professionals"
+                [displayedColumns]="['id', 'name', 'docId', 'type', 'action']"
+                [columnsNames]="['Id', 'Nombre', 'DNI/Pasaporte', 'Tipo', 'Action']">
+            </app-users-list>
+        </div>
+
     </mat-tab>
     <mat-tab label="Paciente">
-        <app-users-list *ngIf="patients != undefined" [users]="patients"
-            [displayedColumns]="['id', 'NHC', 'name', 'firstName', 'lastName', 'gender', 'docId', 'action']"
-            [columnsNames]="['Id', 'NHC', 'Nombre', 'Apellido', '2do Apellido', 'genero', 'DNI/Pasaporte', 'action']">
-        </app-users-list>
+        <div *ngIf="!(isHandset$|async)">
+            <app-users-list *ngIf="patients != undefined" [users]="patients"
+                [displayedColumns]="['id', 'name', 'firstName', 'lastName', 'NHC', 'gender', 'docId', 'action']"
+                [columnsNames]="['Id', 'Nombre', 'Apellido', '2do Apellido','NHC', 'Género', 'DNI/Pasaporte', 'Action']">
+            </app-users-list>
+        </div>
+        <div *ngIf="(isHandset$|async)">
+            <app-users-list *ngIf="patients != undefined" [users]="patients"
+                [displayedColumns]="['id', 'name', 'docId', 'action']"
+                [columnsNames]="['Id', 'Nombre','DNI/Pasaporte', 'Action']">
+            </app-users-list>
+        </div>
     </mat-tab>
 </mat-tab-group>
 <button mat-raised-button color="primary" class="add" routerLink="/user/new">

@@ -15,7 +15,7 @@ $textColor: rgb(197, 186, 186);
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 .navbar{
@@ -39,7 +39,7 @@ $textColor: rgb(197, 186, 186);
 }
 
 .ml-1{
-  margin-left: 10px;
+  margin-left: 17px;
 }
 
 .row{
