@@ -25,6 +25,7 @@ import { ProfessionalFormComponent } from './forms/professional-form/professiona
 import { PatientFormComponent } from './forms/patient-form/patient-form.component';
 import { QueryValidatorDirective } from './query-validator.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -42,7 +43,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ProfessionalFormComponent,
     PatientFormComponent,
     QueryValidatorDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

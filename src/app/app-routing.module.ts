@@ -5,9 +5,13 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
+  { path: "", component: LoginComponent },
+  { path: "home", component: LoginComponent },
+  { path: "login", component: LoginComponent },
   { path: "users", component: UsersComponent },
   { path: "user/edit/:userType/:id", component: UserDetailsComponent },
   { path: "user/new", component: NewUserComponent },

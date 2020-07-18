@@ -5,6 +5,7 @@
     height: 90vh;
     align-items: flex-start;
     background-color: white;
+    padding-top:30px;
 }
 
 .page-body{
@@ -12,8 +13,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.mat-display-4{
-    margin-top: 10px;
+    div{
+        margin:0px;
+    }
+    button{
+        width:300px;
+    }
 }
