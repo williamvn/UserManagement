@@ -1,0 +1,22 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: flex-start;
+    background-color: white;
+    padding-top:30px;
+}
+
+.page-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div{
+        margin:0px;
+    }
+    button{
+        width:300px;
+    }
+}
