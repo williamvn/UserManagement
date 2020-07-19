@@ -1,32 +1,32 @@
-.footer{
+.footer {
     width: 100%;
-    padding: 50px 0;
+    padding: 30px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(227, 227, 227);;
+    background-color: rgb(227, 227, 227);
 }
 
-.property{
+.property {
     margin-right: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    div{
+    div {
         margin: 10px;
     }
 }
 
-.options{
+.options {
     margin-left: 50px;
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
 }
 
-.text-center{
+.text-center {
     display: flex;
     justify-content: center;
     align-items: center;

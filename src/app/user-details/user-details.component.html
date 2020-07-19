@@ -1,56 +1,59 @@
-<div class="container" *ngIf="!loading">
-  <form [formGroup]="userForm" novalidate (submit)="saveUser()">
-    <mat-tab-group>
-      <mat-tab label="Datos Personales">
-        <mat-card class="shipping-card">
-          <mat-card-header>
-            <mat-card-title>Detalles</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <app-personal-info-form [isEditable]="formService.isEditable" [personalInfoForm]="personalInfoForm">
-            </app-personal-info-form>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable"
-              [disabled]="personalInfoForm.invalid || addressForm.invalid || patientForm?.invalid || professionalForm?.invalid">Guardar</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-tab>
-      <mat-tab label="Dirección">
-        <mat-card class="shipping-card">
-          <mat-card-header class="mt-5">
-            <mat-card-title>Dirección</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <app-address-form [isEditable]="formService.isEditable" [addressFormGroup]="addressForm"></app-address-form>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable"
-              [disabled]="personalInfoForm.invalid || addressForm.invalid || patientForm?.invalid || professionalForm?.invalid">Guardar</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-tab>
-      <mat-tab label={{type}}>
-        <mat-card class="shipping-card">
-          <mat-card-header>
-            <mat-card-title>Información del {{type}}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <app-professional-form *ngIf="formService.isProfessional" [isEditable]="formService.isEditable"
-              [professionalForm]="professionalForm"></app-professional-form>
-            <app-patient-form *ngIf="!formService.isProfessional" [isEditable]="formService.isEditable"
-              [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarriers']"></app-patient-form>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable"
-              [disabled]="personalInfoForm.invalid || addressForm.invalid || patientForm?.invalid || professionalForm?.invalid">Guardar</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-tab>
-    </mat-tab-group>
-  </form>
-</div>
+<div class="full-page">
+  <div class="container" *ngIf="!loading">
+    <form [formGroup]="userForm" novalidate (submit)="saveUser()">
+      <mat-tab-group>
+        <mat-tab label="Datos Personales">
+          <mat-card class="shipping-card">
+            <mat-card-header>
+              <mat-card-title>Detalles</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-personal-info-form [isEditable]="formService.isEditable" [personalInfoForm]="personalInfoForm">
+              </app-personal-info-form>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable"
+                [disabled]="personalInfoForm.invalid || addressForm.invalid || patientForm?.invalid || professionalForm?.invalid">Guardar</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-tab>
+        <mat-tab label="Dirección">
+          <mat-card class="shipping-card">
+            <mat-card-header class="mt-5">
+              <mat-card-title>Dirección</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-address-form [isEditable]="formService.isEditable" [addressFormGroup]="addressForm">
+              </app-address-form>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable"
+                [disabled]="personalInfoForm.invalid || addressForm.invalid || patientForm?.invalid || professionalForm?.invalid">Guardar</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-tab>
+        <mat-tab label={{type}}>
+          <mat-card class="shipping-card">
+            <mat-card-header>
+              <mat-card-title>Información del {{type}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-professional-form *ngIf="formService.isProfessional" [isEditable]="formService.isEditable"
+                [professionalForm]="professionalForm"></app-professional-form>
+              <app-patient-form *ngIf="!formService.isProfessional" [isEditable]="formService.isEditable"
+                [patientForm]="patientForm" [insuranceCarriers]="user['insuranceCarriers']"></app-patient-form>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" type="submit" *ngIf="formService.isEditable"
+                [disabled]="personalInfoForm.invalid || addressForm.invalid || patientForm?.invalid || professionalForm?.invalid">Guardar</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-tab>
+      </mat-tab-group>
+    </form>
+  </div>
 
-<div class="center" *ngIf="loading">
-  <mat-spinner></mat-spinner>
+  <div class="center" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
 </div>
