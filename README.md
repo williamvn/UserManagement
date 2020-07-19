@@ -8,7 +8,7 @@ Note: The database and the app's user interface are made in Spanish.
 Only the view has been implemented, no logic for now.
 
 ##### Display Users
-Is the main view where you can see all the Users displayed. There are three tabs which filter the user by rol. The first tab includes all kind of users, and then the other two tabs only show the specific rol (patient, professional). Each table can be sort by any of the fields shown and has pagination. Each user shown in the table has three types of actions on him. Edit, delete which can be accessed through buttons and view the internal details of the user who can be accessed by clicking on the row.
+Is the main view where you can see all the Users displayed. There are three tabs which filter the user by rol. The first tab includes all kind of users, and then the other two tabs only show the specific role (patient, professional). Each table can be sort by any of the fields shown and has pagination. Each user shown in the table has three types of actions on him. Edit, delete which can be accessed through buttons and view the internal details of the user who can be accessed by clicking on the row.
 
 ![Main View](https://github.com/williamvn/UserManagement/blob/master/main.png?raw=true)
 
@@ -52,7 +52,7 @@ And if you want to know all the doctors whose names are House, the query will be
 
 `type=Médico&name=House`
 
-Note that there is not need to put all the fields to accomplish a query and also that the filters can be at any position in the query.
+Note that there is not need to put all the fields to accomplish a query and also that the filters can be at any position in the query. Also note that when a filter is made over a field present in only one of the roles, the query will be executed only over that role since the filter option is not intended to the other role. So, for example, the example above, it will display all the doctors but also all the patients, you should go to the tab of professionals to see the desired result.
 
 
 ## Development server
