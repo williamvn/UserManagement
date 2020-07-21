@@ -55,9 +55,15 @@ And if you want to know all the doctors whose name is House, the query will be:
 Note that there is not need to put all the fields to accomplish a query and also that the filters can be at any position in the query. Also note that when a filter is made over a field present in only one of the roles, the query will be executed only over that role since the filter option is not intended to the other role. So, for example, the example above, it will display all the doctors but also all the patients, you should go to the tab of professionals to see the desired result.
 
 
-## Development server
+## Development servers
+#### Angular Server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. To run the backed json server, you must install json-server (https://github.com/typicode/json-server) and raise the server over json `db.json` on the port 3000.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. 
+
+#### Mock Server
+There is any backend server created at the moment, so you can test the app raising the file db.json in the assets folder. 
+
+To run a mock backend server, you must install json-server (https://github.com/typicode/json-server) and raise the server over json `db.json` on the port 3000.
 
 ## Code scaffolding
 
