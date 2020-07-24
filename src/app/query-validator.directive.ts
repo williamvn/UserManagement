@@ -3,14 +3,14 @@ import { NG_VALIDATORS, Validator, FormControl, ValidationErrors, Validators, Ab
 
 
   const FILTERS: string[] = [
-    "id",
     "name",
     "lastName",
     "secondLastName",
     "noCollegiate",
     "documentationId",
     "type",
-    "NHC"
+    "NHC",
+    "gender"
   ];
 
 @Directive({
