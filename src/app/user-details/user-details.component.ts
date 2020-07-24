@@ -40,7 +40,7 @@ export class UserDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       var userType = params.get('userType');
       var id = +params.get('id');
-      if (!id) {
+      if (id==undefined) {
         this.router.navigate(["not-found"]);
       }
       else {
@@ -87,7 +87,7 @@ export class UserDetailsComponent implements OnInit {
     var resource: Resource = this.formService.isProfessional ? "professionals" : "patients";
     this.userService.getUserById(id, resource).subscribe(
       response => {
-        this.user = response[0];
+        this.user = response;
         this.formService.user = this.user;
         if (this.formService.isProfessional) {
           this.formService.createProfessionalForm();

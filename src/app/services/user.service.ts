@@ -49,7 +49,7 @@ export class UserService {
   }
 
   public getUserById(id: number, resource: Resource): Observable<User> {
-    return this.http.get<User>(this.BASE_URI + resource + "?id=" + id);
+    return this.http.get<User>(this.BASE_URI + resource + "/" + id);
   }
 
   public updateUser(user, resource: Resource):Observable<User> {
