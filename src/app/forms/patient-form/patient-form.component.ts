@@ -47,8 +47,6 @@ export class PatientFormComponent implements OnInit {
     this.patientForm.addControl("insurance" + this.insuranceId, form);
     this.insuranceFormsNames.push("insurance" + this.insuranceId);
     this.insuranceId += 1;
-
-
   }
 
   deleteInsurance(form:FormGroup) {

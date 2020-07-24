@@ -26,7 +26,6 @@ export class UsersComponent implements OnInit {
 
   private _professionalsBackup: Professional[];
   private _patientsBackup: Patient[];
-  private _userSaveBackup: User[];
   advancedQuery: boolean;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -70,7 +69,6 @@ export class UsersComponent implements OnInit {
     //Backup
     this._professionalsBackup = this.professionals;
     this._patientsBackup = this.patients;
-    this._userSaveBackup = this.users;
   }
 
   deleteDoctors() {

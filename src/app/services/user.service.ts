@@ -48,16 +48,16 @@ export class UserService {
     return this.http.get<Patient[]>(this.BASE_URI + "patients");
   }
 
-  public getUserById(id: number, resource: Resource): Observable<User> {
+  public getUserById(id: string, resource: Resource): Observable<User> {
     return this.http.get<User>(this.BASE_URI + resource + "/" + id);
   }
 
-  public updateUser(user, resource: Resource):Observable<User> {
-    return this.http.put<User>(this.BASE_URI + resource + "/" + user.id, user);
+  public updateUser(user:User, resource: Resource):Observable<User> {
+    return this.http.put<User>(this.BASE_URI + resource + "/" + user._id, user);
   }
 
-  public deleteUser(userId, resource: Resource) {
-    return this.http.delete(this.BASE_URI + resource + "/" + userId);
+  public deleteUser(id:string, resource: Resource) {
+    return this.http.delete(this.BASE_URI + resource + "/" + id);
   }
 
   public addNewUser(user, resource: Resource):Observable<User> {
@@ -65,7 +65,7 @@ export class UserService {
   }
 
   public deleteAllDoctors() {
-    return forkJoin(this._professionals.filter(pro => pro.type == "Médico").map(pro => this.deleteUser(pro.id, "professionals")));
+    return forkJoin(this._professionals.filter(pro => pro.type == "Médico").map(pro => this.deleteUser(pro._id, "professionals")));
   }
 
   public sendQuery(query: string): Observable<boolean> {

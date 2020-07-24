@@ -4,14 +4,14 @@
             <mat-form-field class="full-width">
                 <input matInput placeholder="NHC" formControlName='NHC' name="NHC" [readonly]="!isEditable">
                 <mat-error *ngIf="patientForm.controls['NHC'].hasError('required')">
-                    Porfavor introduzca el <strong>NHC</strong>
+                    Por favor introduzca el <strong>NHC</strong>
                 </mat-error>
             </mat-form-field>
         </div>
     </div>
 
-    <div class=" row insurance-container" *ngFor="let form of insuranceForms;let i = index;">
-        <form class="insurance" [formGroup]="form">
+    <div class="row insurance-container row-reverse" *ngFor="let form of insuranceForms;let i = index;">
+        <form class="row insurance" [formGroup]="form">
             <mat-form-field>
                 <input matInput placeholder="Nombre del Seguro" formControlName="name" [readonly]="!isEditable">
             </mat-form-field>

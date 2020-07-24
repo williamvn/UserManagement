@@ -62,11 +62,13 @@ export class FormsService {
     });
   }
 
-  public allowOnlyNumbers(event: KeyboardEvent): void {
-    if ((event.keyCode < 48 || event.keyCode > 57) && event.keyCode !== 9 && event.keyCode !== 8) {
-      event.preventDefault();
-    }
+  public loadCities(): Observable<string[]> {
+    return this.http.get("../../assets/cities.json").pipe(map((res) => {
+      return res["cities"];
+    }));
   }
+ 
+  //Get Info from Reactive Forms
 
   public getUser(): void {
     this.mapFormToUser(this.personalInfoForm);
@@ -101,11 +103,9 @@ export class FormsService {
     }
   }
 
-  public loadCities(): Observable<string[]> {
-    return this.http.get("../../assets/cities.json").pipe(map((res) => {
-      return res["cities"];
-    }));
-  }
+  
+
+  //Validations
 
   public docValidation(c: FormControl) {
     let PASSPORT = new RegExp(/^[a-z A-Z]{3}[0-9]{6}[a-z]?$/);
@@ -131,6 +131,12 @@ export class FormsService {
         valid: true
       }
     }:null;
+  }
+
+  public allowOnlyNumbers(event: KeyboardEvent): void {
+    if ((event.keyCode < 48 || event.keyCode > 57) && event.keyCode !== 9 && event.keyCode !== 8) {
+      event.preventDefault();
+    }
   }
 
 }

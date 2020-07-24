@@ -41,7 +41,7 @@ export class UsersListComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
-  deleteUser(user) {
+  deleteUser(user:User) {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
       data: { title: "Eliminar", subtitle: "Estás intentando borrar un usuario.", body: "¿Estás seguro?", reject: "No", accept: "Sí" }
@@ -50,7 +50,7 @@ export class UsersListComponent implements OnInit, OnChanges {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         var resource: Resource = isProfessional ? "professionals" : "patients";
-        this.userService.deleteUser(user.id, resource).subscribe(
+        this.userService.deleteUser(user._id, resource).subscribe(
           () => {
             this._snackBar.open("Usuario Eliminado", "Aceptar", {
               duration: 5000,

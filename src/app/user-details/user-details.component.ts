@@ -24,6 +24,7 @@ export class UserDetailsComponent implements OnInit {
 
   loading: boolean = true;
   type: string;
+
   constructor(private route: ActivatedRoute,
     private userService: UserService,
     private router: Router,
@@ -39,8 +40,8 @@ export class UserDetailsComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       var userType = params.get('userType');
-      var id = +params.get('id');
-      if (id==undefined) {
+      var id: string = params.get('id');
+      if (id == undefined) {
         this.router.navigate(["not-found"]);
       }
       else {
@@ -49,9 +50,9 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  private loadUser(id: number, userType: string): void {
+  private loadUser(id: string, userType: string): void {
     if (userType == "professional") {
-      this.user = this.userService.professionals.find(pro => pro.id == id);
+      this.user = this.userService.professionals.find(pro => pro._id == id);
       this.formService.isProfessional = true;
       this.type = "Profesional";
       if (!this.user) {
@@ -65,7 +66,7 @@ export class UserDetailsComponent implements OnInit {
       }
     }
     else if (userType == "patient") {
-      this.user = this.userService.patients.find(patient => patient.id == id);
+      this.user = this.userService.patients.find(patient => patient._id == id);
       this.formService.isProfessional = false;
       this.type = "Paciente";
       if (!this.user) {
@@ -83,7 +84,7 @@ export class UserDetailsComponent implements OnInit {
     }
   }
 
-  private getUserbyId(id: number) {
+  private getUserbyId(id: string) {
     var resource: Resource = this.formService.isProfessional ? "professionals" : "patients";
     this.userService.getUserById(id, resource).subscribe(
       response => {
