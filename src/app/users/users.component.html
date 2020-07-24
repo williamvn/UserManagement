@@ -6,7 +6,9 @@
                 <input matInput placeholder="Ejemplo: name=William&lastName=Shackespare&id=3..." name="Buscar"
                     [(ngModel)]="query" #searchquery="ngModel" (keyup)="resetQuery()" QueryValidator>
                 <mat-error *ngIf="searchquery.invalid">
-                    El formato de búsqueda es incorrecto. <a  class="error-link" href="https://github.com/williamvn/UserManagement/blob/master/README.md">Vea Documentación</a>, para mas informcación.
+                    El formato de búsqueda es incorrecto. <a class="error-link"
+                        href="https://github.com/williamvn/UserManagement/blob/master/README.md">Vea Documentación</a>,
+                    para mas informcación.
                 </mat-error>
             </mat-form-field>
             <button mat-mini-fab type="submit" color="primary" [disabled]="form.invalid">
@@ -30,13 +32,13 @@
 <mat-tab-group>
     <mat-tab label="Todo">
         <div *ngIf="!(isHandset$|async)">
-            <app-users-list *ngIf="users != undefined" [users]="users"
+            <app-users-list *ngIf="users != undefined" [users]="users" (reload)="loadUsers()"
                 [displayedColumns]="['name', 'lastName', 'secondLastName', 'gender', 'documentationId', 'action']"
                 [columnsNames]="['Nombre', 'Apellido', '2do Apellido', 'Género', 'DNI/Pasaporte', 'Action']">
             </app-users-list>
         </div>
         <div *ngIf="(isHandset$|async)">
-            <app-users-list *ngIf="users != undefined" [users]="users"
+            <app-users-list *ngIf="users != undefined" [users]="users" (reload)="loadUsers()"
                 [displayedColumns]="['name', 'documentationId', 'action']"
                 [columnsNames]="['Nombre', 'DNI/Pasaporte', 'Action']">
             </app-users-list>
@@ -44,13 +46,13 @@
     </mat-tab>
     <mat-tab label="Profesional">
         <div *ngIf="!(isHandset$|async)">
-            <app-users-list *ngIf="professionals != undefined" [users]="professionals"
+            <app-users-list *ngIf="professionals != undefined" [users]="professionals" (reload)="loadUsers()"
                 [displayedColumns]="['name', 'lastName', 'secondLastName', 'type', 'gender', 'documentationId', 'noCollegiate', 'action']"
                 [columnsNames]="['Nombre', 'Apellido', '2do Apellido', 'Tipo', 'Género', 'DNI/Pasaporte', 'No. Colegiado', 'Action']">
             </app-users-list>
         </div>
         <div *ngIf="(isHandset$|async)">
-            <app-users-list *ngIf="professionals != undefined" [users]="professionals"
+            <app-users-list *ngIf="professionals != undefined" [users]="professionals" (reload)="loadUsers()"
                 [displayedColumns]="['name', 'documentationId', 'type', 'action']"
                 [columnsNames]="['Nombre', 'DNI/Pasaporte', 'Tipo', 'Action']">
             </app-users-list>
@@ -59,13 +61,13 @@
     </mat-tab>
     <mat-tab label="Paciente">
         <div *ngIf="!(isHandset$|async)">
-            <app-users-list *ngIf="patients != undefined" [users]="patients"
+            <app-users-list *ngIf="patients != undefined" [users]="patients" (reload)="loadUsers()"
                 [displayedColumns]="['name', 'lastName', 'secondLastName', 'NHC', 'gender', 'documentationId', 'action']"
                 [columnsNames]="['Nombre', 'Apellido', '2do Apellido','NHC', 'Género', 'DNI/Pasaporte', 'Action']">
             </app-users-list>
         </div>
         <div *ngIf="(isHandset$|async)">
-            <app-users-list *ngIf="patients != undefined" [users]="patients"
+            <app-users-list *ngIf="patients != undefined" [users]="patients" (reload)="loadUsers()"
                 [displayedColumns]="['name', 'documentationId', 'action']"
                 [columnsNames]="['Nombre','DNI/Pasaporte', 'Action']">
             </app-users-list>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, OnChanges, SimpleChanges, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, OnChanges, SimpleChanges, Inject, Output, EventEmitter } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../model/user';
@@ -22,6 +22,7 @@ export class UsersListComponent implements OnInit, OnChanges {
   @Input() displayedColumns: string[];
   @Input() columnsNames: string[];
   @Input() users: User[] = [];
+  @Output() reload = new EventEmitter<any>();
   dataSource = new MatTableDataSource(this.users);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -41,7 +42,7 @@ export class UsersListComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
-  deleteUser(user:User) {
+  deleteUser(user: User) {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
       data: { title: "Eliminar", subtitle: "Estás intentando borrar un usuario.", body: "¿Estás seguro?", reject: "No", accept: "Sí" }
@@ -55,6 +56,7 @@ export class UsersListComponent implements OnInit, OnChanges {
             this._snackBar.open("Usuario Eliminado", "Aceptar", {
               duration: 5000,
             });
+            this.reload.emit();
           },
           (error) => { this.router.navigate[("error")] }
         );

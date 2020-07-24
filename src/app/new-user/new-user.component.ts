@@ -68,7 +68,6 @@ export class NewUserComponent implements OnInit {
         this.user.address = addr;
         this.formService.user = this.user;
         this.formService.createPatientForm();
-        console.log(this.user['insuranceCarriers']);
       }
       else {
         this.router.navigate(["not-found"]);

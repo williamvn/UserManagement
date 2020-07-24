@@ -44,7 +44,7 @@ export class UsersComponent implements OnInit {
     this.loadUsers();
   }
 
-  private loadUsers(): void {
+  loadUsers(): void {
     this.userService.loadUsers().subscribe(
       success => {
         if (success) {
@@ -83,6 +83,7 @@ export class UsersComponent implements OnInit {
             this._snackBar.open("Todos los médicos han sido borrados", "Cerrar", {
               duration: 5000,
             });
+            this.loadUsers();
           },
           (error) => {this.router.navigate(["error"]) }
         );
