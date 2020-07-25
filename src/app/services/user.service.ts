@@ -15,7 +15,7 @@ export type Resource = "professionals" | "patients";
   providedIn: 'root'
 })
 export class UserService {
-  BASE_URI = "http://localhost:3000/";
+  BASE_URI = "http://192.168.0.164:3000/";
 
   private _professionals: Professional[] = [];
   private _patients: Patient[] = [];
