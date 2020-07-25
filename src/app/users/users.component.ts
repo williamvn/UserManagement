@@ -61,16 +61,6 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  private loadCollections(): void {
-    this.professionals = this.userService.professionals;
-    this.patients = this.userService.patients;
-    this.users = this.professionals;
-    this.users = this.users.concat(this.patients);
-    //Backup
-    this._professionalsBackup = this.professionals;
-    this._patientsBackup = this.patients;
-  }
-
   deleteDoctors() {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
@@ -118,5 +108,15 @@ export class UsersComponent implements OnInit {
     if (!this.query) {
       this.loadUsers();
     }
+  }
+
+  private loadCollections(): void {
+    this.professionals = this.userService.professionals;
+    this.patients = this.userService.patients;
+    this.users = this.professionals;
+    this.users = this.users.concat(this.patients);
+    //Backup
+    this._professionalsBackup = this.professionals;
+    this._patientsBackup = this.patients;
   }
 }

@@ -99,7 +99,12 @@ export class UserDetailsComponent implements OnInit {
         this.loadForms();
       },
       error => {
-        this.router.navigate(["error"])
+        if (error.status === 400) {
+          this.router.navigate(["not-found"]);
+        }
+        else {
+          this.router.navigate(["error"]);
+        }
       }
     );
   }

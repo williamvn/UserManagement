@@ -21,6 +21,8 @@ export class FormsService {
 
   constructor(private formbuilder: FormBuilder, private http: HttpClient) { }
 
+  //Form Builder Functions
+
   public createProfessionalForm(): void {
     this.createUserForm();
     this.createAddressForm();
@@ -29,6 +31,16 @@ export class FormsService {
       type: [this.user['type']]
     });
 
+  }
+
+  public createPatientForm(): void {
+    this.createUserForm();
+
+    this.createAddressForm();
+
+    this.patientForm = this.formbuilder.group({
+      NHC: [this.user['NHC'], Validators.required]
+    });
   }
 
   private createUserForm(): void {
@@ -52,16 +64,9 @@ export class FormsService {
     })
   }
 
-  public createPatientForm(): void {
-    this.createUserForm();
-
-    this.createAddressForm();
-
-    this.patientForm = this.formbuilder.group({
-      NHC: [this.user['NHC'], Validators.required]
-    });
-  }
-
+  /**
+   * This function load the cities availables for suggestion in the form
+   */
   public loadCities(): Observable<string[]> {
     return this.http.get("../../assets/cities.json").pipe(map((res) => {
       return res["cities"];
@@ -103,9 +108,7 @@ export class FormsService {
     }
   }
 
-  
-
-  //Validations
+  //Validators
 
   public docValidation(c: FormControl) {
     let PASSPORT = new RegExp(/^[a-z A-Z]{3}[0-9]{6}[a-z]?$/);
