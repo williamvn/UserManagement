@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
 import { User } from '../model/user';
 import { Professional } from '../model/professional';
 import { Patient } from '../model/patient';
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AppUserService } from './app-user.service';
 
 
 export type Resource = "professionals" | "patients";
@@ -16,6 +17,7 @@ export type Resource = "professionals" | "patients";
 })
 export class UserService {
   BASE_URI = "http://192.168.0.164:3000/";
+  TOKEN = "";
 
   private _professionals: Professional[] = [];
   private _patients: Patient[] = [];
@@ -28,7 +30,9 @@ export class UserService {
     return this._patients;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private appUserService: AppUserService) {
+    this.TOKEN = appUserService.token;
+  }
 
   public loadUsers(): Observable<boolean> {
     return forkJoin(this.loadPatients(), this.loadProfessionals()).pipe(
@@ -41,27 +45,32 @@ export class UserService {
   }
 
   private loadProfessionals(): Observable<Professional[]> {
-    return this.http.get<Professional[]>(this.BASE_URI + "professionals");
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.get<Professional[]>(this.BASE_URI + "professionals", {headers});
   }
 
   private loadPatients(): Observable<Patient[]> {
-    return this.http.get<Patient[]>(this.BASE_URI + "patients");
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.get<Patient[]>(this.BASE_URI + "patients", {headers});
   }
 
   public getUserById(id: string, resource: Resource): Observable<User> {
     return this.http.get<User>(this.BASE_URI + resource + "/" + id);
   }
 
-  public updateUser(user:User, resource: Resource):Observable<User> {
-    return this.http.put<User>(this.BASE_URI + resource + "/" + user._id, user);
+  public updateUser(user: User, resource: Resource): Observable<User> {
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.put<User>(this.BASE_URI + resource + "/" + user._id, user, {headers});
   }
 
-  public deleteUser(id:string, resource: Resource) {
-    return this.http.delete(this.BASE_URI + resource + "/" + id);
+  public deleteUser(id: string, resource: Resource) {
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.delete(this.BASE_URI + resource + "/" + id, {headers});
   }
 
-  public addNewUser(user, resource: Resource):Observable<User> {
-    return this.http.post<User>(this.BASE_URI + resource, user);
+  public addNewUser(user, resource: Resource): Observable<User> {
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.post<User>(this.BASE_URI + resource, user, {headers});
   }
 
   public deleteAllDoctors() {
@@ -78,10 +87,12 @@ export class UserService {
   }
 
   private sendProfessionalQuery(query: string): Observable<Professional[]> {
-    return this.http.get<Professional[]>(this.BASE_URI + "professionals?" + query);
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.get<Professional[]>(this.BASE_URI + "professionals?" + query, {headers});
   }
 
   private sendPatientQuery(query: string): Observable<Patient[]> {
-    return this.http.get<Patient[]>(this.BASE_URI + "patients?" + query);
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.get<Patient[]>(this.BASE_URI + "patients?" + query, {headers});
   }
 }

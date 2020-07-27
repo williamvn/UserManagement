@@ -13,7 +13,6 @@ export class AppUserService {
 
     private _token: string;
 
-
     get token() {
         return this._token;
     }
@@ -27,7 +26,7 @@ export class AppUserService {
         return this.http.post<TokenResponse>(this.BASE_URI, appUser)
             .pipe(
                 map((response: TokenResponse) => {
-                    this._token = response.accessToken;
+                    this._token = response.access_token;
                     return true;
                 }));
     }
