@@ -8,6 +8,7 @@
             <mat-form-field class="full-width">
                 <input type="password" matInput placeholder="Contraseña" name="Password" [(ngModel)] = "user.password" required>
             </mat-form-field>
+            <div *ngIf="errorMessage" class="alert">{{errorMessage}}</div>
             <mat-slide-toggle class="pull-left" color="primary" [(ngModel)]="user.rememberMe" name="rememberMe">Recordar</mat-slide-toggle>
             <button type="submit" class="full-width" mat-raised-button color="primary">Entrar</button>
         </form>
