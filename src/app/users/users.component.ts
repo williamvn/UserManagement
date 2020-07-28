@@ -41,6 +41,7 @@ export class UsersComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    this.userService.currentRoute = this.router.url;
     if (this.userService.loginRequired) {
       this.router.navigate([""]);
     }

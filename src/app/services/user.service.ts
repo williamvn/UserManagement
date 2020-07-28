@@ -16,8 +16,8 @@ export type Resource = "professionals" | "patients";
   providedIn: 'root'
 })
 export class UserService {
-  BASE_URI = "http://192.168.0.164:3000/";
-  TOKEN = "";
+  private BASE_URI = "http://192.168.0.164:3000/";
+  private TOKEN = "";
 
   private _professionals: Professional[] = [];
   private _patients: Patient[] = [];
@@ -30,12 +30,14 @@ export class UserService {
     return this._patients;
   }
 
-  get loginRequired(){
+  get loginRequired() {
     return !this.TOKEN;
   }
 
+  currentRoute: string = "";
+
   constructor(private http: HttpClient, private appUserService: AppUserService) {
-    appUserService.token.subscribe((token)=>{
+    appUserService.token.subscribe((token) => {
       this.TOKEN = token;
     });
   }
@@ -61,7 +63,8 @@ export class UserService {
   }
 
   public getUserById(id: string, resource: Resource): Observable<User> {
-    return this.http.get<User>(this.BASE_URI + resource + "/" + id);
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.TOKEN}`);
+    return this.http.get<User>(this.BASE_URI + resource + "/" + id, {headers});
   }
 
   public updateUser(user: User, resource: Resource): Observable<User> {

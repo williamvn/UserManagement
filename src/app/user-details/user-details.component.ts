@@ -33,6 +33,7 @@ export class UserDetailsComponent implements OnInit {
     private formbuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.userService.currentRoute = this.router.url;
     if (this.userService.loginRequired) {
       this.router.navigate([""]);
     }
