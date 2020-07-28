@@ -100,7 +100,13 @@ export class NewUserComponent implements OnInit {
         this.router.navigate(["users"]);
       },
       (error) => {
-        this.router.navigate(["error"]);
+        if (error.status == 401) {
+          //Unauthorized
+          this.router.navigate([""]);
+        }
+        else {
+          this.router.navigate(["error"]);
+        }
       });
   }
 }

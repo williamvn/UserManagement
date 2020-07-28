@@ -60,10 +60,16 @@ export class UsersComponent implements OnInit {
           alert("Error Loading the Users");
         }
       },
-      error => {
-        this._snackBar.open("La conexión con la base de datos ha fallado", "Cerrar", {
-          duration: 5000,
-        });
+      (error) => {
+        if (error.status == 401) {
+          //Unauthorized
+          this.router.navigate([""]);
+        }
+        else {
+          this._snackBar.open("La conexión con la base de datos ha fallado", "Cerrar", {
+            duration: 5000,
+          });
+        }
       });
   }
 
@@ -81,7 +87,14 @@ export class UsersComponent implements OnInit {
             });
             this.loadUsers();
           },
-          (error) => { this.router.navigate(["error"]) }
+          (error) => {
+            if (error.status) {
+              this.router.navigate([""]);
+            }
+            else {
+              this.router.navigate(["error"]);
+            }
+          }
         );
       }
     });
@@ -93,8 +106,14 @@ export class UsersComponent implements OnInit {
         if (success) {
           this.loadCollections();
         }
+      },
+      (error) => {
+        if (error.status == 401) {
+          //Unauthorized
+          this.router.navigate([""]);
+        }
         else {
-          alert("Error While loading users");
+          this.router.navigate(["error"]);
         }
       }
     );

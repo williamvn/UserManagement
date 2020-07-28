@@ -58,7 +58,15 @@ export class UsersListComponent implements OnInit, OnChanges {
             });
             this.reload.emit();
           },
-          (error) => { this.router.navigate[("error")] }
+          (error) => { 
+            if(error.status==401){
+              //Unauthorized
+              this.router.navigate[("")];
+            }
+            else{
+              this.router.navigate[("error")];
+            }
+          }
         );
       }
     });

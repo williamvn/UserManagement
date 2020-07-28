@@ -138,7 +138,15 @@ export class UserDetailsComponent implements OnInit {
           duration: 2000,
         });
       },
-      error => { this.router.navigate(["error"]); }
+      (error) => {
+        if (error.status == 401) {
+          //Unauthorized
+          this.router.navigate([""]);
+        }
+        else{
+          this.router.navigate(["error"]);
+        }
+      }
     );
   }
 }
