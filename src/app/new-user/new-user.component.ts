@@ -44,37 +44,42 @@ export class NewUserComponent implements OnInit {
     private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      var userType = params.get('userType');
-      var addr = new Address();
-      if (!userType) {
-        this.isTypeSelected = false;
-      }
-      else if (userType === "professional") {
-        this.formService.isProfessional = true;
-        this.isTypeSelected = true;
-        this.type = "Profesional";
-        this.user = new Professional();
-        this.user.address = addr;
-        this.formService.user = this.user;
-        this.formService.createProfessionalForm();
-      }
-      else if (userType === "patient") {
-        this.formService.isProfessional = false;
-        this.isTypeSelected = true;
-        this.type = "Paciente";
-        this.user = new Patient();
-        this.user['insuranceCarriers'] = [];
-        this.user.address = addr;
-        this.formService.user = this.user;
-        this.formService.createPatientForm();
-      }
-      else {
-        this.router.navigate(["not-found"]);
-        return;
-      }
-      this.loadForms()
-    });
+    if (this.userService.loginRequired) {
+      this.router.navigate([""]);
+    }
+    else {
+      this.route.paramMap.subscribe(params => {
+        var userType = params.get('userType');
+        var addr = new Address();
+        if (!userType) {
+          this.isTypeSelected = false;
+        }
+        else if (userType === "professional") {
+          this.formService.isProfessional = true;
+          this.isTypeSelected = true;
+          this.type = "Profesional";
+          this.user = new Professional();
+          this.user.address = addr;
+          this.formService.user = this.user;
+          this.formService.createProfessionalForm();
+        }
+        else if (userType === "patient") {
+          this.formService.isProfessional = false;
+          this.isTypeSelected = true;
+          this.type = "Paciente";
+          this.user = new Patient();
+          this.user['insuranceCarriers'] = [];
+          this.user.address = addr;
+          this.formService.user = this.user;
+          this.formService.createPatientForm();
+        }
+        else {
+          this.router.navigate(["not-found"]);
+          return;
+        }
+        this.loadForms()
+      });
+    }
   }
 
   private loadForms() {
@@ -88,13 +93,13 @@ export class NewUserComponent implements OnInit {
     this.formService.getUser();
     this.userService.addNewUser(this.user, this.formService.isProfessional ? "professionals" : "patients").subscribe(
       (success) => {
-      this._snackBar.open("Usuario Agregado", "Aceptar", {
-        duration: 2000,
+        this._snackBar.open("Usuario Agregado", "Aceptar", {
+          duration: 2000,
+        });
+        this.router.navigate(["users"]);
+      },
+      (error) => {
+        this.router.navigate(["error"]);
       });
-      this.router.navigate(["users"]);
-    },
-    (error)=>{
-      this.router.navigate(["error"]);
-    });
   }
 }

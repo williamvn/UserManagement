@@ -33,21 +33,26 @@ export class UserDetailsComponent implements OnInit {
     private formbuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.loading = true;
-    this.route.url.subscribe((segments) => {
-      this.formService.isEditable = (segments.find(s => s.path == "edit") !== undefined);
-    });
+    if (this.userService.loginRequired) {
+      this.router.navigate([""]);
+    }
+    else {
+      this.loading = true;
+      this.route.url.subscribe((segments) => {
+        this.formService.isEditable = (segments.find(s => s.path == "edit") !== undefined);
+      });
 
-    this.route.paramMap.subscribe(params => {
-      var userType = params.get('userType');
-      var id: string = params.get('id');
-      if (id == undefined) {
-        this.router.navigate(["not-found"]);
-      }
-      else {
-        this.loadUser(id, userType);
-      }
-    });
+      this.route.paramMap.subscribe(params => {
+        var userType = params.get('userType');
+        var id: string = params.get('id');
+        if (id == undefined) {
+          this.router.navigate(["not-found"]);
+        }
+        else {
+          this.loadUser(id, userType);
+        }
+      });
+    }
   }
 
   private loadUser(id: string, userType: string): void {

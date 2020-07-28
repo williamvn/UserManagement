@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsersListComponent } from './users-list/users-list.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { NewUserComponent } from './new-user/new-user.component';
@@ -11,8 +10,6 @@ import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  { path: "home", component: LoginComponent },
-  { path: "login", component: LoginComponent },
   { path: "users", component: UsersComponent },
   { path: "error", component: ErrorComponent },
   { path: "not-found", component: NotFoundComponent },

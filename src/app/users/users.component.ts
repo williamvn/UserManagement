@@ -35,13 +35,18 @@ export class UsersComponent implements OnInit {
     );
 
   constructor(private userService: UserService,
-              public dialog: MatDialog, 
-              private _snackBar: MatSnackBar, 
-              private breakpointObserver: BreakpointObserver,
-              private router:Router) { }
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar,
+    private breakpointObserver: BreakpointObserver,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.loadUsers();
+    if (this.userService.loginRequired) {
+      this.router.navigate([""]);
+    }
+    else {
+      this.loadUsers();
+    }
   }
 
   loadUsers(): void {
@@ -75,7 +80,7 @@ export class UsersComponent implements OnInit {
             });
             this.loadUsers();
           },
-          (error) => {this.router.navigate(["error"]) }
+          (error) => { this.router.navigate(["error"]) }
         );
       }
     });

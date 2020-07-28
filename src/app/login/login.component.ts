@@ -20,21 +20,22 @@ export class LoginComponent implements OnInit {
   }
 
   logUser() {
-    this.appUserService.LogUser(this.user).subscribe((success) => {
-      if (success) {
-        this._snackBar.open("Entrada Exitosa", "Aceptar", {
-          duration: 2000,
-        });
-        this.router.navigate(["users"]);
-      }
-    }, (error) => {
-      // console.log(error); 
-      if (error.status === 401) {
-        this.errorMessage = "Nombre de usuario o contraseña incorrecta";
-      }
-      else {
-        this.router.navigate(["error"]);
-      }
-    });
+    this.appUserService.LogUser(this.user).subscribe(
+      (success) => {
+        if (success) {
+          this._snackBar.open("Entrada Exitosa", "Aceptar", {
+            duration: 2000,
+          });
+          this.router.navigate(["users"]);
+        }
+      },
+      (error) => {
+        if (error.status === 401) {
+          this.errorMessage = "Nombre de usuario o contraseña incorrecta";
+        }
+        else {
+          this.router.navigate(["error"]);
+        }
+      });
   }
 }
