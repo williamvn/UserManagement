@@ -3,6 +3,11 @@ This project is a web app which manage all the users modelated in the db.json da
 
 Note: The database and the app's user interface are made in Spanish.
 
+## Installation
+```
+$ npm install
+```
+
 ## Functionalities
 
 ##### Login
