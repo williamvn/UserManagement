@@ -1,5 +1,5 @@
 # UserManagement
-This project is a web app which manage all the users modelated in the db.json database through CRUD operations. It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9 and Angular Material.
+This project is a web app which manage all the users modelated in a MongoDB database through CRUD operations. It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9 and Angular Material.
 
 Note: The database and the app's user interface are made in Spanish.
 
@@ -11,7 +11,7 @@ $ npm install
 ## Functionalities
 
 ##### Login
-Only the view has been implemented, no logic for now.
+The app work with json web token authentication and hence it is necessary a valid credential to access into the app. To create a valid credential go to the **Back-end Server** section.
 
 ##### Display Users
 Is the main view where you can see all the Users displayed. There are three tabs which filter the user by role. The first tab includes all kind of users, and then the other two tabs only show the specific role (patient, professional). Each table can be sorted by any of the fields shown and has pagination. Each user shown in the table has three types of actions on him. Edit, delete which can be accessed through buttons and see the internal details of the user, clicking on the row.
@@ -82,6 +82,5 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Deployment
+A demo app has been deployed on GitHub pages at [https://williamvn.github.io/].
