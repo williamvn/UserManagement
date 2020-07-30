@@ -3,6 +3,11 @@ This project is a web app which manage all the users modelated in the db.json da
 
 Note: The database and the app's user interface are made in Spanish.
 
+## Installation
+```
+$ npm install
+```
+
 ## Functionalities
 
 ##### Login
@@ -64,10 +69,6 @@ There is a back-end server implemented for this app. This back-end server is a R
 #### Angular Server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. 
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
