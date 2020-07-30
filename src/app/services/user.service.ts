@@ -16,7 +16,7 @@ export type Resource = "professionals" | "patients";
   providedIn: 'root'
 })
 export class UserService {
-  private BASE_URI = "http://192.168.0.164:3000/";
+  private BASE_URI = "https://his-rest-api.herokuapp.com/";
   private TOKEN = "";
 
   private _professionals: Professional[] = [];

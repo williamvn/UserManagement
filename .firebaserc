@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "user-mangement-51e1f": {
+      "hosting": {
+        "UserManagement": [
+          "user-mangement-51e1f"
+        ]
+      }
+    }
+  }
+}

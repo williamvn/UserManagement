@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
     providedIn: 'root'
 })
 export class AppUserService {
-    BASE_URI = "http://192.168.0.164:3000/auth/login";
+    BASE_URI = "https://his-rest-api.herokuapp.com/auth/login";
 
     private _tokenSubject = new BehaviorSubject<string>("");
     private _token: Observable<string> = this._tokenSubject.asObservable();
