@@ -14,7 +14,7 @@ export class NotFoundComponent implements OnInit {
   }
 
   redirectToHome(){
-    this.router.navigate(["home"]);
+    this.router.navigate(["users"]);
   }
 
 }
