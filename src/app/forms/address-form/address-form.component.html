@@ -40,7 +40,7 @@
 
         <div class="col">
             <mat-form-field class="full-width">
-                <input matInput #zipCode placeholder="Código Postal" type="number" formControlName="zipCode"
+                <input matInput #zipCode placeholder="Código Postal" formControlName="zipCode"
                     name="zipcode" [readonly]="!isEditable" (keydown)="onzipCodeInput($event)">
                 <mat-error *ngIf="addressFormGroup.controls['zipCode'].errors">
                     El codigo Postal debe tener <strong>5</strong> números.
