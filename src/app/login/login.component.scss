@@ -2,10 +2,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 90vh;
     align-items: flex-start;
     background-color: white;
     padding-top:30px;
+    margin-bottom: 4px;
 }
 
 .login-form{
@@ -44,8 +44,19 @@
     color: red;
 }
 
+.img-login{
+    width: 50%;
+}
+
 @media only screen and (max-width: 600px) {
     .login-form{
-        width: 100%;
+        width: 80%;
+    }
+
+    .img-login{
+        width: 60%;
+    }
+    .full-width{
+        width: 90%;
     }
   }

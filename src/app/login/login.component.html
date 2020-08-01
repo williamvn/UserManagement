@@ -1,6 +1,6 @@
 <div class="container">
     <div class="login-form">
-        <img src="../../assets/img/login.png" width="50%">
+        <img src="../../assets/img/login.png" class="img-login">
         <form #theForm="ngForm" (submit)="logUser()" class="form-group full-width">
             <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="Nombre de Usuario" name="Username" [(ngModel)] = "user.username" required>
