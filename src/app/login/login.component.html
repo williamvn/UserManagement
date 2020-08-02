@@ -3,14 +3,15 @@
         <img src="../../assets/img/login.png" class="img-login">
         <form #theForm="ngForm" (submit)="logUser()" class="form-group full-width">
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="Nombre de Usuario" name="Username" [(ngModel)] = "user.username" required>
+                <input type="text" matInput placeholder="Nombre de Usuario" name="Username" [(ngModel)] = "user.username" [disabled]="isLoading" required>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="password" matInput placeholder="Contraseña" name="Password" [(ngModel)] = "user.password" required>
+                <input type="password" matInput placeholder="Contraseña" name="Password" [(ngModel)] = "user.password" [disabled]="isLoading" required>
             </mat-form-field>
             <div *ngIf="errorMessage" class="alert">{{errorMessage}}</div>
+            <mat-spinner *ngIf="isLoading" diameter="40"></mat-spinner>
             <!-- <mat-slide-toggle class="pull-left" color="primary" [(ngModel)]="user.rememberMe" name="rememberMe">Recordar</mat-slide-toggle> -->
-            <button type="submit" class="full-width" mat-raised-button color="primary">Entrar</button>
+            <button type="submit" class="full-width" mat-raised-button color="primary" [disabled]="isLoading">Entrar</button>
         </form>
     </div>
 </div>

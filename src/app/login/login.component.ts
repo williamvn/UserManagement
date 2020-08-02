@@ -15,15 +15,18 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string = "";
   user: AppUser = new AppUser();
+  isLoading = false;
   constructor(private router: Router, private _snackBar: MatSnackBar, private appUserService: AppUserService, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   logUser() {
+    this.isLoading = true;
     this.appUserService.LogUser(this.user).subscribe(
       (success) => {
         if (success) {
+          this.isLoading = false;
           this._snackBar.open("Entrada Exitosa", "Aceptar", {
             duration: 2000,
           });
@@ -33,6 +36,7 @@ export class LoginComponent implements OnInit {
         }
       },
       (error) => {
+        this.isLoading = false;
         if (error.status === 401) {
           this.errorMessage = "Nombre de usuario o contraseña incorrecta";
         }
